@@ -303,6 +303,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5404223683436645321}
     m_Modifications:
+    - target: {fileID: 1040025410752254155, guid: 26373bbe04a460444a4688c5f8dd5cdd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1189025051516969104, guid: 26373bbe04a460444a4688c5f8dd5cdd, type: 3}
       propertyPath: m_Name
       value: Rutz_Leena_Base (1)
@@ -345,6 +349,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2002856433418631722, guid: 26373bbe04a460444a4688c5f8dd5cdd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173982975285108184, guid: 26373bbe04a460444a4688c5f8dd5cdd, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
