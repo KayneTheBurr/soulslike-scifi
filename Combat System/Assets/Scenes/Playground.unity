@@ -1020,7 +1020,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6827121434254332196, guid: f103223c2afea8a4393bbc8f866dafe8, type: 3}
+      propertyPath: Target.TrackingTarget
+      value: 
+      objectReference: {fileID: 8338988565591873055}
+    - target: {fileID: 6827121434254332196, guid: f103223c2afea8a4393bbc8f866dafe8, type: 3}
+      propertyPath: Target.CustomLookAtTarget
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3986203916073420698, guid: f103223c2afea8a4393bbc8f866dafe8, type: 3}
+    - {fileID: 4885317408731978998, guid: f103223c2afea8a4393bbc8f866dafe8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
