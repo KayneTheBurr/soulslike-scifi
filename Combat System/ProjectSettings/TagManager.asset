@@ -2,8 +2,32 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
-  tags: []
+  serializedVersion: 3
+  tags:
+  - CinemachineTarget
+  - ABC/BackLeftDiagonalWeaponSheath
+  - ABC/BackRightWeaponSheath
+  - ABC/BackLeftWeaponSheath
+  - ABC/BackCentreWeaponSheath
+  - ABC/BackRightDiagonalWeaponSheath
+  - ABC/RightWeaponHolder
+  - ABC/RightWeaponSheath
+  - ABC/LeftWeaponSheath
+  - ABC/RightWeaponHolster
+  - ABC/LeftWeaponHolster
+  - ABC/LeftWeaponHolder
+  - GunInitiation
+  - ABC/RightFoot
+  - ABC/LeftFoot
+  - ABC/Head
+  - ABC/LeftHand
+  - ABC/RightHand
+  - ABC/WeaponInitiation
+  - ABC/WeaponBase
+  - ABC/WeaponTip
+  - ABC/WeaponIK
+  - ABC/AdditionalWeaponInitiation
+  - ABC/AdditionalWeaponIK
   layers:
   - Default
   - TransparentFX
@@ -50,27 +74,3 @@ TagManager:
   - Light Layer 5
   - Light Layer 6
   - Light Layer 7
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 

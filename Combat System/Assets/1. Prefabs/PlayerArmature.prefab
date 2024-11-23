@@ -295,7 +295,7 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!1001 &5329221267928686015
+--- !u!1001 &7394195088583386787
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -303,57 +303,64 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5404223683436645321}
     m_Modifications:
-    - target: {fileID: 1189025051516969104, guid: 26373bbe04a460444a4688c5f8dd5cdd, type: 3}
-      propertyPath: m_Name
-      value: Rutz_Leena_Base (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2002856433418631722, guid: 26373bbe04a460444a4688c5f8dd5cdd, type: 3}
+    - target: {fileID: 3793109029080662326, guid: f10ac12663813874da78a0193a310b9e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2002856433418631722, guid: 26373bbe04a460444a4688c5f8dd5cdd, type: 3}
+    - target: {fileID: 3793109029080662326, guid: f10ac12663813874da78a0193a310b9e, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2002856433418631722, guid: 26373bbe04a460444a4688c5f8dd5cdd, type: 3}
+    - target: {fileID: 3793109029080662326, guid: f10ac12663813874da78a0193a310b9e, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2002856433418631722, guid: 26373bbe04a460444a4688c5f8dd5cdd, type: 3}
+    - target: {fileID: 3793109029080662326, guid: f10ac12663813874da78a0193a310b9e, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2002856433418631722, guid: 26373bbe04a460444a4688c5f8dd5cdd, type: 3}
+    - target: {fileID: 3793109029080662326, guid: f10ac12663813874da78a0193a310b9e, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2002856433418631722, guid: 26373bbe04a460444a4688c5f8dd5cdd, type: 3}
+    - target: {fileID: 3793109029080662326, guid: f10ac12663813874da78a0193a310b9e, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2002856433418631722, guid: 26373bbe04a460444a4688c5f8dd5cdd, type: 3}
+    - target: {fileID: 3793109029080662326, guid: f10ac12663813874da78a0193a310b9e, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2002856433418631722, guid: 26373bbe04a460444a4688c5f8dd5cdd, type: 3}
+    - target: {fileID: 3793109029080662326, guid: f10ac12663813874da78a0193a310b9e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2002856433418631722, guid: 26373bbe04a460444a4688c5f8dd5cdd, type: 3}
+    - target: {fileID: 3793109029080662326, guid: f10ac12663813874da78a0193a310b9e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2002856433418631722, guid: 26373bbe04a460444a4688c5f8dd5cdd, type: 3}
+    - target: {fileID: 3793109029080662326, guid: f10ac12663813874da78a0193a310b9e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4604935275437513612, guid: f10ac12663813874da78a0193a310b9e, type: 3}
+      propertyPath: m_Name
+      value: Rutz_Leena_Base (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -9132479249990475511, guid: f10ac12663813874da78a0193a310b9e, type: 3}
+    - {fileID: 7565518382603618734, guid: f10ac12663813874da78a0193a310b9e, type: 3}
+    - {fileID: 6881839243937313296, guid: f10ac12663813874da78a0193a310b9e, type: 3}
+    - {fileID: -4746313299883479671, guid: f10ac12663813874da78a0193a310b9e, type: 3}
+    - {fileID: -3917290762002149018, guid: f10ac12663813874da78a0193a310b9e, type: 3}
+    - {fileID: 8987727330457343734, guid: f10ac12663813874da78a0193a310b9e, type: 3}
+    - {fileID: 4837793533103463197, guid: f10ac12663813874da78a0193a310b9e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 26373bbe04a460444a4688c5f8dd5cdd, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: f10ac12663813874da78a0193a310b9e, type: 3}
 --- !u!4 &5926352080672221077 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 2002856433418631722, guid: 26373bbe04a460444a4688c5f8dd5cdd, type: 3}
-  m_PrefabInstance: {fileID: 5329221267928686015}
+  m_CorrespondingSourceObject: {fileID: 3793109029080662326, guid: f10ac12663813874da78a0193a310b9e, type: 3}
+  m_PrefabInstance: {fileID: 7394195088583386787}
   m_PrefabAsset: {fileID: 0}
