@@ -13,10 +13,16 @@ public class PlayerCamera : MonoBehaviour
     [SerializeField] float upAndDownRotationSpeed = 220;
     [SerializeField] float minPivotAngle = -30; //lowest to look down
     [SerializeField] float maxPivotAngle = 60; //highest to look up 
+    [SerializeField] float cameraCollisionRadius;
+    [SerializeField] LayerMask collideWithLayers;
+
+
 
     [Header("Camera Values")]
     private Vector3 cameraVelocity;
+    private Vector3 cameraObjectPos;
     [SerializeField] float leftAndRightLookAngle, upAndDownLookAngle;
+    private float cameraZPos, targetCamZPos;
 
     private void Awake()
     {
@@ -33,6 +39,7 @@ public class PlayerCamera : MonoBehaviour
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
+        cameraZPos = cam.transform.localPosition.z;
     }
     public void HandleAllCameraAction()
     {
@@ -40,7 +47,7 @@ public class PlayerCamera : MonoBehaviour
         {
             FollowTarget();
             HandleCameraRotation();
-            //collide with environment and not move through walls
+            HandleCameraCollision();
         }
 
     }
@@ -76,6 +83,31 @@ public class PlayerCamera : MonoBehaviour
         cameraPivotTransform.localRotation = targetRotation;
     }
 
+    private void HandleCameraCollision()
+    {
+        targetCamZPos = cameraZPos;
+        RaycastHit hit;
+        //direction to check for collision
+        Vector3 direction = cam.transform.position - cameraPivotTransform.position;
+        direction.Normalize();
+        
+        //check if object in front of camera in desired direction
+        if (Physics.SphereCast(cameraPivotTransform.position, cameraCollisionRadius, direction, out hit, Mathf.Abs(targetCamZPos), collideWithLayers))
+        {
+            //figure out how close the object is to the camera
+            float distanceFromHitObject = Vector3.Distance(cameraPivotTransform.position, hit.point);
+            //we make our z position to this then
+            targetCamZPos = -(distanceFromHitObject - cameraCollisionRadius);
+        }
+        //if out target position is ;less than out radius, we subtract our radius 
+        if(Mathf.Abs(targetCamZPos) < cameraCollisionRadius)
+        {
+            targetCamZPos = -cameraCollisionRadius;
+        }
+        //apply final position using a lerp over 0.2f
+        cameraObjectPos.z = Mathf.Lerp(cam.transform.localPosition.z, targetCamZPos, 0.2f);
+        cam.transform.localPosition = cameraObjectPos;
 
+    }
 
 }
