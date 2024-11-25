@@ -1,7 +1,9 @@
 using UnityEngine;
+using Unity.Netcode;
 
-public class CharacterManager : MonoBehaviour
+public class CharacterManager : NetworkBehaviour
 {
+    [HideInInspector] public CharacterNetworkManager characterNetworkManager;
     [HideInInspector] public CharacterController characterController;
     [HideInInspector] public Animator animator;
 
@@ -10,17 +12,14 @@ public class CharacterManager : MonoBehaviour
     public bool canRotate = true;
     public bool canMove = true;
     public bool applyRootMotion = false;
-    public bool isSprinting = false;
+    public bool isSprinting = false; //add to network
 
-
-    [Header("Stats")]
-    public int endurance = 10;
-    public int currentStamina = 1;
-
-
+    
+    
     protected virtual void Awake()
     {
         DontDestroyOnLoad(this);
+        characterNetworkManager = GetComponent<CharacterNetworkManager>();
         characterController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
     }
@@ -30,10 +29,33 @@ public class CharacterManager : MonoBehaviour
     }
     protected virtual void Update()
     {
+        if(IsOwner)
+        {
+            characterNetworkManager.networkPosition.Value = transform.position;
+            characterNetworkManager.networkRotation.Value = transform.rotation;
+        }
+        else
+        {
+            transform.position = Vector3.SmoothDamp(transform.position,
+                characterNetworkManager.networkPosition.Value,
+                ref characterNetworkManager.networkPositionVelocity,
+                characterNetworkManager.networkPositionSmoothTime);
 
+            transform.rotation = Quaternion.Slerp(transform.rotation,
+                characterNetworkManager.networkRotation.Value,
+                characterNetworkManager.networkRotationSmoothTime);
+        }
     }
     protected virtual void LateUpdate()
     {
 
     }
+
+    
+
+
+
+
+
+
 }

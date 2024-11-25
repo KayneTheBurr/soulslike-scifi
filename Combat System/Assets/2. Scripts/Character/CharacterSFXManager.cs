@@ -11,7 +11,7 @@ public class CharacterSFXManager : MonoBehaviour
 
     public void PlayDodgeSFX()
     {
-        Debug.Log("dodge sfx");
+        //Debug.Log("dodge sfx");
         audioSource.PlayOneShot(WorldSFXManager.instance.rollSFX);
     }
 

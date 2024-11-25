@@ -46,7 +46,20 @@ public class PlayerInputManager : MonoBehaviour
             instance.enabled = false;
         }
     }
-
+    private void OnApplicationFocus(bool focus)
+    {
+        if(enabled)
+        {
+            if(focus)
+            {
+                playerControls.Enable();
+            }
+            else
+            {
+                playerControls.Disable();
+            }
+        }
+    }
     private void OnEnable()
     {
         if(playerControls == null)

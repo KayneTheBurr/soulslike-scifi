@@ -10,10 +10,15 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
     private Vector3 moveDirection;
     private Vector3 targetRotateDirection;
     public float walkSpeed, runSpeed, sprintSpeed, rotationSpeed;
-    public int sprintStaminaCost;
+    public float sprintStaminaCost;
 
     [Header("Dodge")]
     private Vector3 dodgeDirection;
+    [SerializeField] float dodgeStaminaCost = 25;
+    [SerializeField] float backStepStaminaCost = 15;
+
+
+
 
     protected override void Awake()
     {
@@ -117,15 +122,16 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
         }
         if(player.isSprinting)
         {
-            player.playerNetworkManager.currentStamina.Value -= sprintStaminaCost;
+            player.playerNetworkManager.currentStamina.Value -= sprintStaminaCost * Time.deltaTime;
         }
     }
 
     public void AttemptToDodge()
     {
-        
+        //check for other actions and stamina
         if (player.isPerformingAction) return;
-        
+        if (player.playerNetworkManager.currentStamina.Value <= 0) return;
+
         if (moveAmount > 0) //if moving, dodge in direction of movement
         {
             
@@ -139,11 +145,14 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
 
             player.playerAnimatorManager.PlayTargetActionAnimation("Fwd_Dodge_01", true, true);
 
+            player.playerNetworkManager.currentStamina.Value -= dodgeStaminaCost;
 
         }
         else //if stationary, dodge backwards (backstep)
         {
             player.playerAnimatorManager.PlayTargetActionAnimation("Back_Step_01", true, true);
+
+            player.playerNetworkManager.currentStamina.Value -= backStepStaminaCost;
         }
         
     }
