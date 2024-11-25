@@ -1,22 +1,25 @@
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
 
 public class PlayerInputManager : MonoBehaviour
 {
     public static PlayerInputManager instance;
     PlayerControls playerControls;
+    public PlayerManager player;
+
+    [Header("Camera Inputs")]
+    [SerializeField] Vector2 cameraInput;
+    public float camVerticalInput, camHorizontalInput;
 
     [Header("Movement Inputs")]
     [SerializeField] Vector2 movementInput;
     public float verticalInput, horizontalInput, moveAmount;
 
-    [Header("Camera Inputs")]
-    [SerializeField] Vector2 cameraInput;
-    public float camVerticalInput, camHorizontalInput;
-    
+    [Header("Player Action Inputs")]
+    [SerializeField] bool dodgeInput = false;
+    [SerializeField] bool sprintInput = false;
 
-    //get joystick controls
-    //movpe cahracter based on joystick input 
 
     private void Awake()
     {
@@ -52,6 +55,11 @@ public class PlayerInputManager : MonoBehaviour
 
             playerControls.PlayerMovement.Movement.performed += i => movementInput = i.ReadValue<Vector2>();
             playerControls.PlayerCamera.CameraControls.performed += i => cameraInput = i.ReadValue<Vector2>();
+            playerControls.PlayerActions.Dodge.performed += i => dodgeInput = true;
+
+            //hold to sprint, release to cancel
+            playerControls.PlayerActions.Sprint.performed += i => sprintInput = true;
+            playerControls.PlayerActions.Sprint.canceled += i => sprintInput = false;
         }
 
         playerControls.Enable();
@@ -70,9 +78,17 @@ public class PlayerInputManager : MonoBehaviour
 
     private void Update()
     {
+        HandleAllInputs();
+    }
+
+    private void HandleAllInputs()
+    {
         HandlePlayerMovementInput();
         HandleCameraMovementInput();
+        HandleDodgeInput();
+        HandleSprintInput();
     }
+    //Movements
     private void HandlePlayerMovementInput()
     {
         verticalInput = movementInput.y;
@@ -89,14 +105,43 @@ public class PlayerInputManager : MonoBehaviour
         {
             moveAmount = 1.0f;
         }
+
+        if (player == null)
+            return;
+
+        //only pass vertical since strafing is only while locked on, want to only run forward with camera movement right now 
+        player.playerAnimatorManager.UpdateAnimatorMovementParameters(0, moveAmount, player.isSprinting);
+
+
     }
     private void HandleCameraMovementInput()
     {
         camVerticalInput = cameraInput.y;
         camHorizontalInput = cameraInput.x;
     }
+    //Actions
+    private void HandleDodgeInput()
+    {
+        if(dodgeInput)
+        {
+            dodgeInput = false;
+            //disable when menu is open
+            //check for stamina
+            player.playerLocomotionManager.AttemptToDodge();
+        }
+    }
 
-
+    private void HandleSprintInput()
+    {
+        if(sprintInput)
+        {
+            player.playerLocomotionManager.HandleSprinting();
+        }
+        else
+        {
+            player.isSprinting = false;
+        }
+    }
 
 
 }

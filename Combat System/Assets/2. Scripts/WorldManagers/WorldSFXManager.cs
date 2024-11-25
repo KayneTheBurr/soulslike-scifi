@@ -1,10 +1,12 @@
 using UnityEngine;
 
-public class PlayerUIManager : MonoBehaviour
+public class WorldSFXManager : MonoBehaviour
 {
-    public static PlayerUIManager instance;
+    public static WorldSFXManager instance;
 
-    [HideInInspector] public PlayerUIHUDManager playerHUDManager;
+    [Header("Action SFX")]
+    public AudioClip rollSFX;
+
 
     private void Awake()
     {
@@ -17,15 +19,9 @@ public class PlayerUIManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        playerHUDManager = GetComponentInChildren<PlayerUIHUDManager>();
-
     }
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
     }
-
-
-
 }
