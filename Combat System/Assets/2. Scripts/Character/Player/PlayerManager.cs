@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : CharacterManager
 {
@@ -45,6 +46,7 @@ public class PlayerManager : CharacterManager
 
         PlayerCamera.instance.player = this;
         PlayerInputManager.instance.player = this;
+        WorldSaveGameManager.instance.player = this;
 
         playerNetworkManager.endurance.Value = 10;
 
@@ -64,7 +66,7 @@ public class PlayerManager : CharacterManager
         currentCharacterData.xPos = transform.position.x;
         currentCharacterData.yPos = transform.position.y;
         currentCharacterData.zPos = transform.position.z;
-
+        currentCharacterData.sceneIndexNumber = SceneManager.GetActiveScene().buildIndex;
 
     }
 

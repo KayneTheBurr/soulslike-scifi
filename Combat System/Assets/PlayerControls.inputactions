@@ -313,6 +313,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "c3ad7f00-e2c8-43c5-abc1-b1da5eaefdba",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Sprint",
                     "type": "PassThrough",
                     "id": "6fecd89d-7049-42e5-bba7-30a4f3398adb",
@@ -347,6 +356,28 @@
                 },
                 {
                     "name": "",
+                    "id": "e35dbf3d-c4b9-4a2e-861e-7e6da398716c",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e8052fb4-a333-4347-94c4-01650fc0fc9a",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "3d22fb2d-b9f0-4ef0-85d8-739a806f7805",
                     "path": "<Keyboard>/space",
                     "interactions": "Hold",
@@ -364,6 +395,45 @@
                     "processors": "",
                     "groups": "",
                     "action": "Sprint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "UI",
+            "id": "f41b241c-58df-4c2e-a30c-828b37eeb481",
+            "actions": [
+                {
+                    "name": "Delete Save File",
+                    "type": "Button",
+                    "id": "9528216f-66e9-4adc-8871-4cb1524db9ee",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "9981d7cf-aae0-421b-8632-dcc8972b6e69",
+                    "path": "<Keyboard>/backspace",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Delete Save File",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9e9d17cb-020e-4c21-adfc-057efd379cd3",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Delete Save File",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

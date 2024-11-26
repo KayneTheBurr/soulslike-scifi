@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8497076223864431089}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Breast.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7856792815278593790}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ear.R.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8522896437792741088}
   - component: {fileID: 1595162391602643316}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00A_Head_008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,7 +225,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5373247065289525761}
   - component: {fileID: 8868590576004231271}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00C_Hair_TypeC_White
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -377,7 +377,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2287335322660488956}
   - component: {fileID: 482542610666248593}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 016.Scifi_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -529,7 +529,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1012415526640876699}
   - component: {fileID: 8624266740272337364}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 024.Fantasy_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -680,7 +680,7 @@ GameObject:
   m_Component:
   - component: {fileID: 649409854790769407}
   - component: {fileID: 7929747074988176427}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 019.Fantasy_belt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -831,7 +831,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8405397908396672739}
   - component: {fileID: 525219482327373241}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 029.Fantasy_NeckFur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -982,7 +982,7 @@ GameObject:
   m_Component:
   - component: {fileID: 708192089815429495}
   - component: {fileID: 649690994029086517}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00A_Head_012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1133,7 +1133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7210453438574188668}
   - component: {fileID: 2139403722031107266}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 010.Scifi_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1284,7 +1284,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8038917244412321866}
   - component: {fileID: 4756930402091217687}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 014.Fantasy_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1434,7 +1434,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1341699101806858985}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bangs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1470,7 +1470,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5969338293554074877}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: arm_stretch.l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1503,7 +1503,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5342817601316606721}
   - component: {fileID: 3479613065722816770}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 001.Fantasy_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1654,7 +1654,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5199979987462472801}
   - component: {fileID: 1569282938912592431}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00A_Head_006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1804,7 +1804,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 82372863406295902}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: c_pinky1.r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1837,7 +1837,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8945880225196815958}
   - component: {fileID: 1111939581034188117}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 007.Scifi_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1988,7 +1988,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 598258087476508152}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: c_ring3.r_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2020,7 +2020,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5897528473538345971}
   - component: {fileID: 9202918305229037534}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 008.Scifi_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2171,7 +2171,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5970691844384835657}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: foot.r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2204,7 +2204,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2569124665166959681}
   - component: {fileID: 735885373751186045}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00C_Hair_TypeG_Black
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2355,7 +2355,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2516647403349998703}
   - component: {fileID: 2571809325352989771}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00C.HBangs.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2506,7 +2506,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1250958769757028526}
   - component: {fileID: 6957246141787399951}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 017.Fantasy_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2656,7 +2656,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7975679017521722531}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fantasy Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2722,7 +2722,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1258147275836480929}
   - component: {fileID: 8549538371160502544}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 018.Fantasy_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2873,7 +2873,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4206046400812683392}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: c_thumb2.r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2906,7 +2906,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9439689140795180}
   - component: {fileID: 3432388834756976451}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00C_Hair_TypeG_Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3057,7 +3057,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3718258262970936940}
   - component: {fileID: 4403712399016286345}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00B_Helm_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3209,7 +3209,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8403894965654440025}
   - component: {fileID: 2470255483513197705}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00C_Hair_TypeF_Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3360,7 +3360,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6121300726351277998}
   - component: {fileID: 2473229556558362380}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 036.Fantasy_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3510,7 +3510,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3707025669197687233}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: hand.r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3547,7 +3547,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6615965579127839563}
   - component: {fileID: 5539936300329671113}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00A_Head_010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3698,7 +3698,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4919837303098344802}
   - component: {fileID: 3421423652527517881}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00C_Hair_TypeD_Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3849,7 +3849,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7413286265183694379}
   - component: {fileID: 2505191260178630517}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00C_Hair_TypeC_Black
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4001,7 +4001,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4532031945478152339}
   - component: {fileID: 7559760707418041861}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00C_Hair_TypeB_Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4151,7 +4151,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6351082812469570366}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Breast.L.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4184,7 +4184,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6052647170257569738}
   - component: {fileID: 176591250477819230}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 014.Scifi_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4335,7 +4335,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4867947256719836251}
   - component: {fileID: 7345929902240792637}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 021.Fantasy_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4486,7 +4486,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7120452843607292660}
   - component: {fileID: 7389944769559973824}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 023.Fantasy_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4637,7 +4637,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2890132612018428893}
   - component: {fileID: 6261673587338583098}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 001.Scifi_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4789,7 +4789,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5297811121642520334}
   - component: {fileID: 3681910687722152411}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 019.Scifi_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4941,7 +4941,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8480013023753534448}
   - component: {fileID: 83770469760261601}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00C_Hair_TypeE_Black
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5092,7 +5092,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8664023725518988602}
   - component: {fileID: 8650499159617829532}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00C_Hair_TypeG_White
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5243,7 +5243,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5587421808155684390}
   - component: {fileID: 5135857780301202329}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 006.Scifi_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5394,7 +5394,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1973741377974147960}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: c_thumb1.r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5427,7 +5427,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8417386565552019734}
   - component: {fileID: 5102944607046120273}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 006.Fantasy_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5578,7 +5578,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8399097144077970942}
   - component: {fileID: 3480079529208451584}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00B_Helm_010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5730,7 +5730,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4210746059989656048}
   - component: {fileID: 4479067182449909233}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 027.Fantasy_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5881,7 +5881,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4627631538836207944}
   - component: {fileID: 6192872503354039568}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 009.Scifi_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6032,7 +6032,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1526939090679485814}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: toes_01.r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6065,7 +6065,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2134252814836561815}
   - component: {fileID: 7952496525054497579}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 010.Fantasy_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6216,7 +6216,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1067804482288713601}
   - component: {fileID: 8506412128965844553}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 004.Scifi_Helm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6368,7 +6368,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8877882585874654622}
   - component: {fileID: 5141555182529488030}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00A_Head_011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6519,7 +6519,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5644976422807073580}
   - component: {fileID: 1106035754606032080}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 015.Fantasy_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6670,7 +6670,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5090942423738451540}
   - component: {fileID: 2052599018146672982}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00C.HBangs.027
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6821,7 +6821,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5772062542064127370}
   - component: {fileID: 1134317367515673824}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 005.Fantasy_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6972,7 +6972,7 @@ GameObject:
   m_Component:
   - component: {fileID: 187931178610850162}
   - component: {fileID: 5653338160554957959}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00C_Hair_TypeH_Black
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7123,7 +7123,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5901779772708402619}
   - component: {fileID: 1187178861078154033}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 020.Fantasy_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7274,7 +7274,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 431491902547001493}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: c_index3.l_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7306,7 +7306,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8238090444849135009}
   - component: {fileID: 1788126265736727270}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00C_Hair_TypeE_Blonde
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7456,7 +7456,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3421013580535108654}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fantasy Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7525,7 +7525,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5239391059764162133}
   - component: {fileID: 3642891907804176114}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 011.Scifi_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7676,7 +7676,7 @@ GameObject:
   m_Component:
   - component: {fileID: 756207420979362864}
   - component: {fileID: 974391607085965234}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00B_Helm_006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7827,7 +7827,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5118188877138477065}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: c_middle3.l_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7859,7 +7859,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5899417353975497577}
   - component: {fileID: 714040427259941800}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00C_Hair_TypeA_Blonde
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8010,7 +8010,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7116749413777590084}
   - component: {fileID: 5785777451188294304}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 017.Scifi_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8161,7 +8161,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4842976675903159588}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: c_middle3.l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8194,7 +8194,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9024080742289248198}
   - component: {fileID: 2919428599815610412}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 024.Fantasy_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8345,7 +8345,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8820768827865068603}
   - component: {fileID: 3547179118744911578}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 008.Scifi_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8496,7 +8496,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3257829511280567487}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: c_index2.r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8529,7 +8529,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6918653849304050455}
   - component: {fileID: 308419441098331636}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 016.Scifi_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8681,7 +8681,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7927436668744921900}
   - component: {fileID: 477663009621919593}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00C_Hair_TypeH_White
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8831,7 +8831,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3425061011013537955}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ear.R.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8864,7 +8864,7 @@ GameObject:
   m_Component:
   - component: {fileID: 838549956741521380}
   - component: {fileID: 3550730585829613741}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 029.Fantasy_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9015,7 +9015,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3102678947827749902}
   - component: {fileID: 5249636279405433423}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 025.Fantasy_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9166,7 +9166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7683448791516603663}
   - component: {fileID: 4142315962085515878}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 030.Fantasy_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9317,7 +9317,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2391475774699085030}
   - component: {fileID: 6188256503377072067}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 004.Fantasy_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9468,7 +9468,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7910271799830903158}
   - component: {fileID: 8840848024313123010}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 007.Fantasy_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9619,7 +9619,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4872419254500767581}
   - component: {fileID: 7861614922849004950}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 032.Fantasy_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9769,7 +9769,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4587394634385413671}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ear.L.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9802,7 +9802,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4599937753269543835}
   - component: {fileID: 7403858835926809055}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 020.Fantasy_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9952,7 +9952,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8767369585348349599}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: c_thumb2.l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9985,7 +9985,7 @@ GameObject:
   m_Component:
   - component: {fileID: 353047778866056115}
   - component: {fileID: 1274076718343047013}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 032.Fantasy_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10137,7 +10137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4464191115227448995}
   - component: {fileID: 421153798607720481}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 004.Scifi_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10289,7 +10289,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5931675940426397104}
   - component: {fileID: 2522784235381547233}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00B_Helm_004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10440,7 +10440,7 @@ GameObject:
   m_Component:
   - component: {fileID: 96397154107827124}
   - component: {fileID: 6319864873854553225}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 036.Fantasy_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10591,7 +10591,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9118326227342417919}
   - component: {fileID: 7449605919897419629}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00C_Hair_TypeA_Black
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10742,7 +10742,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2668605355340800444}
   - component: {fileID: 7922304699099384374}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 007.Scifi_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10894,7 +10894,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7822002375449855573}
   - component: {fileID: 347519895682392517}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 005.Scifi_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11046,7 +11046,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2622803334526480287}
   - component: {fileID: 4498118923518982405}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00C_Hair_TypeH_Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11196,7 +11196,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4311901675367963490}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Breast.R.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11229,7 +11229,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6852658338683009108}
   - component: {fileID: 5392657765204020055}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 034.Fantasy_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11380,7 +11380,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3227884522775958571}
   - component: {fileID: 8468370500329752992}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 005.Fantasy_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11531,7 +11531,7 @@ GameObject:
   m_Component:
   - component: {fileID: 588520132426093850}
   - component: {fileID: 598615810225660145}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 032.Fantasy_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11682,7 +11682,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1270147690897667695}
   - component: {fileID: 1850884812876324421}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00C_Hair_TypeE_White
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11833,7 +11833,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1821659343581683004}
   - component: {fileID: 5314679889035194358}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 024.Fantasy_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11983,7 +11983,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7770756163268642347}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: c_index1.r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12015,7 +12015,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 903830067245298822}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: c_thumb3.l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12047,7 +12047,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3348169112918770505}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Breast.R.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12080,7 +12080,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8264219411306061073}
   - component: {fileID: 6116623241162376978}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 022.Fantasy_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12230,7 +12230,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6811814483865542062}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: c_index2.l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12263,7 +12263,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3520323553658381081}
   - component: {fileID: 2112855589713752267}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 003.Scifi_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12415,7 +12415,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4328877665301952078}
   - component: {fileID: 2492738747590279170}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 029.Fantasy_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12566,7 +12566,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2861852757951526163}
   - component: {fileID: 8410082167026672018}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 017.Scifi_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12718,7 +12718,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7333702853463117117}
   - component: {fileID: 7656888024010339355}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 017.Scifi_Helm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12870,7 +12870,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6645470512037365422}
   - component: {fileID: 5894834066616377362}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 023.Fantasy_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13021,7 +13021,7 @@ GameObject:
   m_Component:
   - component: {fileID: 753128076423094847}
   - component: {fileID: 4837092665139003339}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 012.Scifi_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13172,7 +13172,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4694173107909455029}
   - component: {fileID: 3793675200735892591}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 010.Scifi_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13324,7 +13324,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4255929877011398990}
   - component: {fileID: 2446154778553962595}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 013.Fantasy_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13474,7 +13474,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6286660247178109774}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: c_pinky3.l_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13506,7 +13506,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4519458924249562105}
   - component: {fileID: 8303388210808495346}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 006.Scifi_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13657,7 +13657,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8021014014926916206}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Heads
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13703,7 +13703,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5404951583934875746}
   - component: {fileID: 3034654920427518954}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00B_Helm_005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13854,7 +13854,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3075281851229399711}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg_stretch.r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13886,7 +13886,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 865439894870228461}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ear.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13918,7 +13918,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7938949152213027463}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: c_pinky3.r_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13950,7 +13950,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7448129213508878361}
   - component: {fileID: 5809271530711092336}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 014.Fantasy_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14101,7 +14101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 966248210473756667}
   - component: {fileID: 5392320292026677702}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00C.HBangs.018
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14252,7 +14252,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6330656056171778442}
   - component: {fileID: 2401052539642073351}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 015.Scifi_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14402,7 +14402,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1489000612875074377}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: c_middle3.r_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14433,7 +14433,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7084632327612594287}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: c_index3.l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14466,7 +14466,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6608803612697585129}
   - component: {fileID: 6634968575518783538}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00C.HBangs.036
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14616,7 +14616,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6274785344915138568}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Breast.R.002_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14647,7 +14647,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8876796765572698475}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: toes_01.l_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14679,7 +14679,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4452740317100695506}
   - component: {fileID: 8579566020205682418}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 019.Scifi_Helm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14831,7 +14831,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5931822588330905602}
   - component: {fileID: 5979423248245106774}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 026.Fantasy_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14982,7 +14982,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3940516454685201657}
   - component: {fileID: 1418045897081075058}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00C_Hair_TypeH_Blonde
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15133,7 +15133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2319316451435498214}
   - component: {fileID: 4715147656265632370}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00B_Helm_012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15285,7 +15285,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7648256301857755606}
   - component: {fileID: 3557409856509771445}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 034.Fantasy_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15435,7 +15435,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4979520885007917688}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: shoulder.l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15468,7 +15468,7 @@ GameObject:
   m_Component:
   - component: {fileID: 753659497391524303}
   - component: {fileID: 6233319529938791544}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00A_Head_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15619,7 +15619,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7580797554787818769}
   - component: {fileID: 7161418263341470084}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00C_Hair_TypeC_Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15771,7 +15771,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6186210879063007819}
   - component: {fileID: 3269508442908680361}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 035.Fantasy_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15922,7 +15922,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5020356862880883594}
   - component: {fileID: 2201473249461008566}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 018.Scifi_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16073,7 +16073,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1467813412401608360}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: c_index3.r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16105,7 +16105,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5562037390794374624}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: c_pinky2.r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16138,7 +16138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5040441256702782888}
   - component: {fileID: 6698271896843287489}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 011.Fantasy_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16288,7 +16288,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6038444339614052583}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spine_01.x
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16321,7 +16321,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5470069721583205060}
   - component: {fileID: 5321541472354632827}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 020.Fantasy_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16471,7 +16471,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7200061352563135243}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: shoulder.r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16504,7 +16504,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9040927520190234354}
   - component: {fileID: 5546710822674136178}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 002.Scifi_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16656,7 +16656,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8010463133997621682}
   - component: {fileID: 4773803440522698040}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 012.Fantasy_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16807,7 +16807,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8728027233154169554}
   - component: {fileID: 8601608505544439672}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 017.Fantasy_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16958,7 +16958,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5924817294534109621}
   - component: {fileID: 7654060044592158762}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 007.Fantasy_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17109,7 +17109,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4994231538268697873}
   - component: {fileID: 1329783132193080756}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 022.Fantasy_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17259,7 +17259,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4615026858279429882}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: c_thumb3.l_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17291,7 +17291,7 @@ GameObject:
   m_Component:
   - component: {fileID: 33475670382336406}
   - component: {fileID: 4417203223046212588}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 017.Scifi_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17442,7 +17442,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8267230377514846223}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Breast.L.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17475,7 +17475,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6297323103071509757}
   - component: {fileID: 761215434089707436}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 019.Fantasy_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17626,7 +17626,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4984500456329653681}
   - component: {fileID: 4898380916061730036}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 018.Scifi_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17778,7 +17778,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9197046931100490609}
   - component: {fileID: 1819129763927651319}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 013.Fantasy_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17929,7 +17929,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5090625054385999991}
   - component: {fileID: 3735031089094892592}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 012.Scifi_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18079,7 +18079,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5960607953644014210}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: toes_01.r_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18111,7 +18111,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1054012446040721597}
   - component: {fileID: 8086018374143920615}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 016.Fantasy_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18262,7 +18262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1370049335096386677}
   - component: {fileID: 5663544380615395887}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00B_Helm_003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18413,7 +18413,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8219006638685413664}
   - component: {fileID: 4828185916112978151}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00B_Helm_007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18563,7 +18563,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6375039732177710907}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: c_pinky3.r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18596,7 +18596,7 @@ GameObject:
   m_Component:
   - component: {fileID: 113427461930077848}
   - component: {fileID: 1289607335541669111}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 009.Scifi_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18748,7 +18748,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7144017254628487644}
   - component: {fileID: 2424393213482792265}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00C_Hair_TypeA_White
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18899,7 +18899,7 @@ GameObject:
   m_Component:
   - component: {fileID: 496513507572308617}
   - component: {fileID: 1037668945850613642}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 021.Fantasy_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19049,7 +19049,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8768060680302078675}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: c_index3.r_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19090,7 +19090,7 @@ GameObject:
   - component: {fileID: 7377431891504224825}
   - component: {fileID: 7328409266463948501}
   - component: {fileID: 6469895621558305248}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player_Base
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -19189,12 +19189,12 @@ MonoBehaviour:
   characterController: {fileID: 0}
   animator: {fileID: 0}
   isPerformingAction: 0
+  isJumping: 0
+  isGrounded: 1
   canRotate: 1
   canMove: 1
   applyRootMotion: 0
   isSprinting: 0
-  endurance: 10
-  currentStamina: 1
   playerLocomotionManager: {fileID: 0}
   playerAnimatorManager: {fileID: 0}
   playerStatsManager: {fileID: 0}
@@ -19211,6 +19211,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ece36ffc4cb99e489a6379a55f49c68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  staminaRegenTimer: 0
+  staminaRegenDelay: 2
+  staminaTickTimer: 0
+  staminaTickRate: 0.1
+  staminaRegenAmount: 5
 --- !u!114 &4567402134198962600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19223,6 +19228,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72b8ec2e85fe47b46b5afa7b54eae81f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  groundCheckSphereRadius: 0.28
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 1
+  gravityForce: -40
+  yVelocity: {x: 0, y: 0, z: 0}
+  groundedYVelocity: -20
+  fallStartYVelocity: -5
   verticalMovement: 0
   horizontalMovement: 0
   moveAmount: 0
@@ -19231,6 +19244,9 @@ MonoBehaviour:
   sprintSpeed: 8
   rotationSpeed: 10
   sprintStaminaCost: 5
+  dodgeStaminaCost: 25
+  backStepStaminaCost: 15
+  jumpStaminaCost: 15
 --- !u!114 &8982461500860018143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19279,7 +19295,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.85, z: 0}
+  m_Center: {x: 0, y: 0.965, z: 0}
 --- !u!82 &7328409266463948501
 AudioSource:
   m_ObjectHideFlags: 0
@@ -19403,6 +19419,75 @@ MonoBehaviour:
     m_InternalValue: 0
   maxStamina:
     m_InternalValue: 0
+  characterName:
+    m_InternalValue:
+      utf8LengthInBytes: 9
+      bytes:
+        offset0000:
+          byte0000: 67
+          byte0001: 104
+          byte0002: 97
+          byte0003: 114
+          byte0004: 97
+          byte0005: 99
+          byte0006: 116
+          byte0007: 101
+          byte0008: 114
+          byte0009: 0
+          byte0010: 0
+          byte0011: 0
+          byte0012: 0
+          byte0013: 0
+          byte0014: 0
+          byte0015: 0
+        offset0016:
+          byte0000: 0
+          byte0001: 0
+          byte0002: 0
+          byte0003: 0
+          byte0004: 0
+          byte0005: 0
+          byte0006: 0
+          byte0007: 0
+          byte0008: 0
+          byte0009: 0
+          byte0010: 0
+          byte0011: 0
+          byte0012: 0
+          byte0013: 0
+          byte0014: 0
+          byte0015: 0
+        offset0032:
+          byte0000: 0
+          byte0001: 0
+          byte0002: 0
+          byte0003: 0
+          byte0004: 0
+          byte0005: 0
+          byte0006: 0
+          byte0007: 0
+          byte0008: 0
+          byte0009: 0
+          byte0010: 0
+          byte0011: 0
+          byte0012: 0
+          byte0013: 0
+          byte0014: 0
+          byte0015: 0
+        byte0048: 0
+        byte0049: 0
+        byte0050: 0
+        byte0051: 0
+        byte0052: 0
+        byte0053: 0
+        byte0054: 0
+        byte0055: 0
+        byte0056: 0
+        byte0057: 0
+        byte0058: 0
+        byte0059: 0
+        byte0060: 0
+        byte0061: 0
 --- !u!1 &4615969629703003895
 GameObject:
   m_ObjectHideFlags: 0
@@ -19413,7 +19498,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7138959310593397495}
   - component: {fileID: 867418669990574889}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 004.Scifi_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19564,7 +19649,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9125398165293260731}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: c_ring3.r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19597,7 +19682,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6281222113733656352}
   - component: {fileID: 1304043082506505210}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 028.Fantasy_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19748,7 +19833,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1831053234384218232}
   - component: {fileID: 2750666238450791072}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 004.Scifi_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19900,7 +19985,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2213851171017412266}
   - component: {fileID: 5239108881795814801}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 008.Fantasy_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20050,7 +20135,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5014991961758566577}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ear.L.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20083,7 +20168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 961247860482537148}
   - component: {fileID: 5206576415756601343}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 005.Scifi_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20235,7 +20320,7 @@ GameObject:
   m_Component:
   - component: {fileID: 947345213425788238}
   - component: {fileID: 1824777222344061626}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 019.Scifi_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20387,7 +20472,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1908151709186744799}
   - component: {fileID: 3262824605726895054}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00A_Head_003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20538,7 +20623,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8159787345405380072}
   - component: {fileID: 7448521325497874396}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 018.Fantasy_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20689,7 +20774,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4321998310772338900}
   - component: {fileID: 2967611340751253490}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 017.Fantasy_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20839,7 +20924,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8441090306804260904}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: head.x
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20872,7 +20957,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6446651259168342216}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: toes_01.l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20905,7 +20990,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5791117760786721015}
   - component: {fileID: 825412667798454950}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00A_Head_004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21056,7 +21141,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7280400019837373428}
   - component: {fileID: 4701665438740394540}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 003.Fantasy_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21207,7 +21292,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8109392064656828361}
   - component: {fileID: 2431280267226644941}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 033.Fantasy_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21358,7 +21443,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1476732907090991352}
   - component: {fileID: 7888122027896531396}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 014.Scifi_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21510,7 +21595,7 @@ GameObject:
   m_Component:
   - component: {fileID: 856561041957460900}
   - component: {fileID: 1924996891364743160}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00B_Helm_009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21661,7 +21746,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5506692686002365643}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SciFi Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21712,7 +21797,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2508274909300987117}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Leena
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21745,7 +21830,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8639756071094733391}
   - component: {fileID: 7178644831506800577}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00A_Head_007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21896,7 +21981,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3260460505223020599}
   - component: {fileID: 8601662082526538555}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 019.Fantasy_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22047,7 +22132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9050909154546589613}
   - component: {fileID: 237209742705523822}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 026.Fantasy_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22198,7 +22283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3209529774880294373}
   - component: {fileID: 2489647788843829543}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 012.Scifi_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22350,7 +22435,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3413243758512888609}
   - component: {fileID: 2419368873605527011}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 010.Fantasy_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22501,7 +22586,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3435709536063407952}
   - component: {fileID: 4310590182570193967}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00C_Hair_TypeD_Black
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22652,7 +22737,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7941342512762780059}
   - component: {fileID: 5046643899849377212}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 019.Fantasy_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22803,7 +22888,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4273528773489042103}
   - component: {fileID: 8101352343893800481}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 028.Fantasy_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22954,7 +23039,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7687214513103509970}
   - component: {fileID: 215496701687721155}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00C_Hair_TypeF_Blonde
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23105,7 +23190,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1025296588477053123}
   - component: {fileID: 555294071620699753}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00C_Hair_TypeA_Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23256,7 +23341,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2071437025979347621}
   - component: {fileID: 6793563606240442407}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 003.Fantasy_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23408,7 +23493,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9189690959478190099}
   - component: {fileID: 6478875537491601228}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 019.Scifi_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23560,7 +23645,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6417591485679337896}
   - component: {fileID: 3788412244446930254}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 020.Scifi_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23712,7 +23797,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4870335488138362108}
   - component: {fileID: 5385560534420043159}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00C.HBangs.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23863,7 +23948,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3715408837966763120}
   - component: {fileID: 5416407583201377443}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 009.Fantasy_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24014,7 +24099,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7857274045521871712}
   - component: {fileID: 3147479159199622945}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 022.Fantasy_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24164,7 +24249,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4711007026170613317}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ear.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24197,7 +24282,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3407408515355743849}
   - component: {fileID: 1585819086435758570}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 013.Fantasy_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24348,7 +24433,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5470862462389303184}
   - component: {fileID: 8495098883661530838}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 027.Fantasy_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24499,7 +24584,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8060284563934057869}
   - component: {fileID: 5187660822818748564}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00C_Hair_TypeB_Blonde
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24650,7 +24735,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2432440208951613924}
   - component: {fileID: 8666873918027865712}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00C_Hair_TypeF_White
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24800,7 +24885,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3186162116791283911}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Helmets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24847,7 +24932,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1078316469458958533}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg_stretch.l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24880,7 +24965,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3624520611594321524}
   - component: {fileID: 4111434597622230082}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 002.Fantasy_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25031,7 +25116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4658203741810334880}
   - component: {fileID: 4575579126031983745}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 010.Fantasy_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25182,7 +25267,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1036430382255252004}
   - component: {fileID: 9169162003222368608}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 012.Fantasy_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25333,7 +25418,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1294622630948877982}
   - component: {fileID: 4438050780916804090}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 016.Fantasy_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25484,7 +25569,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1260226039203147450}
   - component: {fileID: 6508375722423956264}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 006.Fantasy_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25634,7 +25719,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4796429842604182011}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: hand.l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25670,7 +25755,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5809073028508507682}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: c_middle1.l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25703,7 +25788,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4472729781179141020}
   - component: {fileID: 3008301214243912567}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 007.Fantasy_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25854,7 +25939,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3060422550280930581}
   - component: {fileID: 7187392440020640386}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 001.Fantasy_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26005,7 +26090,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6055193627168746568}
   - component: {fileID: 7828850641182332016}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 028.Fantasy_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26156,7 +26241,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1256014364679879694}
   - component: {fileID: 6086777207094326956}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 031.Fantasy_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26306,7 +26391,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5888576704322171413}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: thigh_stretch.r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26338,7 +26423,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6018191639044809266}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: c_index1.l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26370,7 +26455,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 149714749007485991}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: c_middle2.l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26403,7 +26488,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2225527869018928414}
   - component: {fileID: 439168988380877976}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 020.Scifi_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26555,7 +26640,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8819336697788634322}
   - component: {fileID: 724820467002920540}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 036.Fantasy_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26706,7 +26791,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2496628444650293167}
   - component: {fileID: 5714782806957289667}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 004.Fantasy_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26857,7 +26942,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4887699075022836200}
   - component: {fileID: 5772842285413667772}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 005.Scifi_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27007,7 +27092,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3012480312887081476}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: c_thumb3.r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27039,7 +27124,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7340357479219021861}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: c_thumb3.r_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27071,7 +27156,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8203352835685177401}
   - component: {fileID: 2085799833752321192}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 008.Fantasy_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27222,7 +27307,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2253744882048993359}
   - component: {fileID: 4345939365002098020}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 005.Fantasy_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27373,7 +27458,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2412353087572749628}
   - component: {fileID: 7313213323398417901}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 027.Fantasy_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27523,7 +27608,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 463108104340482593}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Scifi Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27575,7 +27660,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7343365345050210988}
   - component: {fileID: 5518840141831156191}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 006.Fantasy_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27726,7 +27811,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6059938337199315686}
   - component: {fileID: 3337764477334208048}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 009.Fantasy_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27877,7 +27962,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2176281243067085522}
   - component: {fileID: 8864991892948405832}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 035.Fantasy_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28027,7 +28112,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2203056985635051249}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Breast.L.002_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28059,7 +28144,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5338590635986303349}
   - component: {fileID: 2434906804596719420}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 011.Fantasy_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28210,7 +28295,7 @@ GameObject:
   m_Component:
   - component: {fileID: 626275092398060376}
   - component: {fileID: 1647680797900549963}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 013.Scifi_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28362,7 +28447,7 @@ GameObject:
   m_Component:
   - component: {fileID: 234247922758863595}
   - component: {fileID: 5941905151510068658}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 001.Scifi_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28514,7 +28599,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5738146074450494105}
   - component: {fileID: 2954953439377622124}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 006.Scifi_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28666,7 +28751,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7617129847648773052}
   - component: {fileID: 7708051492064096023}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 020.Scifi_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28817,7 +28902,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 368831988914834090}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: c_middle1.r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28850,7 +28935,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5682435535873779580}
   - component: {fileID: 8114746727103105597}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 034.Fantasy_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29001,7 +29086,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2668983147175983209}
   - component: {fileID: 6914454916820207635}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 025.Fantasy_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29152,7 +29237,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5702920801937344301}
   - component: {fileID: 574607485526291963}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00A_Head_013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29303,7 +29388,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2218670689527265312}
   - component: {fileID: 8075435547783392587}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 010.Scifi_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29454,7 +29539,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6111996551537248055}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: c_middle3.r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29486,7 +29571,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2987883459155492619}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: thigh_stretch.l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29519,7 +29604,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2266937863800546830}
   - component: {fileID: 4765745588888110292}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 033.Fantasy_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29669,7 +29754,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9047355259829817120}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ear.R.002_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29701,7 +29786,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5624918027311977181}
   - component: {fileID: 3562567634005223350}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00B_Helm_011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29853,7 +29938,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3582430988898522978}
   - component: {fileID: 3194545900567585911}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 012.Fantasy_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30004,7 +30089,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5236186847319568176}
   - component: {fileID: 3464984536714568131}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00C_Hair_TypeD_Blonde
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30155,7 +30240,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3016983898487397147}
   - component: {fileID: 3185361333001172265}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 013.Scifi_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30305,7 +30390,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1030098572112831505}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fantasy Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30370,7 +30455,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 26037881243546131}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: c_ring3.l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30403,7 +30488,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2118706507739985385}
   - component: {fileID: 4729523095644593991}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 031.Fantasy_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30554,7 +30639,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2750953346180712884}
   - component: {fileID: 2019470570611578114}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 009.Fantasy_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30705,7 +30790,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6029776771821627433}
   - component: {fileID: 6741930384337056399}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00A_Head_005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30856,7 +30941,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4190471864962807794}
   - component: {fileID: 7330144721608202407}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00C_Hair_TypeB_White
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31007,7 +31092,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2961469340888425344}
   - component: {fileID: 8175740136213000143}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 016.Fantasy_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31157,7 +31242,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8498555723534358792}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: c_thumb1.l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31190,7 +31275,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6629019016874368951}
   - component: {fileID: 2198933208976316831}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 003.Scifi_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31342,7 +31427,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2818319110064506830}
   - component: {fileID: 2237112588839818332}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 003.Scifi_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31493,7 +31578,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1071740698283908010}
   - component: {fileID: 660058186286553210}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00A_Head_014
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31643,7 +31728,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5981763444996411856}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Breast.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31676,7 +31761,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3914859078863334694}
   - component: {fileID: 1339523310273759121}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 013.Scifi_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31827,7 +31912,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1329490376186092853}
   - component: {fileID: 7192698969879605875}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 030.Fantasy_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31978,7 +32063,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9133023833577822878}
   - component: {fileID: 3824895882733462628}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 023.Fantasy_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32130,7 +32215,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1200255387835918055}
   - component: {fileID: 5049885921135264251}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00C_Hair_TypeG_Blonde
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32281,7 +32366,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1432006405966549242}
   - component: {fileID: 1502987451878216849}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00B_Helm_013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32433,7 +32518,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5182132617640687792}
   - component: {fileID: 3086386815393854689}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 011.Scifi_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32583,7 +32668,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6140717948702751908}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: foot.l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32615,7 +32700,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1121442707373982785}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: c_pinky2.l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32647,7 +32732,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4139456774167201318}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32711,7 +32796,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7044403522628029435}
   - component: {fileID: 378195894012512480}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 018.Fantasy_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32862,7 +32947,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1272512665486279159}
   - component: {fileID: 7883263082746829832}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 002.Fantasy_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33013,7 +33098,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1260865617530284254}
   - component: {fileID: 3383322676871405127}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 009.Scifi_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33165,7 +33250,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4995705556506215032}
   - component: {fileID: 2350404799219574374}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 026.Fantasy_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33316,7 +33401,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2101209543146090034}
   - component: {fileID: 543833291830984892}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00C_Hair_TypeE_Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33467,7 +33552,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2522027904409772295}
   - component: {fileID: 944783254434523110}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00C_Hair_TypeD_White
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33617,7 +33702,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4252969065415418129}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: forearm_stretch.l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33650,7 +33735,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7699803732657768441}
   - component: {fileID: 7876200793017514031}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00C_Hair_TypeF_Black
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33801,7 +33886,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7328836088228061255}
   - component: {fileID: 8168732036171113700}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 004.Fantasy_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33952,7 +34037,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2253524358116972553}
   - component: {fileID: 1758821417974467355}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 011.Scifi_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34104,7 +34189,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2349757783420307646}
   - component: {fileID: 7118422883391304124}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00A_Head_009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34255,7 +34340,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8784508997698549439}
   - component: {fileID: 1457266678008105493}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 030.Fantasy_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34406,7 +34491,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7347589738796460658}
   - component: {fileID: 730095315331731142}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 014.Scifi_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34557,7 +34642,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1520576456914898338}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spine_02.x
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34594,7 +34679,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9173492501508502525}
   - component: {fileID: 4776636946931013303}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 002.Fantasy_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34744,7 +34829,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7425129303602122828}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: root.x
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34779,7 +34864,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3932398926931510582}
   - component: {fileID: 2390088776836645731}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 031.Fantasy_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34929,7 +35014,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7050840998326409363}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: c_ring2.r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34962,7 +35047,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1455140652025777115}
   - component: {fileID: 1944688339336026815}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 033.Fantasy_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35112,7 +35197,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7939362342667388876}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: c_middle2.r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35145,7 +35230,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7078339168798808560}
   - component: {fileID: 7947440231904764335}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 007.Scifi_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35297,7 +35382,7 @@ GameObject:
   m_Component:
   - component: {fileID: 336565704421515152}
   - component: {fileID: 3098848351110546548}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 002.Scifi_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35449,7 +35534,7 @@ GameObject:
   m_Component:
   - component: {fileID: 663429856016194713}
   - component: {fileID: 1951471223703651775}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 029.Fantasy_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35601,7 +35686,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3718682110568858078}
   - component: {fileID: 3508549213942594744}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 015.Scifi_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35752,7 +35837,7 @@ GameObject:
   m_Component:
   - component: {fileID: 183024333849007815}
   - component: {fileID: 4936723489994358998}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 008.Fantasy_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35903,7 +35988,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5143273771890199132}
   - component: {fileID: 680409216974365653}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00B_Helm_008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36055,7 +36140,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8819368551827304933}
   - component: {fileID: 1907212642961182332}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 003.Fantasy_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36206,7 +36291,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5095501275073987632}
   - component: {fileID: 510389462880269571}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 025.Fantasy_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36357,7 +36442,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8530901504755363767}
   - component: {fileID: 3877973447154870687}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 016.Scifi_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36509,7 +36594,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2060348562451284972}
   - component: {fileID: 249365344407045960}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 001.Fantasy_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36660,7 +36745,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1993749223221022604}
   - component: {fileID: 3549713399219118323}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00C_Hair_TypeC_Blonde
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36811,7 +36896,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2050881485170210709}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: c_ring2.l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36844,7 +36929,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5514023014168997152}
   - component: {fileID: 2663406541972032631}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 008.Scifi_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36996,7 +37081,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6004767221578823814}
   - component: {fileID: 6147273446503926109}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00C_Hair_TypeB_Black
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37146,7 +37231,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7589819912058308772}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: arm_stretch.r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37178,7 +37263,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5323704960321004104}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ear.L.002_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37210,7 +37295,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2929733418235446395}
   - component: {fileID: 1530229934069811297}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 018.Scifi_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37361,7 +37446,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8685875379504205102}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: c_ring3.l_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37393,7 +37478,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8693353850109190879}
   - component: {fileID: 4716882186891460573}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 015.Scifi_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37544,7 +37629,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3363583768269726567}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: c_pinky3.l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37576,7 +37661,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2589812258758659277}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: neck.x
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37609,7 +37694,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6938376402173592486}
   - component: {fileID: 3546910141421590684}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 035.Fantasy_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37760,7 +37845,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4148675849550744094}
   - component: {fileID: 2486944024118321405}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00A_Head_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37911,7 +37996,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3381839837929248891}
   - component: {fileID: 3224529568417810978}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 015.Fantasy_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38062,7 +38147,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7419535749798880554}
   - component: {fileID: 776778501820277857}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 015.Fantasy_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38213,7 +38298,7 @@ GameObject:
   m_Component:
   - component: {fileID: 193314973826527124}
   - component: {fileID: 941113447295273050}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 001.Scifi_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38364,7 +38449,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7642799947229970744}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: c_ring1.r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38397,7 +38482,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1715729974143631850}
   - component: {fileID: 8032444516418426935}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 002.Scifi_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38549,7 +38634,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3914373066659971287}
   - component: {fileID: 6396148991468461421}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 00B_Helm_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38699,7 +38784,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3638584648004713484}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: forearm_stretch.r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38731,7 +38816,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 162933497882696103}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SciFi Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38782,7 +38867,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 762007090865838487}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: c_pinky1.l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38814,7 +38899,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2369239041673837007}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: c_ring1.l
   m_TagString: Untagged
   m_Icon: {fileID: 0}

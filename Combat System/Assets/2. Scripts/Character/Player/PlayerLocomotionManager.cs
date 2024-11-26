@@ -16,6 +16,7 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
     private Vector3 dodgeDirection;
     [SerializeField] float dodgeStaminaCost = 25;
     [SerializeField] float backStepStaminaCost = 15;
+    [SerializeField] float jumpStaminaCost = 15;
 
 
 
@@ -146,7 +147,6 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
             player.playerAnimatorManager.PlayTargetActionAnimation("Fwd_Dodge_01", true, true);
 
             player.playerNetworkManager.currentStamina.Value -= dodgeStaminaCost;
-
         }
         else //if stationary, dodge backwards (backstep)
         {
@@ -154,10 +154,34 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
 
             player.playerNetworkManager.currentStamina.Value -= backStepStaminaCost;
         }
-        
+    }
+    public void AttemptToJump()
+    {
+        //no jumping is doing another action (can be changed to allow attacks)
+        if (player.isPerformingAction) return;
+
+        //no jump if out of stamina
+        if (player.playerNetworkManager.currentStamina.Value <= 0) return;
+
+        //no jump if we are already jumping
+        if (player.isJumping) return;
+
+        //no jumping if we are not on the ground
+        if (!player.isGrounded) return;
+
+        //play animation depending on which weapon/how many weapons we are using etc
+        player.playerAnimatorManager.PlayTargetActionAnimation("SS_Main_Jump_Start_01", false, true);
+        player.isJumping = true;
+
+
+        player.playerNetworkManager.currentStamina.Value -= jumpStaminaCost;
     }
 
+    public void ApplyJumpForce()
+    {
+        //apply an upward velocity, depends on in game forces
 
 
+    }
 
 }

@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 public class WorldSaveGameManager : MonoBehaviour
 {
     public static WorldSaveGameManager instance;
-    [SerializeField] private PlayerManager player;
+    [SerializeField] public PlayerManager player;
 
     [Header("Save/Load")]
-    [SerializeField] bool saveGame, loadGame;
-
+    [SerializeField] bool saveGame;
+    [SerializeField] bool loadGame;
 
     [Header("World Scene Index")]
     [SerializeField] public int worldSceneIndex = 1;
@@ -95,12 +95,103 @@ public class WorldSaveGameManager : MonoBehaviour
         return fileName;
 
     }
-    public void CreateNewGame()
+    public void AttemptToCreateNewGame()
     {
-        //create a new file with a file name depending on slot we are using
-        fileName = DecideCharacterFileNameBasedOnCharacterSlotUsed(currentCharacterSlotUsed);
+        saveDataWriter = new WriteSaveData();
+        saveDataWriter.saveDataDirectoryPath = Application.persistentDataPath;
 
-        currentCharacterData = new CharacterSaveData();
+        //check to see if we can make a new save file in this character slot (for each slot)
+        saveDataWriter.saveFileName = DecideCharacterFileNameBasedOnCharacterSlotUsed(CharacterSlot.CharacterSlot_01);
+        if (!saveDataWriter.CheckToSeeIfFileExists())
+        {
+            currentCharacterSlotUsed = CharacterSlot.CharacterSlot_01;
+            currentCharacterData = new CharacterSaveData();
+            StartCoroutine(LoadWorldScene());
+            return;
+        }
+        saveDataWriter.saveFileName = DecideCharacterFileNameBasedOnCharacterSlotUsed(CharacterSlot.CharacterSlot_02);
+        if (!saveDataWriter.CheckToSeeIfFileExists())
+        {
+            currentCharacterSlotUsed = CharacterSlot.CharacterSlot_02;
+            currentCharacterData = new CharacterSaveData();
+            StartCoroutine(LoadWorldScene());
+            return;
+        }
+        saveDataWriter.saveFileName = DecideCharacterFileNameBasedOnCharacterSlotUsed(CharacterSlot.CharacterSlot_03);
+        if (!saveDataWriter.CheckToSeeIfFileExists())
+        {
+            currentCharacterSlotUsed = CharacterSlot.CharacterSlot_03;
+            currentCharacterData = new CharacterSaveData();
+            StartCoroutine(LoadWorldScene());
+            return;
+        }
+        saveDataWriter.saveFileName = DecideCharacterFileNameBasedOnCharacterSlotUsed(CharacterSlot.CharacterSlot_04);
+        if (!saveDataWriter.CheckToSeeIfFileExists())
+        {
+            currentCharacterSlotUsed = CharacterSlot.CharacterSlot_04;
+            currentCharacterData = new CharacterSaveData();
+            StartCoroutine(LoadWorldScene());
+            return;
+        }
+        saveDataWriter.saveFileName = DecideCharacterFileNameBasedOnCharacterSlotUsed(CharacterSlot.CharacterSlot_05);
+        if (!saveDataWriter.CheckToSeeIfFileExists())
+        {
+            currentCharacterSlotUsed = CharacterSlot.CharacterSlot_05;
+            currentCharacterData = new CharacterSaveData();
+            StartCoroutine(LoadWorldScene());
+            return;
+        }
+        saveDataWriter.saveFileName = DecideCharacterFileNameBasedOnCharacterSlotUsed(CharacterSlot.CharacterSlot_06);
+        if (!saveDataWriter.CheckToSeeIfFileExists())
+        {
+            currentCharacterSlotUsed = CharacterSlot.CharacterSlot_06;
+            currentCharacterData = new CharacterSaveData();
+            StartCoroutine(LoadWorldScene());
+            return;
+        }
+        saveDataWriter.saveFileName = DecideCharacterFileNameBasedOnCharacterSlotUsed(CharacterSlot.CharacterSlot_07);
+        if (!saveDataWriter.CheckToSeeIfFileExists())
+        {
+            currentCharacterSlotUsed = CharacterSlot.CharacterSlot_07;
+            currentCharacterData = new CharacterSaveData();
+            StartCoroutine(LoadWorldScene());
+            return;
+        }
+        saveDataWriter.saveFileName = DecideCharacterFileNameBasedOnCharacterSlotUsed(CharacterSlot.CharacterSlot_08);
+        if (!saveDataWriter.CheckToSeeIfFileExists())
+        {
+            currentCharacterSlotUsed = CharacterSlot.CharacterSlot_08;
+            currentCharacterData = new CharacterSaveData();
+            StartCoroutine(LoadWorldScene());
+            return;
+        }
+        saveDataWriter.saveFileName = DecideCharacterFileNameBasedOnCharacterSlotUsed(CharacterSlot.CharacterSlot_09);
+        if (!saveDataWriter.CheckToSeeIfFileExists())
+        {
+            currentCharacterSlotUsed = CharacterSlot.CharacterSlot_09;
+            currentCharacterData = new CharacterSaveData();
+            StartCoroutine(LoadWorldScene());
+            return;
+        }
+        saveDataWriter.saveFileName = DecideCharacterFileNameBasedOnCharacterSlotUsed(CharacterSlot.CharacterSlot_10);
+        if (!saveDataWriter.CheckToSeeIfFileExists())
+        {
+            currentCharacterSlotUsed = CharacterSlot.CharacterSlot_10;
+            currentCharacterData = new CharacterSaveData();
+            StartCoroutine(LoadWorldScene());
+            return;
+        }
+
+        //if there are no free slots, player must delete a character first 
+        TitleScreenManager.instance.DisplayNoFreeSlotsPopUp();
+
+
+
+
+
+
+        
+
     }
     public void LoadGame()
     {
@@ -167,9 +258,24 @@ public class WorldSaveGameManager : MonoBehaviour
         characterSlot10 = saveDataWriter.LoadSaveFile();
 
     }
+
+    public void DeleteCharacterSlot(CharacterSlot slot)
+    {
+        // choose a fileName to delete based on sent file
+        saveDataWriter = new WriteSaveData();
+        saveDataWriter.saveDataDirectoryPath = Application.persistentDataPath;
+        saveDataWriter.saveFileName = DecideCharacterFileNameBasedOnCharacterSlotUsed(slot);
+        saveDataWriter.DeleteSaveFile();
+    }
     public IEnumerator LoadWorldScene()
     {
-        AsyncOperation loadOperation = SceneManager.LoadSceneAsync(worldSceneIndex);
+        //If you only want one world scene, use this
+        //AsyncOperation loadOperation = SceneManager.LoadSceneAsync(worldSceneIndex);
+
+        //if you wnat your world to have multiple scenes, use this 
+        AsyncOperation loadOperation = SceneManager.LoadSceneAsync(currentCharacterData.sceneIndexNumber);
+
+        player.LoadGameDataFromCurrentCharacterData(ref currentCharacterData);
 
         yield return null;
 

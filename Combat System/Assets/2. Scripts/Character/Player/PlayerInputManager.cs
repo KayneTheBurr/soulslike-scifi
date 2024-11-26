@@ -19,6 +19,7 @@ public class PlayerInputManager : MonoBehaviour
     [Header("Player Action Inputs")]
     [SerializeField] bool dodgeInput = false;
     [SerializeField] bool sprintInput = false;
+    [SerializeField] bool jumpInput = false;
 
 
     private void Awake()
@@ -32,12 +33,12 @@ public class PlayerInputManager : MonoBehaviour
             Destroy(gameObject);
         }
         //do this once when scene changes
-        
+
     }
 
     private void OnSceneChange(Scene oldScene, Scene newScene)
     {
-       if( newScene.buildIndex == WorldSaveGameManager.instance.worldSceneIndex)
+        if (newScene.buildIndex == WorldSaveGameManager.instance.worldSceneIndex)
         {
             instance.enabled = true;
         }
@@ -48,9 +49,9 @@ public class PlayerInputManager : MonoBehaviour
     }
     private void OnApplicationFocus(bool focus)
     {
-        if(enabled)
+        if (enabled)
         {
-            if(focus)
+            if (focus)
             {
                 playerControls.Enable();
             }
@@ -62,13 +63,14 @@ public class PlayerInputManager : MonoBehaviour
     }
     private void OnEnable()
     {
-        if(playerControls == null)
+        if (playerControls == null)
         {
             playerControls = new PlayerControls();
 
             playerControls.PlayerMovement.Movement.performed += i => movementInput = i.ReadValue<Vector2>();
             playerControls.PlayerCamera.CameraControls.performed += i => cameraInput = i.ReadValue<Vector2>();
             playerControls.PlayerActions.Dodge.performed += i => dodgeInput = true;
+            playerControls.PlayerActions.Jump.performed += i => jumpInput = true;
 
             //hold to sprint, release to cancel
             playerControls.PlayerActions.Sprint.performed += i => sprintInput = true;
@@ -100,6 +102,7 @@ public class PlayerInputManager : MonoBehaviour
         HandleCameraMovementInput();
         HandleDodgeInput();
         HandleSprintInput();
+        HandleJumpInput();
     }
     //Movements
     private void HandlePlayerMovementInput()
@@ -110,11 +113,11 @@ public class PlayerInputManager : MonoBehaviour
         moveAmount = Mathf.Clamp01(Mathf.Abs(verticalInput) + Mathf.Abs(horizontalInput));
 
         //clamped movement in 2 different speeds
-        if(moveAmount <= 0.5 && moveAmount > 0)
+        if (moveAmount <= 0.5 && moveAmount > 0)
         {
             moveAmount = 0.5f;
         }
-        else if(moveAmount > 0.5 && moveAmount <=1 )
+        else if (moveAmount > 0.5 && moveAmount <= 1)
         {
             moveAmount = 1.0f;
         }
@@ -135,7 +138,7 @@ public class PlayerInputManager : MonoBehaviour
     //Actions
     private void HandleDodgeInput()
     {
-        if(dodgeInput)
+        if (dodgeInput)
         {
             dodgeInput = false;
             //disable when menu is open
@@ -146,7 +149,7 @@ public class PlayerInputManager : MonoBehaviour
 
     private void HandleSprintInput()
     {
-        if(sprintInput)
+        if (sprintInput)
         {
             player.playerLocomotionManager.HandleSprinting();
         }
@@ -156,5 +159,18 @@ public class PlayerInputManager : MonoBehaviour
         }
     }
 
+    private void HandleJumpInput()
+    {
+        if(jumpInput)
+        {
+            jumpInput = false;
 
+            //dont do this if a menu is open
+
+            //check for grounded status or performing other actions
+
+            player.playerLocomotionManager.AttemptToJump();
+        }
+    }
+    
 }
