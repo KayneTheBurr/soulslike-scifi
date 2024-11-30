@@ -41,7 +41,7 @@ public class CharacterStatsManager : MonoBehaviour
         float stamina = 0;
 
         stamina = endurance * 10;
-
+        
         return Mathf.RoundToInt(stamina);
         
     }

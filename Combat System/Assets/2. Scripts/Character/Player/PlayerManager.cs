@@ -11,6 +11,7 @@ public class PlayerManager : CharacterManager
     [HideInInspector] public PlayerAnimatorManager playerAnimatorManager;
     [HideInInspector] public PlayerStatsManager playerStatsManager;
     [HideInInspector] public PlayerNetworkManager playerNetworkManager;
+    [HideInInspector] public PlayerInventoryManager playerInventoryManager;
 
     protected override void Awake()
     {
@@ -22,6 +23,7 @@ public class PlayerManager : CharacterManager
         playerAnimatorManager = GetComponent<PlayerAnimatorManager>();
         playerStatsManager = GetComponent<PlayerStatsManager>();
         playerNetworkManager = GetComponent<PlayerNetworkManager>();
+        playerInventoryManager = GetComponent<PlayerInventoryManager>();
     }
 
     protected override void Start()
@@ -113,7 +115,7 @@ public class PlayerManager : CharacterManager
         playerNetworkManager.maxHealth.Value = playerStatsManager.CalculateHealthBasedOnVitality(currentCharacterData.vitality);
         playerNetworkManager.maxStamina.Value = playerStatsManager.CalculateStaminaBasedOnEndurance(currentCharacterData.endurance);
         playerNetworkManager.currentStamina.Value = currentCharacterData.currentStamina;
-        playerNetworkManager.currentStamina.Value = currentCharacterData.currentHealth;
+        playerNetworkManager.currentHealth.Value = currentCharacterData.currentHealth;
         PlayerUIManager.instance.playerHUDManager.SetMaxStaminaValue(playerNetworkManager.maxStamina.Value);
     }
 

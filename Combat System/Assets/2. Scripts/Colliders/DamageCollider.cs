@@ -5,6 +5,9 @@ using System.Collections.Generic;
 
 public class DamageCollider : MonoBehaviour
 {
+    [Header("Collider")]
+    protected Collider damageCollider;
+
     [Header("Damage Types")]
     public float physicalDamage = 0; //break down into sub types (standard, slash, pierce, strike)
     public float plasmaDamage = 0;
@@ -56,5 +59,17 @@ public class DamageCollider : MonoBehaviour
 
         damageTarget.characterEffectsManager.ProcessInstantEffects(damageEffect);
     }
+
+    public virtual void EnableDamageCollider()
+    {
+        damageCollider.enabled = true;
+    }
+    public virtual void DisableDamageCollider()
+    {
+        damageCollider.enabled = false;
+        charactersDamaged.Clear(); //reset the characters list so you can damage characters on the next attack
+    }
+
+
 
 }

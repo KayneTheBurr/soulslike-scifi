@@ -17,7 +17,7 @@ public class PlayerNetworkManager : CharacterNetworkManager
 
 
 
-    public void SetNewMaxHealthValue(int oldValue, int newValue)
+    public void SetNewMaxHealthValue( int oldValue, int newValue)
     {
         maxHealth.Value = player.playerStatsManager.CalculateHealthBasedOnVitality(newValue);
         PlayerUIManager.instance.playerHUDManager.SetMaxHealthValue(maxHealth.Value);
