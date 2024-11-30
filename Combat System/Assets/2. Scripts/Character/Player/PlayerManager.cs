@@ -1,8 +1,12 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerManager : CharacterManager
 {
+    [Header("Debug Menu")]
+    [SerializeField] bool respawnCharacter = false;
+
     [HideInInspector] public PlayerLocomotionManager playerLocomotionManager;
     [HideInInspector] public PlayerAnimatorManager playerAnimatorManager;
     [HideInInspector] public PlayerStatsManager playerStatsManager;
@@ -10,8 +14,10 @@ public class PlayerManager : CharacterManager
 
     protected override void Awake()
     {
+        //do character manager awake stuff 
         base.Awake();
-        //do charcter stuff then player only stuff
+
+        //after doing charcter stuff then player only stuff gets done next 
         playerLocomotionManager = GetComponent<PlayerLocomotionManager>();
         playerAnimatorManager = GetComponent<PlayerAnimatorManager>();
         playerStatsManager = GetComponent<PlayerStatsManager>();
@@ -31,6 +37,7 @@ public class PlayerManager : CharacterManager
         playerLocomotionManager.AllMovement();
         playerStatsManager.RegenerateStamina();
 
+        DebugMenu();
     }
     protected override void LateUpdate()
     {
@@ -40,24 +47,42 @@ public class PlayerManager : CharacterManager
 
     }
 
+    public override IEnumerator HandleDeathEvents(bool manuallySelectDeathAnim = false)
+    {
+        if(IsOwner)
+        {
+            PlayerUIManager.instance.playerUIPopUpManager.SendYouDiedPopUp();
+        }
+        return base.HandleDeathEvents(manuallySelectDeathAnim);
+        //check fpr players that are alive, respawn if none 
+    }
+
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
 
-        PlayerCamera.instance.player = this;
-        PlayerInputManager.instance.player = this;
-        WorldSaveGameManager.instance.player = this;
+        if( IsOwner)
+        {
+            PlayerCamera.instance.player = this;
+            PlayerInputManager.instance.player = this;
+            WorldSaveGameManager.instance.player = this;
 
-        playerNetworkManager.endurance.Value = 10;
+            //playerNetworkManager.endurance.Value = 10;
 
-        //read stamina value, set stamina any time it is changed
-        playerNetworkManager.currentStamina.OnValueChanged += playerStatsManager.ResetStaminaRegenTimer;
-        playerNetworkManager.currentStamina.OnValueChanged += PlayerUIManager.instance.playerHUDManager.SetNewStaminaValue;
+            //update stat when its corresponding attribute is chagned 
+            playerNetworkManager.vitality.OnValueChanged += playerNetworkManager.SetNewMaxHealthValue;
+            playerNetworkManager.endurance.OnValueChanged += playerNetworkManager.SetNewMaxStaminaValue;
 
 
-        playerNetworkManager.maxStamina.Value = playerStatsManager.CalculateStaminaBasedOnEndurance(playerNetworkManager.endurance.Value);
-        playerNetworkManager.currentStamina.Value = playerStatsManager.CalculateStaminaBasedOnEndurance(playerNetworkManager.endurance.Value);
-        PlayerUIManager.instance.playerHUDManager.SetMaxStaminaValue(playerNetworkManager.maxStamina.Value);
+            //read stat value, set stat any time it is changed
+            
+            playerNetworkManager.currentStamina.OnValueChanged += playerStatsManager.ResetStaminaRegenTimer;
+            playerNetworkManager.currentStamina.OnValueChanged += PlayerUIManager.instance.playerHUDManager.SetNewStaminaValue;
+            playerNetworkManager.currentHealth.OnValueChanged += PlayerUIManager.instance.playerHUDManager.SetNewHealthValue;
+
+        }
+        playerNetworkManager.currentHealth.OnValueChanged += playerNetworkManager.CheckHP;
+        
     }
 
     public void SaveGameDataToCurrentCharacterData(ref CharacterSaveData currentCharacterData)
@@ -68,6 +93,12 @@ public class PlayerManager : CharacterManager
         currentCharacterData.zPos = transform.position.z;
         currentCharacterData.sceneIndexNumber = SceneManager.GetActiveScene().buildIndex;
 
+        currentCharacterData.vitality = playerNetworkManager.vitality.Value;
+        currentCharacterData.endurance = playerNetworkManager.endurance.Value;
+        currentCharacterData.currentStamina = playerNetworkManager.currentStamina.Value;
+        currentCharacterData.currentHealth = playerNetworkManager.currentHealth.Value;
+
+
     }
 
     public void LoadGameDataFromCurrentCharacterData(ref CharacterSaveData currentCharacterData)
@@ -75,6 +106,39 @@ public class PlayerManager : CharacterManager
         playerNetworkManager.characterName.Value = currentCharacterData.characterName;
         Vector3 myPos = new Vector3(currentCharacterData.xPos, currentCharacterData.yPos, currentCharacterData.zPos);
         transform.position = myPos;
+
+        playerNetworkManager.vitality.Value = currentCharacterData.vitality;
+        playerNetworkManager.endurance.Value = currentCharacterData.endurance;
+
+        playerNetworkManager.maxHealth.Value = playerStatsManager.CalculateHealthBasedOnVitality(currentCharacterData.vitality);
+        playerNetworkManager.maxStamina.Value = playerStatsManager.CalculateStaminaBasedOnEndurance(currentCharacterData.endurance);
+        playerNetworkManager.currentStamina.Value = currentCharacterData.currentStamina;
+        playerNetworkManager.currentStamina.Value = currentCharacterData.currentHealth;
+        PlayerUIManager.instance.playerHUDManager.SetMaxStaminaValue(playerNetworkManager.maxStamina.Value);
+    }
+
+    public override void ReviveCharacter()
+    {
+        base.ReviveCharacter();
+
+        if(IsOwner)
+        {
+            playerNetworkManager.currentHealth.Value = playerNetworkManager.maxHealth.Value;
+            playerNetworkManager.currentStamina.Value = playerNetworkManager.maxStamina.Value;
+            //restore flux to max value
+
+            //play rebirth effects
+            playerAnimatorManager.PlayTargetActionAnimation("Empty", false);
+        }
+    }
+
+    private void DebugMenu()
+    {
+        if(respawnCharacter)
+        {
+            respawnCharacter = false;
+            ReviveCharacter();
+        }
     }
 
 

@@ -27,7 +27,7 @@ public class CharacterAnimatorManager : MonoBehaviour
     }
 
     public virtual void PlayTargetActionAnimation(string targetAnimation, 
-                            bool isPerformingAction, bool applyRootMotion,
+                            bool isPerformingAction, bool applyRootMotion = true,
                             bool canRotate = false, bool canMove = false)
     {
         character.applyRootMotion = applyRootMotion;

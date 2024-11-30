@@ -9,14 +9,24 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
     [Header("Movement Settings")]
     private Vector3 moveDirection;
     private Vector3 targetRotateDirection;
-    public float walkSpeed, runSpeed, sprintSpeed, rotationSpeed;
+    [SerializeField] float rotationSpeed;
+    [SerializeField] float runSpeed;
+    [SerializeField] float sprintSpeed;
+    [SerializeField] public float walkSpeed;
     public float sprintStaminaCost;
+
+    [Header("Jump")]
+    [SerializeField] float jumpStaminaCost = 15;
+    [SerializeField] float jumpHeight = 2;
+    private Vector3 jumpDirection;
+    [SerializeField] float jumpForwardSpeed = 5;
+    [SerializeField] float airborneManeuverSpeed = 3;
 
     [Header("Dodge")]
     private Vector3 dodgeDirection;
     [SerializeField] float dodgeStaminaCost = 25;
     [SerializeField] float backStepStaminaCost = 15;
-    [SerializeField] float jumpStaminaCost = 15;
+    
 
 
 
@@ -36,7 +46,8 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
     {
         HandleGroundedMovement();
         HandleRotation();
-        //air movement
+        HandleJumpingMovement();
+        HandleAirborneMovement();
     }
     private void GetVertandHoriInputs()
     {
@@ -76,6 +87,28 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
             }
         }
 
+    }
+
+    private void HandleJumpingMovement()
+    {
+        if(player.isJumping)
+        {
+            player.characterController.Move(jumpDirection * jumpForwardSpeed * Time.deltaTime);
+        }
+    }
+
+    private void HandleAirborneMovement()
+    {
+        if(!player.isGrounded)
+        {
+            Vector3 airborneDirection;
+            airborneDirection = PlayerCamera.instance.cam.transform.forward * PlayerInputManager.instance.verticalInput;
+            airborneDirection += PlayerCamera.instance.cam.transform.right * PlayerInputManager.instance.horizontalInput;
+            airborneDirection.y = 0;
+
+            player.characterController.Move(airborneDirection * airborneManeuverSpeed * Time.deltaTime);
+
+        }
     }
 
     private void HandleRotation()
@@ -175,12 +208,35 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
 
 
         player.playerNetworkManager.currentStamina.Value -= jumpStaminaCost;
+
+        jumpDirection = PlayerCamera.instance.cam.transform.forward * PlayerInputManager.instance.verticalInput;
+        jumpDirection += PlayerCamera.instance.cam.transform.right * PlayerInputManager.instance.horizontalInput;
+        jumpDirection.y = 0;
+        
+        if(jumpDirection != Vector3.zero)
+        {
+            //our movement speed will affect how much we can move while in the air 
+            if (player.isSprinting)
+            {
+                jumpDirection *= 1;
+            }
+            else if (moveAmount > 0.5f)
+            {
+                jumpDirection *= 0.5f;
+            }
+            else if (moveAmount <= 0.5f)
+            {
+                jumpDirection *= 0.25f;
+            }
+        }
+        
     }
 
     public void ApplyJumpForce()
     {
+        
         //apply an upward velocity, depends on in game forces
-
+        yVelocity.y = Mathf.Sqrt(jumpHeight * -2 * gravityForce);
 
     }
 

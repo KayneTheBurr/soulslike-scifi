@@ -159,7 +159,7 @@ public class PlayerInputManager : MonoBehaviour
         }
     }
 
-    private void HandleJumpInput()
+    public void HandleJumpInput()
     {
         if(jumpInput)
         {
