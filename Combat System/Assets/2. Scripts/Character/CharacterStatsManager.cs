@@ -21,6 +21,21 @@ public class CharacterStatsManager : MonoBehaviour
         character = GetComponent<CharacterManager>();
     }
 
+    protected virtual void Start()
+    {
+
+    }
+
+    public int CalculateHealthBasedOnVitality(int vitality)
+    {
+        float health = 0;
+
+        health = vitality * 15;
+
+        return Mathf.RoundToInt(health);
+
+    }
+
     public int CalculateStaminaBasedOnEndurance(int endurance)
     {
         float stamina = 0;

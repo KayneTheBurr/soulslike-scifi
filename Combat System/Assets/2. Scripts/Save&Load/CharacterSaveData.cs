@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterSaveData
 {
     [Header("Scene Index")]
-    public int sceneIndexNumber = 1;
+    public int sceneIndexNumber;
 
 
     [Header("Character Name")]
@@ -16,6 +16,14 @@ public class CharacterSaveData
 
     [Header("Position")]
     public float xPos, yPos, zPos;
+
+    [Header("Attributes")]
+    public int vitality;
+    public int endurance;
+
+    [Header("Resources")]
+    public float currentHealth;
+    public float currentStamina;
 
 
 }

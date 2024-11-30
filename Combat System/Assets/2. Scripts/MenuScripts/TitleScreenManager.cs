@@ -72,6 +72,7 @@ public class TitleScreenManager : MonoBehaviour
     public void SelectNoSlot()
     {
         currentSelectedCharacterSlot = CharacterSlot.No_Slot;
+        //loadCharacterMenuReturnButton.Select();
     }
 
     public void AttemptToDeleteCharacterSlot()

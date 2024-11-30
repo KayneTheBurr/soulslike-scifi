@@ -106,7 +106,7 @@ public class WorldSaveGameManager : MonoBehaviour
         {
             currentCharacterSlotUsed = CharacterSlot.CharacterSlot_01;
             currentCharacterData = new CharacterSaveData();
-            StartCoroutine(LoadWorldScene());
+            NewGame();
             return;
         }
         saveDataWriter.saveFileName = DecideCharacterFileNameBasedOnCharacterSlotUsed(CharacterSlot.CharacterSlot_02);
@@ -114,7 +114,7 @@ public class WorldSaveGameManager : MonoBehaviour
         {
             currentCharacterSlotUsed = CharacterSlot.CharacterSlot_02;
             currentCharacterData = new CharacterSaveData();
-            StartCoroutine(LoadWorldScene());
+            NewGame();
             return;
         }
         saveDataWriter.saveFileName = DecideCharacterFileNameBasedOnCharacterSlotUsed(CharacterSlot.CharacterSlot_03);
@@ -122,7 +122,7 @@ public class WorldSaveGameManager : MonoBehaviour
         {
             currentCharacterSlotUsed = CharacterSlot.CharacterSlot_03;
             currentCharacterData = new CharacterSaveData();
-            StartCoroutine(LoadWorldScene());
+            NewGame();
             return;
         }
         saveDataWriter.saveFileName = DecideCharacterFileNameBasedOnCharacterSlotUsed(CharacterSlot.CharacterSlot_04);
@@ -130,7 +130,7 @@ public class WorldSaveGameManager : MonoBehaviour
         {
             currentCharacterSlotUsed = CharacterSlot.CharacterSlot_04;
             currentCharacterData = new CharacterSaveData();
-            StartCoroutine(LoadWorldScene());
+            NewGame();
             return;
         }
         saveDataWriter.saveFileName = DecideCharacterFileNameBasedOnCharacterSlotUsed(CharacterSlot.CharacterSlot_05);
@@ -138,7 +138,7 @@ public class WorldSaveGameManager : MonoBehaviour
         {
             currentCharacterSlotUsed = CharacterSlot.CharacterSlot_05;
             currentCharacterData = new CharacterSaveData();
-            StartCoroutine(LoadWorldScene());
+            NewGame();
             return;
         }
         saveDataWriter.saveFileName = DecideCharacterFileNameBasedOnCharacterSlotUsed(CharacterSlot.CharacterSlot_06);
@@ -146,7 +146,7 @@ public class WorldSaveGameManager : MonoBehaviour
         {
             currentCharacterSlotUsed = CharacterSlot.CharacterSlot_06;
             currentCharacterData = new CharacterSaveData();
-            StartCoroutine(LoadWorldScene());
+            NewGame();
             return;
         }
         saveDataWriter.saveFileName = DecideCharacterFileNameBasedOnCharacterSlotUsed(CharacterSlot.CharacterSlot_07);
@@ -154,7 +154,7 @@ public class WorldSaveGameManager : MonoBehaviour
         {
             currentCharacterSlotUsed = CharacterSlot.CharacterSlot_07;
             currentCharacterData = new CharacterSaveData();
-            StartCoroutine(LoadWorldScene());
+            NewGame();
             return;
         }
         saveDataWriter.saveFileName = DecideCharacterFileNameBasedOnCharacterSlotUsed(CharacterSlot.CharacterSlot_08);
@@ -162,7 +162,7 @@ public class WorldSaveGameManager : MonoBehaviour
         {
             currentCharacterSlotUsed = CharacterSlot.CharacterSlot_08;
             currentCharacterData = new CharacterSaveData();
-            StartCoroutine(LoadWorldScene());
+            NewGame();
             return;
         }
         saveDataWriter.saveFileName = DecideCharacterFileNameBasedOnCharacterSlotUsed(CharacterSlot.CharacterSlot_09);
@@ -170,7 +170,7 @@ public class WorldSaveGameManager : MonoBehaviour
         {
             currentCharacterSlotUsed = CharacterSlot.CharacterSlot_09;
             currentCharacterData = new CharacterSaveData();
-            StartCoroutine(LoadWorldScene());
+            NewGame();
             return;
         }
         saveDataWriter.saveFileName = DecideCharacterFileNameBasedOnCharacterSlotUsed(CharacterSlot.CharacterSlot_10);
@@ -178,20 +178,23 @@ public class WorldSaveGameManager : MonoBehaviour
         {
             currentCharacterSlotUsed = CharacterSlot.CharacterSlot_10;
             currentCharacterData = new CharacterSaveData();
-            StartCoroutine(LoadWorldScene());
+            NewGame();
             return;
         }
 
         //if there are no free slots, player must delete a character first 
         TitleScreenManager.instance.DisplayNoFreeSlotsPopUp();
 
+    }
 
+    private void NewGame()
+    {
+        //temporary until choosing a base character stats system exists
+        player.playerNetworkManager.vitality.Value = 15;
+        player.playerNetworkManager.endurance.Value = 12;
 
-
-
-
-        
-
+        SaveGame();
+        StartCoroutine(LoadWorldScene());
     }
     public void LoadGame()
     {
@@ -270,10 +273,10 @@ public class WorldSaveGameManager : MonoBehaviour
     public IEnumerator LoadWorldScene()
     {
         //If you only want one world scene, use this
-        //AsyncOperation loadOperation = SceneManager.LoadSceneAsync(worldSceneIndex);
+        AsyncOperation loadOperation = SceneManager.LoadSceneAsync(worldSceneIndex);
 
         //if you wnat your world to have multiple scenes, use this 
-        AsyncOperation loadOperation = SceneManager.LoadSceneAsync(currentCharacterData.sceneIndexNumber);
+        //AsyncOperation loadOperation = SceneManager.LoadSceneAsync(currentCharacterData.sceneIndexNumber);
 
         player.LoadGameDataFromCurrentCharacterData(ref currentCharacterData);
 
