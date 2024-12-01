@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: MonoWire Sword
   itemIcon: {fileID: 21300000, guid: 21871228c33c9d2429e12d25f8ab4fbe, type: 3}
   itemDescription: 
-  itemID: 0
+  itemID: 2
   weaponModel: {fileID: 879714617653237107, guid: 806a83faa9bce944bb9df1bc955d459e, type: 3}
   strREQ: 8
   dexREQ: 15
@@ -32,3 +32,4 @@ MonoBehaviour:
   geneticDamage: 0
   poiseDamage: 10
   baseStaminaCost: 20
+  oh_r1_Action: {fileID: 11400000, guid: 1d1d7bad1c1aa5c44abcc9ee37f13e3c, type: 2}

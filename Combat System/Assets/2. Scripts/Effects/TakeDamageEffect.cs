@@ -42,9 +42,9 @@ public class TakeDamageEffect : InstantCharacterEffect
     {
         base.ProcessEffect(character);
 
-
+        
         // if the character is dead, dont process any additional damage effects since they are already dead
-        if(character.isDead.Value)
+        if (character.isDead.Value)
         {
             return;
         }
@@ -80,7 +80,7 @@ public class TakeDamageEffect : InstantCharacterEffect
         {
             finalDamage = 1;
         }
-
+        
         character.characterNetworkManager.currentHealth.Value -= finalDamage;
 
         //calculate poise damage to determine if character will be stunned and play damaged animation or not 

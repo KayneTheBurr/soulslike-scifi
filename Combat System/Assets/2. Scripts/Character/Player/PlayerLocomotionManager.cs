@@ -39,7 +39,22 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
     protected override void Update()
     {
         base.Update();
+        if(player.IsOwner)
+        {
+            player.characterNetworkManager.verticalMovement.Value = verticalMovement;
+            player.characterNetworkManager.horizontalMovement.Value = horizontalMovement;
+            player.characterNetworkManager.moveAmount.Value = moveAmount;
+        }
+        else
+        {
+            verticalMovement = player.characterNetworkManager.verticalMovement.Value;
+            horizontalMovement = player.characterNetworkManager.horizontalMovement.Value;
+            moveAmount = player.characterNetworkManager.moveAmount.Value;
 
+            player.playerAnimatorManager.UpdateAnimatorMovementParameters(0, moveAmount, player.playerNetworkManager.isSprinting.Value);
+
+
+        }
 
     }
     public void AllMovement()
@@ -69,7 +84,7 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
         moveDirection.Normalize();
         moveDirection.y = 0;
 
-        if(player.isSprinting)
+        if(player.playerNetworkManager.isSprinting.Value)
         {
             player.characterController.Move(moveDirection * sprintSpeed * Time.deltaTime);
         }
@@ -91,7 +106,7 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
 
     private void HandleJumpingMovement()
     {
-        if(player.isJumping)
+        if(player.playerNetworkManager.isJumping.Value)
         {
             player.characterController.Move(jumpDirection * jumpForwardSpeed * Time.deltaTime);
         }
@@ -137,24 +152,24 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
         if (player.isPerformingAction)
         {
             //if doing something else, set sprinting to false
-            player.isSprinting = false;
+            player.playerNetworkManager.isSprinting.Value = false;
         }
         //if out of stamina stop sprinting
         if(player.playerNetworkManager.currentStamina.Value <= 0)
         {
-            player.isSprinting = false;
+            player.playerNetworkManager.isSprinting.Value = false;
             return;
         }
 
         if(moveAmount >= 0.5f)
         {
-            player.isSprinting = true;
+            player.playerNetworkManager.isSprinting.Value = true;
         }
         else
         {
-            player.isSprinting = false;
+            player.playerNetworkManager.isSprinting.Value = false;
         }
-        if(player.isSprinting)
+        if(player.playerNetworkManager.isSprinting.Value)
         {
             player.playerNetworkManager.currentStamina.Value -= sprintStaminaCost * Time.deltaTime;
         }
@@ -197,14 +212,14 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
         if (player.playerNetworkManager.currentStamina.Value <= 0) return;
 
         //no jump if we are already jumping
-        if (player.isJumping) return;
+        if (player.playerNetworkManager.isJumping.Value) return;
 
         //no jumping if we are not on the ground
         if (!player.isGrounded) return;
 
         //play animation depending on which weapon/how many weapons we are using etc
         player.playerAnimatorManager.PlayTargetActionAnimation("SS_Main_Jump_Start_01", false, true);
-        player.isJumping = true;
+        player.playerNetworkManager.isJumping.Value = true;
 
 
         player.playerNetworkManager.currentStamina.Value -= jumpStaminaCost;
@@ -216,7 +231,7 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
         if(jumpDirection != Vector3.zero)
         {
             //our movement speed will affect how much we can move while in the air 
-            if (player.isSprinting)
+            if (player.playerNetworkManager.isSprinting.Value)
             {
                 jumpDirection *= 1;
             }

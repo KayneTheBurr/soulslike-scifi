@@ -38,7 +38,7 @@ public class CharacterLocomotionManager : MonoBehaviour
         }
         else //if we are not grounded do this 
         {
-            if(!character.isJumping && !fallingVelocitySet) //if not jumping AND falling speed not set
+            if(!character.characterNetworkManager.isJumping.Value && !fallingVelocitySet) //if not jumping AND falling speed not set
             {
                 fallingVelocitySet = true;
                 yVelocity.y = fallStartYVelocity;
@@ -60,7 +60,7 @@ public class CharacterLocomotionManager : MonoBehaviour
     //draw the ground sphere for grounded checks 
     protected void OnDrawGizmosSelected()
     {
-        Gizmos.DrawSphere(character.transform.position, groundCheckSphereRadius);
+        //Gizmos.DrawSphere(character.transform.position, groundCheckSphereRadius);
     }
 
 

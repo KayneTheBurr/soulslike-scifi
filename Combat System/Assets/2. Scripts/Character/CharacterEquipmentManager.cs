@@ -3,10 +3,6 @@ using UnityEngine;
 public class CharacterEquipmentManager : MonoBehaviour
 {
     
-
-
-
-
     protected virtual void Awake()
     {
 
@@ -15,6 +11,4 @@ public class CharacterEquipmentManager : MonoBehaviour
     {
 
     }
-
-
 }

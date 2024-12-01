@@ -6,9 +6,9 @@ public class WeaponManager : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log("no col");
+        //Debug.Log("no col");
         meleeDamageCollider = GetComponentInChildren<MeleeWeaponDamageCollider>();
-        Debug.Log("col!");
+        //Debug.Log("col!");
     }
     public void SetWeaponDamage(CharacterManager characterWithWeapon, WeaponItem weapon)
     {

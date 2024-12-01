@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3115809871632257793}
-  - component: {fileID: 8131178560293431136}
   - component: {fileID: 2746553187075428448}
+  - component: {fileID: 3612159174720704644}
   m_Layer: 10
   m_Name: DamageCollider
   m_TagString: Untagged
@@ -33,27 +33,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3515109460994010245}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &8131178560293431136
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 213286310080738480}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 0.0010002211, y: 0.0007223232, z: 0.009630262}
-  m_Center: {x: 0.0007912441, y: -0.000000012434092, z: 0.0053771585}
 --- !u!114 &2746553187075428448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,6 +53,27 @@ MonoBehaviour:
   geneticDamage: 0
   radiationDamage: 0
   characterCausingDamage: {fileID: 0}
+--- !u!135 &3612159174720704644
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213286310080738480}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Radius: 0.002
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &835227315644490752
 GameObject:
   m_ObjectHideFlags: 0
@@ -83,8 +83,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3515109460994010245}
-  - component: {fileID: 6924704077942916300}
-  - component: {fileID: 7290879679043448276}
   m_Layer: 0
   m_Name: WeaponModel
   m_TagString: Untagged
@@ -108,62 +106,6 @@ Transform:
   - {fileID: 3115809871632257793}
   m_Father: {fileID: 7076756351228821349}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &6924704077942916300
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 835227315644490752}
-  m_Mesh: {fileID: -5086027232801534795, guid: 91e103b86f26ce947b99187c5166be41, type: 3}
---- !u!23 &7290879679043448276
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 835227315644490752}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 9772ee1b629b9ec4a9e76245f8436c05, type: 2}
-  - {fileID: 2100000, guid: 7f3f7c4f92aa376439042f8c39306f18, type: 2}
-  - {fileID: 2100000, guid: 2d84700c6cbf6dc439d14f713536aad8, type: 2}
-  - {fileID: 2100000, guid: be58c8a8f5112a449bca8a982482fd11, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &879714617653237107
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,7 +117,7 @@ GameObject:
   - component: {fileID: 7524193405401170396}
   - component: {fileID: 2738640589795617871}
   m_Layer: 0
-  m_Name: Weapon_StraightSword_02
+  m_Name: Weapon_Unarmed_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

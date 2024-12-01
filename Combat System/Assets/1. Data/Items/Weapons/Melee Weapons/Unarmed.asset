@@ -10,25 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b63ac7fecab9034c88768a6cccf67b3, type: 3}
-  m_Name: Basic Sword
+  m_Name: Unarmed
   m_EditorClassIdentifier: 
-  itemName: Basic Sword
-  itemIcon: {fileID: 21300000, guid: 21871228c33c9d2429e12d25f8ab4fbe, type: 3}
+  itemName: 
+  itemIcon: {fileID: 0}
   itemDescription: 
-  itemID: 1
-  weaponModel: {fileID: 879714617653237107, guid: 85959492d5a24cd4e971d043e5a96bc6, type: 3}
-  strREQ: 5
-  dexREQ: 5
+  itemID: 0
+  weaponModel: {fileID: 879714617653237107, guid: 82cfbf3e112d23245a9eb70f05710050, type: 3}
+  strREQ: 1
+  dexREQ: 1
   intREQ: 0
   wisREQ: 0
   chaosREQ: 0
   perceptionREQ: 0
-  physicalDamage: 15
+  physicalDamage: 5
   plasmaDamage: 0
   cryoDamage: 0
   chemicalDamage: 0
   radiationDamage: 0
   electricalDamage: 0
   geneticDamage: 0
-  poiseDamage: 10
-  baseStaminaCost: 20
+  poiseDamage: 5
+  baseStaminaCost: 10

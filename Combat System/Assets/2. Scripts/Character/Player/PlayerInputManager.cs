@@ -20,7 +20,7 @@ public class PlayerInputManager : MonoBehaviour
     [SerializeField] bool dodgeInput = false;
     [SerializeField] bool sprintInput = false;
     [SerializeField] bool jumpInput = false;
-
+    [SerializeField] bool r1_Input = false;
 
     private void Awake()
     {
@@ -41,10 +41,18 @@ public class PlayerInputManager : MonoBehaviour
         if (newScene.buildIndex == WorldSaveGameManager.instance.worldSceneIndex)
         {
             instance.enabled = true;
+            if (playerControls != null)
+            {
+                playerControls.Enable();
+            }
         }
         else
         {
             instance.enabled = false;
+            if (playerControls != null)
+            {
+                playerControls.Disable();
+            }
         }
     }
     private void OnApplicationFocus(bool focus)
@@ -71,6 +79,7 @@ public class PlayerInputManager : MonoBehaviour
             playerControls.PlayerCamera.CameraControls.performed += i => cameraInput = i.ReadValue<Vector2>();
             playerControls.PlayerActions.Dodge.performed += i => dodgeInput = true;
             playerControls.PlayerActions.Jump.performed += i => jumpInput = true;
+            playerControls.PlayerActions.R1LeftClick.performed += i => r1_Input = true;
 
             //hold to sprint, release to cancel
             playerControls.PlayerActions.Sprint.performed += i => sprintInput = true;
@@ -89,6 +98,11 @@ public class PlayerInputManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         SceneManager.activeSceneChanged += OnSceneChange;
         instance.enabled = false;
+
+        if(playerControls != null)
+        {
+            playerControls.Disable();
+        }
     }
 
     private void Update()
@@ -103,6 +117,7 @@ public class PlayerInputManager : MonoBehaviour
         HandleDodgeInput();
         HandleSprintInput();
         HandleJumpInput();
+        HandleR1Input();
     }
     //Movements
     private void HandlePlayerMovementInput()
@@ -126,7 +141,7 @@ public class PlayerInputManager : MonoBehaviour
             return;
 
         //only pass vertical since strafing is only while locked on, want to only run forward with camera movement right now 
-        player.playerAnimatorManager.UpdateAnimatorMovementParameters(0, moveAmount, player.isSprinting);
+        player.playerAnimatorManager.UpdateAnimatorMovementParameters(0, moveAmount, player.playerNetworkManager.isSprinting.Value);
 
 
     }
@@ -155,7 +170,7 @@ public class PlayerInputManager : MonoBehaviour
         }
         else
         {
-            player.isSprinting = false;
+            player.playerNetworkManager.isSprinting.Value = false;
         }
     }
 
@@ -173,4 +188,22 @@ public class PlayerInputManager : MonoBehaviour
         }
     }
     
+    private void HandleR1Input()
+    {
+        if(r1_Input)
+        {
+            r1_Input = false;
+            //do nothing if UI window is open 
+
+            player.playerNetworkManager.SetCharacterActionHand(true);
+
+            //if we are using 2 hands, do the 2hand action instead of one hand action 
+            player.playerCombatManager.PerformWeaponBasedAction(player.playerInventoryManager.currentRightHandWeapon.oh_r1_Action,
+                player.playerInventoryManager.currentRightHandWeapon);
+
+
+
+        }
+    }
+
 }

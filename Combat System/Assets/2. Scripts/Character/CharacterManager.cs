@@ -1,7 +1,9 @@
 using UnityEngine;
 using Unity.Netcode;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.InputSystem.Processors;
+using NUnit.Framework;
 
 public class CharacterManager : NetworkBehaviour
 {
@@ -18,13 +20,10 @@ public class CharacterManager : NetworkBehaviour
 
     [Header("Flags")]
     public bool isPerformingAction;
-    public bool isJumping = false;
     public bool isGrounded = true;
     public bool canRotate = true;
     public bool canMove = true;
     public bool applyRootMotion = false;
-    public bool isSprinting = false; //add to network
-
     
     protected virtual void Awake()
     {
@@ -37,7 +36,7 @@ public class CharacterManager : NetworkBehaviour
     }
     protected virtual void Start()
     {
-
+        IgnoreMyOwnColliders();
     }
     protected virtual void Update()
     {
@@ -96,7 +95,30 @@ public class CharacterManager : NetworkBehaviour
 
     }
 
+    protected virtual void IgnoreMyOwnColliders()
+    {
+        //get all the colliders on us(character controller) and children (damagable bone colliders)
+        Collider characterControllerCollider = GetComponent<Collider>();
+        Collider[] damagableCharacterColliders = GetComponentsInChildren<Collider>();
 
+        //make a list of colliders to ignore and add all owners own colliders to the list to ignore
+        List<Collider> collidersToIgnore = new List<Collider>();
+        foreach(var collider in damagableCharacterColliders)
+        {
+            collidersToIgnore.Add(collider);
+        }
+        collidersToIgnore.Add(characterControllerCollider);
+
+        //go through every collider on the list and make them ignore one another
+        foreach(var collider in collidersToIgnore)
+        {
+            foreach(var otherCollider in collidersToIgnore)
+            {
+                Physics.IgnoreCollision(collider, otherCollider, true);
+            }
+        }
+
+    }
 
 
 }

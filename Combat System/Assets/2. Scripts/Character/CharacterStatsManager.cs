@@ -49,7 +49,7 @@ public class CharacterStatsManager : MonoBehaviour
     {
         if (!character.IsOwner) return;
 
-        if (character.isSprinting) return;
+        if (character.characterNetworkManager.isSprinting.Value) return;
 
         if (character.isPerformingAction) return;
 

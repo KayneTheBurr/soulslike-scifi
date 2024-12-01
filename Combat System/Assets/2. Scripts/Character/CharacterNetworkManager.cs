@@ -18,6 +18,8 @@ public class CharacterNetworkManager : NetworkBehaviour
     [Header("Flags")]
     public NetworkVariable<bool> isSprinting =
         new NetworkVariable<bool>(false, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    public NetworkVariable<bool> isJumping =
+        new NetworkVariable<bool>(false, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
 
     [Header("Animator")]
     public NetworkVariable<float> horizontalMovement =
@@ -64,10 +66,31 @@ public class CharacterNetworkManager : NetworkBehaviour
 
     }
 
-
-
-
-
+    //a server RPC is a function called from a client to the zerver (in our case the host)
+    [ServerRpc]
+    public void NotifyTheServerOfActionAnimationServerRpc(ulong clientID, string animationID, bool applyRootMotion)
+    {
+        //if this character is the host/server, then activate the client rpc
+        if(IsServer)
+        {
+            PlayActionAnimationForAllClientsClientRpc(clientID, animationID, applyRootMotion);
+        }
+    }
+    //a client rpc is sent to all clients present from the server/host
+    [ClientRpc]
+    public void PlayActionAnimationForAllClientsClientRpc(ulong clientID, string animationID, bool applyRootMotion)
+    {
+        //make sure to not run the function on the character who sent it(so we dont play the animation twice)
+        if (clientID != NetworkManager.Singleton.LocalClientId)
+        {
+            PerformActionAnimationFromServer(animationID, applyRootMotion);
+        }
+    }
+    private void PerformActionAnimationFromServer(string animationID, bool applyRootMotion)
+    {
+        character.applyRootMotion = applyRootMotion;
+        character.animator.CrossFade(animationID, 0.2f);
+    }
 
 
 }

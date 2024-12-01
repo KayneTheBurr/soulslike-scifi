@@ -42,6 +42,8 @@ public class WeaponItem : Item
     //heavy modifier
 
     //item based actions
+    [Header("Item Based Actions")]
+    public WeaponItemAction oh_r1_Action; //one handed r1 weapon action 
 
     //special abilities
 

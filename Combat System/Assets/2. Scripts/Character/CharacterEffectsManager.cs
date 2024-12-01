@@ -16,6 +16,7 @@ public class CharacterEffectsManager : MonoBehaviour
 
     public virtual void ProcessInstantEffects(InstantCharacterEffect effect)
     {
+        
         //take in an effect
         //do what the effect causes
         effect.ProcessEffect(character);
