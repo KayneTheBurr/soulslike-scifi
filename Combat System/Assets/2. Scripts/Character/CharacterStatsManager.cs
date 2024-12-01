@@ -41,7 +41,7 @@ public class CharacterStatsManager : MonoBehaviour
         float stamina = 0;
 
         stamina = endurance * 10;
-
+        
         return Mathf.RoundToInt(stamina);
         
     }
@@ -49,7 +49,7 @@ public class CharacterStatsManager : MonoBehaviour
     {
         if (!character.IsOwner) return;
 
-        if (character.isSprinting) return;
+        if (character.characterNetworkManager.isSprinting.Value) return;
 
         if (character.isPerformingAction) return;
 

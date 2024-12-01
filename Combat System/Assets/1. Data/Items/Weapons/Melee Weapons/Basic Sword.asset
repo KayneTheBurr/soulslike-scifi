@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b63ac7fecab9034c88768a6cccf67b3, type: 3}
+  m_Name: Basic Sword
+  m_EditorClassIdentifier: 
+  itemName: Basic Sword
+  itemIcon: {fileID: 21300000, guid: 21871228c33c9d2429e12d25f8ab4fbe, type: 3}
+  itemDescription: 
+  itemID: 1
+  weaponModel: {fileID: 879714617653237107, guid: 85959492d5a24cd4e971d043e5a96bc6, type: 3}
+  strREQ: 5
+  dexREQ: 5
+  intREQ: 0
+  wisREQ: 0
+  chaosREQ: 0
+  perceptionREQ: 0
+  physicalDamage: 15
+  plasmaDamage: 0
+  cryoDamage: 0
+  chemicalDamage: 0
+  radiationDamage: 0
+  electricalDamage: 0
+  geneticDamage: 0
+  poiseDamage: 10
+  baseStaminaCost: 20

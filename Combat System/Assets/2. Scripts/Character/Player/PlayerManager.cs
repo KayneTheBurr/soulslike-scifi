@@ -6,11 +6,15 @@ public class PlayerManager : CharacterManager
 {
     [Header("Debug Menu")]
     [SerializeField] bool respawnCharacter = false;
+    [SerializeField] bool switchRightWeapon = false;
 
     [HideInInspector] public PlayerLocomotionManager playerLocomotionManager;
     [HideInInspector] public PlayerAnimatorManager playerAnimatorManager;
     [HideInInspector] public PlayerStatsManager playerStatsManager;
     [HideInInspector] public PlayerNetworkManager playerNetworkManager;
+    [HideInInspector] public PlayerInventoryManager playerInventoryManager;
+    [HideInInspector] public PlayerEquipmentManager playerEquipmentManager;
+    [HideInInspector] public PlayerCombatManager playerCombatManager;
 
     protected override void Awake()
     {
@@ -22,6 +26,9 @@ public class PlayerManager : CharacterManager
         playerAnimatorManager = GetComponent<PlayerAnimatorManager>();
         playerStatsManager = GetComponent<PlayerStatsManager>();
         playerNetworkManager = GetComponent<PlayerNetworkManager>();
+        playerInventoryManager = GetComponent<PlayerInventoryManager>();
+        playerEquipmentManager = GetComponent<PlayerEquipmentManager>();
+        playerCombatManager = GetComponent<PlayerCombatManager>();
     }
 
     protected override void Start()
@@ -81,8 +88,21 @@ public class PlayerManager : CharacterManager
             playerNetworkManager.currentHealth.OnValueChanged += PlayerUIManager.instance.playerHUDManager.SetNewHealthValue;
 
         }
+        //Stats
         playerNetworkManager.currentHealth.OnValueChanged += playerNetworkManager.CheckHP;
-        
+        //Equipment
+        playerNetworkManager.currentRightWeaponID.OnValueChanged += playerNetworkManager.OnCurrentRightHandWeaponIDChange;
+        playerNetworkManager.currentLeftWeaponID.OnValueChanged += playerNetworkManager.OnCurrentLeftHandWeaponIDChange;
+        playerNetworkManager.currentWeaponBeingUsed.OnValueChanged += playerNetworkManager.OnCurrentWeaponBeingUsedIDChange;
+
+        //if we connect to someone elses world, reload our character data to this new character
+        //dont run this if we are the server host 
+        if (IsOwner && !IsServer)
+        {
+            LoadGameDataFromCurrentCharacterData(ref WorldSaveGameManager.instance.currentCharacterData);
+        }
+
+
     }
 
     public void SaveGameDataToCurrentCharacterData(ref CharacterSaveData currentCharacterData)
@@ -113,7 +133,7 @@ public class PlayerManager : CharacterManager
         playerNetworkManager.maxHealth.Value = playerStatsManager.CalculateHealthBasedOnVitality(currentCharacterData.vitality);
         playerNetworkManager.maxStamina.Value = playerStatsManager.CalculateStaminaBasedOnEndurance(currentCharacterData.endurance);
         playerNetworkManager.currentStamina.Value = currentCharacterData.currentStamina;
-        playerNetworkManager.currentStamina.Value = currentCharacterData.currentHealth;
+        playerNetworkManager.currentHealth.Value = currentCharacterData.currentHealth;
         PlayerUIManager.instance.playerHUDManager.SetMaxStaminaValue(playerNetworkManager.maxStamina.Value);
     }
 
@@ -138,6 +158,12 @@ public class PlayerManager : CharacterManager
         {
             respawnCharacter = false;
             ReviveCharacter();
+        }
+        if(switchRightWeapon)
+        {
+            switchRightWeapon = false;
+            playerEquipmentManager.SwitchRightWeapon();
+
         }
     }
 

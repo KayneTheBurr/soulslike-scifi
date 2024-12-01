@@ -2,9 +2,13 @@ using NUnit.Framework;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.TextCore.Text;
 
 public class DamageCollider : MonoBehaviour
 {
+    [Header("Collider")]
+    protected Collider damageCollider;
+
     [Header("Damage Types")]
     public float physicalDamage = 0; //break down into sub types (standard, slash, pierce, strike)
     public float plasmaDamage = 0;
@@ -23,10 +27,11 @@ public class DamageCollider : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
-        CharacterManager damageTarget = col.GetComponent<CharacterManager>();
-
+        CharacterManager damageTarget = col.GetComponentInParent<CharacterManager>();
+        
         if (damageTarget != null )
         {
+            
             contactPoint = damageTarget.GetComponent<Collider>().ClosestPointOnBounds(transform.position);
 
             //check if we can damage this target or not based on characters "freindly fire" 
@@ -45,8 +50,9 @@ public class DamageCollider : MonoBehaviour
         charactersDamaged.Add(damageTarget);
 
         TakeDamageEffect damageEffect = Instantiate(WorldCharacterEffectsManager.instance.takeDamageEffect);
+        
         damageEffect.physicalDamage = physicalDamage;
-        damageEffect.physicalDamage = plasmaDamage;
+        damageEffect.plasmaDamage = plasmaDamage;
         damageEffect.electricalDamage = electricalDamage;
         damageEffect.cryoDamage = cryoDamage;
         damageEffect.chemicalDamage = chemicalDamage;
@@ -54,7 +60,23 @@ public class DamageCollider : MonoBehaviour
         damageEffect.geneticDamage = geneticDamage;
         damageEffect.contactPoint = contactPoint;
 
+        
+
         damageTarget.characterEffectsManager.ProcessInstantEffects(damageEffect);
+
+        
     }
+
+    public virtual void EnableDamageCollider()
+    {
+        damageCollider.enabled = true;
+    }
+    public virtual void DisableDamageCollider()
+    {
+        damageCollider.enabled = false;
+        charactersDamaged.Clear(); //reset the characters list so you can damage characters on the next attack
+    }
+
+
 
 }
