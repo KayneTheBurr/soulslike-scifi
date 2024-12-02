@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
 {
-    [SerializeField] MeleeWeaponDamageCollider meleeDamageCollider;
+    public MeleeWeaponDamageCollider meleeDamageCollider;
 
     private void Awake()
     {
@@ -20,6 +20,8 @@ public class WeaponManager : MonoBehaviour
         meleeDamageCollider.cryoDamage = weapon.cryoDamage;
         meleeDamageCollider.radiationDamage = weapon.radiationDamage;
         meleeDamageCollider.geneticDamage = weapon.geneticDamage;
+
+        meleeDamageCollider.light_Attack_01_DamageModifier = weapon.light_Attack_01_DamageModifier;
     }
 
 }

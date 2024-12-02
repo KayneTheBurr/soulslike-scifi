@@ -12,6 +12,9 @@ public class PlayerInputManager : MonoBehaviour
     [SerializeField] Vector2 cameraInput;
     public float camVerticalInput, camHorizontalInput;
 
+    [Header("Lock On")]
+    [SerializeField] bool lockOn_Input = false;
+
     [Header("Movement Inputs")]
     [SerializeField] Vector2 movementInput;
     public float verticalInput, horizontalInput, moveAmount;
@@ -21,6 +24,8 @@ public class PlayerInputManager : MonoBehaviour
     [SerializeField] bool sprintInput = false;
     [SerializeField] bool jumpInput = false;
     [SerializeField] bool r1_Input = false;
+
+    
 
     private void Awake()
     {
@@ -80,6 +85,7 @@ public class PlayerInputManager : MonoBehaviour
             playerControls.PlayerActions.Dodge.performed += i => dodgeInput = true;
             playerControls.PlayerActions.Jump.performed += i => jumpInput = true;
             playerControls.PlayerActions.R1LeftClick.performed += i => r1_Input = true;
+            playerControls.PlayerActions.LockOn.performed += i => lockOn_Input = true;
 
             //hold to sprint, release to cancel
             playerControls.PlayerActions.Sprint.performed += i => sprintInput = true;
@@ -112,6 +118,7 @@ public class PlayerInputManager : MonoBehaviour
 
     private void HandleAllInputs()
     {
+        HandleLockOnInput();
         HandlePlayerMovementInput();
         HandleCameraMovementInput();
         HandleDodgeInput();
@@ -119,6 +126,40 @@ public class PlayerInputManager : MonoBehaviour
         HandleJumpInput();
         HandleR1Input();
     }
+    
+    //Lock On
+    private void HandleLockOnInput()
+    {
+        //check for dead target
+        if(player.playerNetworkManager.isLockedOn.Value)
+        {
+            if (player.playerCombatManager.currentTarget == null) return;
+            if(player.playerCombatManager.currentTarget.isDead.Value)
+            {
+                player.playerNetworkManager.isLockedOn.Value = false;
+            }
+            //try to find new target to lock onto 
+        }
+
+        if(lockOn_Input && player.playerNetworkManager.isLockedOn.Value)
+        {
+            lockOn_Input = false;
+            //disable lock on
+            return;
+        }
+        if(lockOn_Input && !player.playerNetworkManager.isLockedOn.Value)
+        {
+            lockOn_Input = false;
+
+            //how does lock on affect ranged weapons?
+
+            PlayerCamera.instance.HandleLocatingLockOnTargets();
+
+            return;
+        }
+    }
+    
+    
     //Movements
     private void HandlePlayerMovementInput()
     {
@@ -137,8 +178,16 @@ public class PlayerInputManager : MonoBehaviour
             moveAmount = 1.0f;
         }
 
-        if (player == null)
-            return;
+        if (player == null) return;
+        
+        if(moveAmount != 0)
+        {
+            player.playerNetworkManager.isMoving.Value = true;
+        }
+        else
+        {
+            player.playerNetworkManager.isMoving.Value = false;
+        }
 
         //only pass vertical since strafing is only while locked on, want to only run forward with camera movement right now 
         player.playerAnimatorManager.UpdateAnimatorMovementParameters(0, moveAmount, player.playerNetworkManager.isSprinting.Value);

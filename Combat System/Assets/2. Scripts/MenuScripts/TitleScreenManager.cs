@@ -5,6 +5,10 @@ using UnityEngine.UI;
 public class TitleScreenManager : MonoBehaviour
 {
     public static TitleScreenManager instance;
+
+    //testing network function attempt 23580620358762
+    [SerializeField] private bool isHostInstance;
+
     [Header("Menus")]
     public GameObject mainMenu, loadCharactersMenu;
 
@@ -36,7 +40,33 @@ public class TitleScreenManager : MonoBehaviour
     }
     public void StartNetworkAsHost()
     {
-        NetworkManager.Singleton.StartHost();
+        //original single line here before debuggin unity 6 shit
+        //NetworkManager.Singleton.StartHost();
+
+        Debug.Log("Configuring port for Host...");
+
+        var transport = NetworkManager.Singleton.GetComponent<Unity.Netcode.Transports.UTP.UnityTransport>();
+
+        // Set port depending on whether this is the main host or the clone
+        if (isHostInstance) // Main host
+        {
+            transport.ConnectionData.Port = 7778;
+            Debug.Log("Starting Main Host on port 7778...");
+        }
+        else // Clone host
+        {
+            transport.ConnectionData.Port = 7780;
+            Debug.Log("Starting Clone Host on port 7780...");
+        }
+
+        if (!NetworkManager.Singleton.StartHost())
+        {
+            Debug.LogError("Failed to start Host! Check port conflicts or transport configuration.");
+        }
+        else
+        {
+            Debug.Log($"Host started successfully on port {transport.ConnectionData.Port}!");
+        }
     }
     public void StartNewGame()
     {

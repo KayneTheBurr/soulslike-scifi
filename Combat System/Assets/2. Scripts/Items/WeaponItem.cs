@@ -24,8 +24,10 @@ public class WeaponItem : Item
     public int electricalDamage = 0;
     public int geneticDamage = 0;
 
+    [Header("Attack Modifiers")]
     //stat scaling
     //weapon modifiers
+    public float light_Attack_01_DamageModifier = 0.8f;
     //light/heavy attack modifiers
     //critical modifiers
 
@@ -35,8 +37,9 @@ public class WeaponItem : Item
 
     //weapon blocking absorbtion and stagger
 
-    [Header("Stamina Costs")]
+    [Header("Stamina Cost Modifiers")]
     public int baseStaminaCost = 20;
+    public float lightAttackStaminaCostModifier = 1.1f;
     //running attack cost
     //light modifier
     //heavy modifier

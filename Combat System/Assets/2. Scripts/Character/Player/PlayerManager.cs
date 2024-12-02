@@ -34,7 +34,7 @@ public class PlayerManager : CharacterManager
     protected override void Start()
     {
         base.Start();
-        
+        DontDestroyOnLoad(gameObject);
     }
     protected override void Update()
     {

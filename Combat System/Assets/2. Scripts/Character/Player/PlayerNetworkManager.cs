@@ -1,6 +1,7 @@
 using UnityEngine;
 using Unity.Netcode;
 using Unity.Collections;
+using UnityEditor.PackageManager;
 
 public class PlayerNetworkManager : CharacterNetworkManager
 {
@@ -73,6 +74,40 @@ public class PlayerNetworkManager : CharacterNetworkManager
         WeaponItem newWeapon = Instantiate(WorldItemDataBase.instance.GetWeaponByID(newID));
         player.playerCombatManager.currentWeaponBeingUsed = newWeapon;
         
+    }
+
+    //item actions
+    [ServerRpc]
+    public void NotifyTheServerOfWeaponActionServerRpc(ulong clientID, int actionID, int weaponID)
+    {
+        if(IsServer)
+        {
+            NotifyTheServerOfWeaponActionClientRpc( clientID, actionID, weaponID);
+        }
+    }
+
+    [ClientRpc]
+    private void NotifyTheServerOfWeaponActionClientRpc(ulong clientID, int actionID, int weaponID)
+    {
+        //do not play the action again for the person who called it 
+        if (clientID != NetworkManager.Singleton.LocalClientId)
+        {
+            PerformWeaponAction(actionID, weaponID);
+        }
+    }
+
+    private void PerformWeaponAction(int actionID, int weaponID)
+    {
+        WeaponItemAction weaponAction = WorldActionManager.instance.GetWeaponItemActionByID(actionID);
+
+        if (weaponAction != null)
+        {
+            weaponAction.AttemptToPerformAction(player, WorldItemDataBase.instance.GetWeaponByID(weaponID));
+        }
+        else
+        {
+            Debug.Log("Action is null, ERROR ERROR");
+        }
     }
 
 }
