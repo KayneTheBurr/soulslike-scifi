@@ -1,7 +1,7 @@
 using UnityEngine;
 using Unity.Netcode;
 using Unity.Collections;
-using UnityEditor.PackageManager;
+
 
 public class PlayerNetworkManager : CharacterNetworkManager
 {
