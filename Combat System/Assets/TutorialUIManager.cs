@@ -76,8 +76,12 @@ public class TutorialUIManager : MonoBehaviour
     public IEnumerator Respawn()
     {
         yield return new WaitForSeconds(4);
-        player.gameObject.transform.position = Vector3.zero;
-        player.respawnCharacter = true;
+        if(player != null )
+        {
+            player.gameObject.transform.position = Vector3.zero;
+            player.respawnCharacter = true;
+        }
+        
         
     }
 

@@ -147,7 +147,7 @@ public class PlayerManager : CharacterManager
         {
             playerNetworkManager.currentHealth.Value = playerNetworkManager.maxHealth.Value;
             playerNetworkManager.currentStamina.Value = playerNetworkManager.maxStamina.Value;
-            isDead.Value = false;
+            //isDead.Value = false;
             //restore flux to max value
             
             //play rebirth effects
