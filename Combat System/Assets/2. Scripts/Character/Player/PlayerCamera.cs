@@ -116,9 +116,9 @@ public class PlayerCamera : MonoBehaviour
 
     public void HandleLocatingLockOnTargets()
     {
-        float shortestDistance = Mathf.Infinity; //used to find the target closest to us 
-        float shortestDistanceOfRightTarget = Mathf.Infinity; //find target on shortest distance on one axis to the right 
-        float shortestDistanceOfLeftTarget = -Mathf.Infinity; //find target on shortest distance on one axis to the left (-)
+        //float shortestDistance = Mathf.Infinity; //used to find the target closest to us 
+        //float shortestDistanceOfRightTarget = Mathf.Infinity; //find target on shortest distance on one axis to the right 
+        //float shortestDistanceOfLeftTarget = -Mathf.Infinity; //find target on shortest distance on one axis to the left (-)
 
         //get all colliders around player in a radius
         Collider[] colliders = Physics.OverlapSphere(player.transform.position, lockOnRadius, WorldUtilityManager.instance.GetCharacterLayers()); 

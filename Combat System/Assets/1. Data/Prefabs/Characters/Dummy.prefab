@@ -20450,7 +20450,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 0.75
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -21594,12 +21594,12 @@ GameObject:
   - component: {fileID: 4492889626842492473}
   - component: {fileID: 935187394611590841}
   - component: {fileID: -3734962839504339649}
-  - component: {fileID: 3724411028523817459}
+  - component: {fileID: 2867567892436245945}
   - component: {fileID: 5826348801787429942}
   - component: {fileID: 7012828793404712313}
   - component: {fileID: 5160945015924638036}
   - component: {fileID: 2211409391292579997}
-  - component: {fileID: 5311455153835205713}
+  - component: {fileID: -3186404768418883935}
   - component: {fileID: 3378020434095910662}
   - component: {fileID: 802099889850498496}
   - component: {fileID: 554099063395952070}
@@ -21620,8 +21620,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4993609475029919357}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.38984734, z: 0, w: 0.92087954}
-  m_LocalPosition: {x: 7.28, y: -0.015, z: -6.39}
+  m_LocalRotation: {x: 0, y: -0.9552784, z: 0, w: 0.29570806}
+  m_LocalPosition: {x: -2.4364655, y: 0.00000047683716, z: 13.417847}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -21643,7 +21643,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: ff348b5742a77bf4a918c293861e3212, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
@@ -21664,7 +21664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3515302245
+  GlobalObjectIdHash: 2741310794
   InScenePlacedSourceGlobalObjectIdHash: 3037142561
   DeferredDespawnTick: 0
   Ownership: 1
@@ -21705,6 +21705,8 @@ MonoBehaviour:
   canMove: 1
   applyRootMotion: 0
   aiCombatManager: {fileID: 0}
+  aiNetworkManager: {fileID: 0}
+  aiLocomotionManager: {fileID: 0}
   navMeshAgent: {fileID: 0}
   currentState: {fileID: 11400000, guid: 4a1efe66a0f36924f912bed8c93186bf, type: 2}
   idle: {fileID: 11400000, guid: 4a1efe66a0f36924f912bed8c93186bf, type: 2}
@@ -21724,10 +21726,11 @@ MonoBehaviour:
   currentAttackType: 0
   currentTarget: {fileID: 0}
   lockOnTransform: {fileID: 0}
+  canPerformRollingAttack: 0
   detectionRadius: 10
   minDetectionAngle: -35
   maxDetectionAngle: 35
---- !u!114 &3724411028523817459
+--- !u!114 &2867567892436245945
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -21736,7 +21739,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4993609475029919357}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af3c5d6f80d2fe24ca638566715aaad4, type: 3}
+  m_Script: {fileID: 11500000, guid: 239268a18d6f8c74aac476b4ce315a9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
@@ -21753,6 +21756,10 @@ MonoBehaviour:
     m_InternalValue: 0
   isLockedOn:
     m_InternalValue: 0
+  isInvulnerable:
+    m_InternalValue: 0
+  isMoving:
+    m_InternalValue: 0
   horizontalMovement:
     m_InternalValue: 0
   verticalMovement:
@@ -21768,9 +21775,9 @@ MonoBehaviour:
   maxStamina:
     m_InternalValue: 0
   currentHealth:
-    m_InternalValue: 100
+    m_InternalValue: 0
   maxHealth:
-    m_InternalValue: 100
+    m_InternalValue: 0
 --- !u!114 &5826348801787429942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21819,7 +21826,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50beaa730599bb640abb8a9b857dacaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5311455153835205713
+--- !u!114 &-3186404768418883935
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -21828,7 +21835,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4993609475029919357}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65c1771f61ff71447b1ac49f515154dd, type: 3}
+  m_Script: {fileID: 11500000, guid: c65fc44a42beb7944a1ec2870e922a42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   groundCheckSphereRadius: 0.28

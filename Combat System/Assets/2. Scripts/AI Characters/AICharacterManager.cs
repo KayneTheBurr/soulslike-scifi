@@ -5,6 +5,7 @@ public class AICharacterManager : CharacterManager
 {
     [HideInInspector] public AICombatManager aiCombatManager;
     [HideInInspector] public AINetworkManager aiNetworkManager;
+    [HideInInspector] public AILocomotionManager aiLocomotionManager;
 
     [Header("NavMesh Agent")]
     public NavMeshAgent navMeshAgent;
@@ -23,8 +24,10 @@ public class AICharacterManager : CharacterManager
         base.Awake();
 
         navMeshAgent = GetComponentInChildren<NavMeshAgent>();
+
         aiCombatManager = GetComponent<AICombatManager>();
         aiNetworkManager = GetComponent<AINetworkManager>();
+        aiLocomotionManager = GetComponent<AILocomotionManager>();
 
         idle = Instantiate(idle);
         pursueTarget = Instantiate(pursueTarget);
@@ -39,7 +42,12 @@ public class AICharacterManager : CharacterManager
         {
             currentState = nextState;
         }
-        if(navMeshAgent.enabled)
+
+        //reset the position/rotation after teh state machine has processed it
+        navMeshAgent.transform.localPosition = Vector3.zero;
+        navMeshAgent.transform.localRotation = Quaternion.identity;
+
+        if (navMeshAgent.enabled)
         {
             Vector3 agentDestination = navMeshAgent.destination;
             float remainingDistance = Vector3.Distance(agentDestination, transform.position);

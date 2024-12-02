@@ -31,7 +31,8 @@ public class DamageCollider : MonoBehaviour
     protected virtual void OnTriggerEnter(Collider col)
     {
         CharacterManager damageTarget = col.GetComponentInParent<CharacterManager>();
-        
+        Debug.Log("hit");
+
         if (damageTarget != null )
         {
             
@@ -47,6 +48,7 @@ public class DamageCollider : MonoBehaviour
 
     protected virtual void DamageTarget(CharacterManager damageTarget)
     {
+        
         //dont want to deal damage again to a target if we already damaged them with this instance of damage
         //add them to a list and check the list to see if they are on the list of damageable characters already or not 
         if (charactersDamaged.Contains(damageTarget)) return;

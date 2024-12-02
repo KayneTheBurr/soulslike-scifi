@@ -6096,7 +6096,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1526939090679485814}
   - component: {fileID: 714082172049695897}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: toes_01.r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13986,7 +13986,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3075281851229399711}
   - component: {fileID: 6594149439446370008}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: leg_stretch.r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19409,6 +19409,7 @@ MonoBehaviour:
   characterEffectsManager: {fileID: 0}
   characterAnimatorManager: {fileID: 0}
   characterCombatManager: {fileID: 0}
+  characterGroup: 0
   isPerformingAction: 0
   isGrounded: 1
   canRotate: 1
@@ -19448,6 +19449,10 @@ MonoBehaviour:
   isJumping:
     m_InternalValue: 0
   isLockedOn:
+    m_InternalValue: 0
+  isInvulnerable:
+    m_InternalValue: 0
+  isMoving:
     m_InternalValue: 0
   horizontalMovement:
     m_InternalValue: 0
@@ -19577,6 +19582,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentAttackType: 0
   currentTarget: {fileID: 0}
+  lockOnTransform: {fileID: 0}
+  canPerformRollingAttack: 0
   currentWeaponBeingUsed: {fileID: 0}
 --- !u!114 &-3160774519190820704
 MonoBehaviour:
@@ -21335,7 +21342,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6446651259168342216}
   - component: {fileID: 894819391764915794}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: toes_01.l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25334,7 +25341,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1078316469458958533}
   - component: {fileID: 5168691304671561669}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: leg_stretch.l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26842,7 +26849,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5888576704322171413}
   - component: {fileID: 5095186939776682984}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: thigh_stretch.r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30046,7 +30053,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2987883459155492619}
   - component: {fileID: 5565348366912685476}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: thigh_stretch.l
   m_TagString: Untagged
   m_Icon: {fileID: 0}

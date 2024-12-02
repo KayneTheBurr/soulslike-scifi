@@ -169,7 +169,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2168059192425235896, guid: 274f383a2d4bb4842ba9e1da1cc25c4a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -502.49994
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2168059192425235896, guid: 274f383a2d4bb4842ba9e1da1cc25c4a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -427,7 +427,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2168059192425235896, guid: 274f383a2d4bb4842ba9e1da1cc25c4a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -97.49994
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2168059192425235896, guid: 274f383a2d4bb4842ba9e1da1cc25c4a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -569,42 +569,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1578304262}
         m_TargetAssemblyTypeName: TitleScreenManager, Assembly-CSharp
         m_MethodName: StartNetworkAsHost
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 932409692}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 178379306}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 866873871}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
-        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1105,7 +1069,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2168059192425235896, guid: 274f383a2d4bb4842ba9e1da1cc25c4a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -637.49994
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2168059192425235896, guid: 274f383a2d4bb4842ba9e1da1cc25c4a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1456,24 +1420,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1578304262}
-        m_TargetAssemblyTypeName: TitleScreenManager, Assembly-CSharp
-        m_MethodName: CloseLoadGameMenu
-        m_Mode: 1
+        m_TargetAssemblyTypeName: TitleScreenManager
+        m_MethodName: 
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2028176060}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
-        m_MethodName: Select
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1618,24 +1570,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1578304262}
-        m_TargetAssemblyTypeName: TitleScreenManager, Assembly-CSharp
-        m_MethodName: DeleteCharacterSlot
-        m_Mode: 1
+        m_TargetAssemblyTypeName: TitleScreenManager
+        m_MethodName: 
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 534406820}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
-        m_MethodName: Select
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1749,7 +1689,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2168059192425235896, guid: 274f383a2d4bb4842ba9e1da1cc25c4a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 307.50006
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2168059192425235896, guid: 274f383a2d4bb4842ba9e1da1cc25c4a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1991,7 +1931,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2168059192425235896, guid: 274f383a2d4bb4842ba9e1da1cc25c4a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 37.50006
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2168059192425235896, guid: 274f383a2d4bb4842ba9e1da1cc25c4a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2208,12 +2148,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1578304262}
-        m_TargetAssemblyTypeName: TitleScreenManager, Assembly-CSharp
-        m_MethodName: StartNewGame
-        m_Mode: 1
+        m_TargetAssemblyTypeName: TitleScreenManager
+        m_MethodName: 
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2341,12 +2281,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1578304262}
-        m_TargetAssemblyTypeName: TitleScreenManager, Assembly-CSharp
-        m_MethodName: CloseDeleteCharacterPopUp
-        m_Mode: 1
+        m_TargetAssemblyTypeName: TitleScreenManager
+        m_MethodName: 
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2906,7 +2846,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2168059192425235896, guid: 274f383a2d4bb4842ba9e1da1cc25c4a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 442.50006
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2168059192425235896, guid: 274f383a2d4bb4842ba9e1da1cc25c4a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3284,7 +3224,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2168059192425235896, guid: 274f383a2d4bb4842ba9e1da1cc25c4a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -232.49994
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2168059192425235896, guid: 274f383a2d4bb4842ba9e1da1cc25c4a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4079,7 +4019,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2168059192425235896, guid: 274f383a2d4bb4842ba9e1da1cc25c4a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 172.50006
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2168059192425235896, guid: 274f383a2d4bb4842ba9e1da1cc25c4a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4219,24 +4159,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1578304262}
-        m_TargetAssemblyTypeName: TitleScreenManager, Assembly-CSharp
-        m_MethodName: OpenLoadGameMenu
-        m_Mode: 1
+        m_TargetAssemblyTypeName: TitleScreenManager
+        m_MethodName: 
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 534406820}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
-        m_MethodName: Select
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4330,7 +4258,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2168059192425235896, guid: 274f383a2d4bb4842ba9e1da1cc25c4a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -367.49994
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2168059192425235896, guid: 274f383a2d4bb4842ba9e1da1cc25c4a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4973,28 +4901,12 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1578304262}
-          m_TargetAssemblyTypeName: TitleScreenManager, Assembly-CSharp
-          m_MethodName: SelectNoSlot
-          m_Mode: 1
+          m_TargetAssemblyTypeName: TitleScreenManager
+          m_MethodName: 
+          m_Mode: 0
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1578304262}
-          m_TargetAssemblyTypeName: TitleScreenManager, Assembly-CSharp
-          m_MethodName: SelectNoSlot
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgumentAssemblyTypeName: 
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -5216,7 +5128,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2168059192425235896, guid: 274f383a2d4bb4842ba9e1da1cc25c4a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 577.50006
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2168059192425235896, guid: 274f383a2d4bb4842ba9e1da1cc25c4a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5458,7 +5370,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3971182926779250757, guid: 45c8f2a7f6a97c24bb134a68c45333bd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 90.00012
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4755328367247539640, guid: 45c8f2a7f6a97c24bb134a68c45333bd, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5574,19 +5486,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8653922276055225659, guid: 45c8f2a7f6a97c24bb134a68c45333bd, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8653922276055225659, guid: 45c8f2a7f6a97c24bb134a68c45333bd, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8653922276055225659, guid: 45c8f2a7f6a97c24bb134a68c45333bd, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8653922276055225659, guid: 45c8f2a7f6a97c24bb134a68c45333bd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 90.00012
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

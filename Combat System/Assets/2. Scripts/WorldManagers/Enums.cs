@@ -22,7 +22,10 @@ public enum WeaponModelSlot
 }
 public enum AttackType
 {
-    LightAttack01
+    LightAttack01,
+    LightRunningAttack01,
+    LightRollingAttack01
+
 }
 
 public enum CharacterGroup
