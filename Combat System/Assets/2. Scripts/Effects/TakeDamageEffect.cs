@@ -56,6 +56,7 @@ public class TakeDamageEffect : InstantCharacterEffect
         //play damage animation
         //check for build up effect (poison bleed etc)
         //play damage sound fx
+        PlayDamageSFX(character);
 
         //play damge vfx (blood etc)
         PlayDamageVFX(character);
@@ -93,9 +94,18 @@ public class TakeDamageEffect : InstantCharacterEffect
     private void PlayDamageVFX(CharacterManager character)
     {
         //play a special effect based on element type
+        Debug.Log("play vfx");
 
         character.characterEffectsManager.PlayBloodSplatterVFX(contactPoint);
     }
+    private void PlayDamageSFX(CharacterManager character)
+    {
+        Debug.Log("play sfx");
+        AudioClip physicalDamageSFX = WorldSFXManager.instance.ChooseRandomSFXFromArray(WorldSFXManager.instance.physicalDamageSFX);
 
+        character.characterSFXManager.PlaySoundFX(physicalDamageSFX);
+        //play more sfx based on damage type done
+
+    }
 }   
 

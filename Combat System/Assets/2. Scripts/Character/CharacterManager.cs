@@ -17,6 +17,7 @@ public class CharacterManager : NetworkBehaviour
     [HideInInspector] public CharacterEffectsManager characterEffectsManager;
     [HideInInspector] public CharacterAnimatorManager characterAnimatorManager;
     [HideInInspector] public CharacterCombatManager characterCombatManager;
+    [HideInInspector] public CharacterSFXManager characterSFXManager;
 
     [Header("Character Group")]
     public CharacterGroup characterGroup;
@@ -37,6 +38,7 @@ public class CharacterManager : NetworkBehaviour
         characterEffectsManager = GetComponent<CharacterEffectsManager>();
         characterAnimatorManager = GetComponent<CharacterAnimatorManager>();
         characterCombatManager = GetComponent<CharacterCombatManager>();
+        characterSFXManager = GetComponent<CharacterSFXManager>();
     }
     protected virtual void Start()
     {

@@ -38,7 +38,9 @@ public class CharacterEffectsManager : MonoBehaviour
         //
         else
         {
+            
             GameObject bloodSplatter = Instantiate(WorldCharacterEffectsManager.instance.bloodSplatterVFX, contactPoint, Quaternion.identity) ;
+            Debug.Log(bloodSplatter.name);
         }
     }
 
