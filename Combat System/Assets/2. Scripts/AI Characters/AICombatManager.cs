@@ -39,7 +39,7 @@ public class AICombatManager : CharacterCombatManager
                     {
                         Debug.DrawLine(aiCharacter.characterCombatManager.lockOnTransform.position,
                         targetCharacter.characterCombatManager.lockOnTransform.position, Color.red);
-                        Debug.Log("Blocked");
+                        
                     }
                     else
                     {

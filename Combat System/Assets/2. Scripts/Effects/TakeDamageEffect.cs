@@ -56,7 +56,10 @@ public class TakeDamageEffect : InstantCharacterEffect
         //play damage animation
         //check for build up effect (poison bleed etc)
         //play damage sound fx
+
         //play damge vfx (blood etc)
+        PlayDamageVFX(character);
+
         //if characcter is AI enemey, check for who just attacked them 
 
     }
@@ -85,6 +88,13 @@ public class TakeDamageEffect : InstantCharacterEffect
 
         //calculate poise damage to determine if character will be stunned and play damaged animation or not 
 
+    }
+
+    private void PlayDamageVFX(CharacterManager character)
+    {
+        //play a special effect based on element type
+
+        character.characterEffectsManager.PlayBloodSplatterVFX(contactPoint);
     }
 
 }   

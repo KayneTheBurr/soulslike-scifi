@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Unity.Netcode;
 
 public class PlayerManager : CharacterManager
 {
@@ -29,8 +30,6 @@ public class PlayerManager : CharacterManager
         playerInventoryManager = GetComponent<PlayerInventoryManager>();
         playerEquipmentManager = GetComponent<PlayerEquipmentManager>();
         playerCombatManager = GetComponent<PlayerCombatManager>();
-
-        
     }
 
     protected override void Start()
@@ -69,6 +68,7 @@ public class PlayerManager : CharacterManager
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
+        NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnectedCallback;
 
         if( IsOwner)
         {
@@ -105,6 +105,23 @@ public class PlayerManager : CharacterManager
         }
 
 
+    }
+
+    private void OnClientConnectedCallback(ulong clientID)
+    {
+        WorldGameSessionManager.instance.AddPlayerToActivePlayersList(this); 
+
+        //if we are the host, we dont need to sync other players, only if joining the game late
+        if(!IsServer && IsOwner)
+        {
+            foreach(var player in WorldGameSessionManager.instance.players)
+            {
+                if(player != this)
+                {
+                    player.LoadOtherPlayerCharactersWhenJoiningServer();
+                }
+            }
+        }
     }
 
     public void SaveGameDataToCurrentCharacterData(ref CharacterSaveData currentCharacterData)
@@ -156,6 +173,19 @@ public class PlayerManager : CharacterManager
         }
     }
 
+    public void LoadOtherPlayerCharactersWhenJoiningServer()
+    {
+        //sync weapons 
+        playerNetworkManager.OnCurrentRightHandWeaponIDChange(0, playerNetworkManager.currentRightWeaponID.Value);
+        playerNetworkManager.OnCurrentLeftHandWeaponIDChange(0, playerNetworkManager.currentLeftWeaponID.Value);
+
+        //armor
+        //consmetic choices
+    }
+
+
+
+    //Debug for testing
     private void DebugMenu()
     {
         if(respawnCharacter)
