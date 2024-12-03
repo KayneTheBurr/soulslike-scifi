@@ -30,6 +30,8 @@ MonoBehaviour:
   radiationDamage: 0
   electricalDamage: 0
   geneticDamage: 0
+  light_Attack_01_DamageModifier: 0.8
   poiseDamage: 10
   baseStaminaCost: 20
-  oh_r1_Action: {fileID: 11400000, guid: 1d1d7bad1c1aa5c44abcc9ee37f13e3c, type: 2}
+  lightAttackStaminaCostModifier: 1.1
+  oh_r1_Action: {fileID: 11400000, guid: 024c38cfe1f48e840a0063603c2348c7, type: 2}

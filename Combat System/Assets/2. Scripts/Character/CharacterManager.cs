@@ -16,7 +16,10 @@ public class CharacterManager : NetworkBehaviour
     [HideInInspector] public Animator animator;
     [HideInInspector] public CharacterEffectsManager characterEffectsManager;
     [HideInInspector] public CharacterAnimatorManager characterAnimatorManager;
-    
+    [HideInInspector] public CharacterCombatManager characterCombatManager;
+
+    [Header("Character Group")]
+    public CharacterGroup characterGroup;
 
     [Header("Flags")]
     public bool isPerformingAction;
@@ -33,11 +36,28 @@ public class CharacterManager : NetworkBehaviour
         animator = GetComponent<Animator>();
         characterEffectsManager = GetComponent<CharacterEffectsManager>();
         characterAnimatorManager = GetComponent<CharacterAnimatorManager>();
+        characterCombatManager = GetComponent<CharacterCombatManager>();
     }
     protected virtual void Start()
     {
         IgnoreMyOwnColliders();
     }
+
+    public override void OnNetworkSpawn()
+    {
+        base.OnNetworkSpawn();
+
+        characterNetworkManager.isMoving.OnValueChanged += characterNetworkManager.OnIsMovingChanged;
+    }
+
+    public override void OnNetworkDespawn()
+    {
+        base.OnNetworkDespawn();
+
+        characterNetworkManager.isMoving.OnValueChanged -= characterNetworkManager.OnIsMovingChanged;
+    }
+
+
     protected virtual void Update()
     {
         animator.SetBool("isGrounded", isGrounded);
@@ -58,6 +78,10 @@ public class CharacterManager : NetworkBehaviour
                 characterNetworkManager.networkRotation.Value,
                 characterNetworkManager.networkRotationSmoothTime);
         }
+    }
+    protected virtual void FixedUpdate()
+    {
+
     }
     protected virtual void LateUpdate()
     {

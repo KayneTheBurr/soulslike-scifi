@@ -20,6 +20,17 @@ public enum WeaponModelSlot
     //LeftHip,
     //Back
 }
+public enum AttackType
+{
+    LightAttack01,
+    LightRunningAttack01,
+    LightRollingAttack01
 
+}
 
+public enum CharacterGroup
+{
+    Friendly, 
+    Enemy
+}
 

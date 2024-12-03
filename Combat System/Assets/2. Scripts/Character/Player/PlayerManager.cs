@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 public class PlayerManager : CharacterManager
 {
     [Header("Debug Menu")]
-    [SerializeField] bool respawnCharacter = false;
-    [SerializeField] bool switchRightWeapon = false;
+    [SerializeField] public bool respawnCharacter = false;
+    [SerializeField] public bool switchRightWeapon = false;
 
     [HideInInspector] public PlayerLocomotionManager playerLocomotionManager;
     [HideInInspector] public PlayerAnimatorManager playerAnimatorManager;
@@ -29,12 +29,14 @@ public class PlayerManager : CharacterManager
         playerInventoryManager = GetComponent<PlayerInventoryManager>();
         playerEquipmentManager = GetComponent<PlayerEquipmentManager>();
         playerCombatManager = GetComponent<PlayerCombatManager>();
+
+        
     }
 
     protected override void Start()
     {
         base.Start();
-        
+        DontDestroyOnLoad(gameObject);
     }
     protected override void Update()
     {
@@ -145,10 +147,12 @@ public class PlayerManager : CharacterManager
         {
             playerNetworkManager.currentHealth.Value = playerNetworkManager.maxHealth.Value;
             playerNetworkManager.currentStamina.Value = playerNetworkManager.maxStamina.Value;
+            isDead.Value = false;
             //restore flux to max value
-
+            
             //play rebirth effects
             playerAnimatorManager.PlayTargetActionAnimation("Empty", false);
+            
         }
     }
 

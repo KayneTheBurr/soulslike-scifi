@@ -7,7 +7,7 @@ using UnityEngine.TextCore.Text;
 public class DamageCollider : MonoBehaviour
 {
     [Header("Collider")]
-    protected Collider damageCollider;
+    [SerializeField] protected Collider damageCollider;
 
     [Header("Damage Types")]
     public float physicalDamage = 0; //break down into sub types (standard, slash, pierce, strike)
@@ -24,11 +24,15 @@ public class DamageCollider : MonoBehaviour
     [Header("Characters Damaged")]
     protected List<CharacterManager> charactersDamaged = new List<CharacterManager>();
 
-
-    private void OnTriggerEnter(Collider col)
+    protected virtual void Awake()
+    {
+        
+    }
+    protected virtual void OnTriggerEnter(Collider col)
     {
         CharacterManager damageTarget = col.GetComponentInParent<CharacterManager>();
-        
+        Debug.Log("hit");
+
         if (damageTarget != null )
         {
             
@@ -44,6 +48,7 @@ public class DamageCollider : MonoBehaviour
 
     protected virtual void DamageTarget(CharacterManager damageTarget)
     {
+        
         //dont want to deal damage again to a target if we already damaged them with this instance of damage
         //add them to a list and check the list to see if they are on the list of damageable characters already or not 
         if (charactersDamaged.Contains(damageTarget)) return;
