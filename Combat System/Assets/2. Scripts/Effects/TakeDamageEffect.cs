@@ -103,7 +103,7 @@ public class TakeDamageEffect : InstantCharacterEffect
         Debug.Log("play sfx");
         AudioClip physicalDamageSFX = WorldSFXManager.instance.ChooseRandomSFXFromArray(WorldSFXManager.instance.physicalDamageSFX);
 
-        character.characterSFXManager.PlaySoundFX(physicalDamageSFX);
+        character.characterSFXManager.PlaySoundFX(physicalDamageSFX, 0.5f);
         //play more sfx based on damage type done
 
     }
