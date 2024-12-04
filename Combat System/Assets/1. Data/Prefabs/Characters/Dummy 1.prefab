@@ -21644,6 +21644,7 @@ MonoBehaviour:
   characterEffectsManager: {fileID: 0}
   characterAnimatorManager: {fileID: 0}
   characterCombatManager: {fileID: 0}
+  characterSFXManager: {fileID: 0}
   characterGroup: 1
   isPerformingAction: 0
   isGrounded: 1
@@ -21736,6 +21737,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 479c142bf22184d4f9bf9ea2aad91135, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hit_Fwd_Med_01: SS_hit_Fwd_Med_01
+  hit_Back_Med_01: SS_hit_Back_Med_01
+  hit_Left_Med_01: SS_hit_Left_Med_01
+  hit_Right_Med_01: SS_hit_Right_Med_01
 --- !u!114 &7012828793404712313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21748,6 +21753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 253f2a8b794587747beb4997c403e3ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bloodSplatterVFX: {fileID: 0}
 --- !u!114 &5160945015924638036
 MonoBehaviour:
   m_ObjectHideFlags: 0

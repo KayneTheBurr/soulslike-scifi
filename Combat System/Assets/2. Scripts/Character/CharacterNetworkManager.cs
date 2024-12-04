@@ -42,6 +42,10 @@ public class CharacterNetworkManager : NetworkBehaviour
     public NetworkVariable<int> endurance =
         new NetworkVariable<int>(10, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
 
+    [Header("Target")]
+    public NetworkVariable<ulong> currentTargetNetworkObjectID = 
+        new NetworkVariable<ulong>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+
     [Header("Resources")]
     public NetworkVariable<float> currentStamina = 
         new NetworkVariable<float>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
@@ -71,6 +75,21 @@ public class CharacterNetworkManager : NetworkBehaviour
             }
         }
 
+    }
+    public void OnLockOnTargetIDChange(ulong oldID, ulong newID)
+    {
+        if(!IsOwner)
+        {
+            character.characterCombatManager.currentTarget = 
+                NetworkManager.Singleton.SpawnManager.SpawnedObjects[newID].gameObject.GetComponent<CharacterManager>();
+        }
+    }
+    public void OnIsLockOnChanged(bool old, bool isLockedOn)
+    {
+        if(!isLockedOn)
+        {
+            character.characterCombatManager.currentTarget = null;
+        }
     }
 
     public void OnIsMovingChanged(bool oldStatus, bool newStatus)

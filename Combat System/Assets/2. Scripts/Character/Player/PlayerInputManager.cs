@@ -141,10 +141,14 @@ public class PlayerInputManager : MonoBehaviour
             //try to find new target to lock onto 
         }
 
+        //if already locked on, unlock on from targets
         if(lockOn_Input && player.playerNetworkManager.isLockedOn.Value)
         {
             lockOn_Input = false;
-            //disable lock on
+            PlayerCamera.instance.ClearLockOnTargets();
+            player.playerNetworkManager.isLockedOn.Value = false;
+
+            
             return;
         }
         if(lockOn_Input && !player.playerNetworkManager.isLockedOn.Value)
@@ -155,7 +159,12 @@ public class PlayerInputManager : MonoBehaviour
 
             PlayerCamera.instance.HandleLocatingLockOnTargets();
 
-            return;
+            if(PlayerCamera.instance.nearestLockOnTarget != null)
+            {
+                //set the target ar our current lock on target 
+                player.playerCombatManager.SetTarget(PlayerCamera.instance.nearestLockOnTarget);
+                player.playerNetworkManager.isLockedOn.Value = true;
+            }
         }
     }
     

@@ -42,19 +42,20 @@ public class TakeDamageEffect : InstantCharacterEffect
     {
         base.ProcessEffect(character);
 
-        
         // if the character is dead, dont process any additional damage effects since they are already dead
-        if (character.isDead.Value)
-        {
-            return;
-        }
+        if (character.isDead.Value) return;
 
         //check for invulnerability window
 
+
         CalculateDamage(character);
+
         //check which direction damage came from
         //play damage animation
+        PlayDirectionalBasedDamageAnimation(character);
+
         //check for build up effect (poison bleed etc)
+
         //play damage sound fx
         PlayDamageSFX(character);
 
@@ -84,11 +85,8 @@ public class TakeDamageEffect : InstantCharacterEffect
         {
             finalDamage = 1;
         }
-        
         character.characterNetworkManager.currentHealth.Value -= finalDamage;
-
         //calculate poise damage to determine if character will be stunned and play damaged animation or not 
-
     }
 
     private void PlayDamageVFX(CharacterManager character)
@@ -105,7 +103,50 @@ public class TakeDamageEffect : InstantCharacterEffect
 
         character.characterSFXManager.PlaySoundFX(physicalDamageSFX, 0.5f);
         //play more sfx based on damage type done
+    }
+
+    private void PlayDirectionalBasedDamageAnimation(CharacterManager character)
+    {
+        
+        if (!character.IsOwner) return;
+        if (character.isDead.Value) return;
+
+        //Calculate if poise is broken
+        poiseIsBroken = true;
+
+        if(angleHitFrom >= 145 &&  angleHitFrom <= 180)
+        {
+            damageAnimation = character.characterAnimatorManager.GetRandomAnimationFromList(character.characterAnimatorManager.Fwd_Med_Damage);
+            
+        }
+        else if (angleHitFrom >= -180 && angleHitFrom <= -145)
+        {
+            damageAnimation = character.characterAnimatorManager.GetRandomAnimationFromList(character.characterAnimatorManager.Fwd_Med_Damage);
+        }
+        else if (angleHitFrom >= 45 && angleHitFrom <= 144)
+        {
+            damageAnimation = character.characterAnimatorManager.GetRandomAnimationFromList(character.characterAnimatorManager.Right_Med_Damage);
+            
+        }
+        else if (angleHitFrom >= -144 && angleHitFrom <= -45)
+        {
+            damageAnimation = character.characterAnimatorManager.GetRandomAnimationFromList(character.characterAnimatorManager.Left_Med_Damage);
+            
+        }
+        else if (angleHitFrom >= -45 && angleHitFrom <= 45)
+        {
+            damageAnimation = character.characterAnimatorManager.GetRandomAnimationFromList(character.characterAnimatorManager.Back_Med_Damage);
+            Debug.Log("back hit");
+        }
+        Debug.Log("animation to play:" +  damageAnimation);
+        // if poise is broken, play the stagger animation
+        if(poiseIsBroken)
+        {
+            character.characterAnimatorManager.lastDamageAnimationPlayed = damageAnimation;
+            character.characterAnimatorManager.PlayTargetActionAnimation(damageAnimation, true);
+        }
 
     }
+
 }   
 

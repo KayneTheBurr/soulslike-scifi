@@ -1,3 +1,4 @@
+using Unity.Netcode;
 using UnityEngine;
 
 public class CharacterCombatManager : MonoBehaviour
@@ -25,6 +26,24 @@ public class CharacterCombatManager : MonoBehaviour
             lockOnTransform = GetComponentInChildren<LockOnTarget>().GetComponent<Transform>();
         }
         
+    }
+
+    public virtual void SetTarget(CharacterManager newTarget)
+    {
+        if(character.IsOwner)
+        {
+            if(newTarget != null)
+            {
+                currentTarget = newTarget;
+                //tell server the ulong ID of the target we locked onto 
+                character.characterNetworkManager.currentTargetNetworkObjectID.Value = newTarget.GetComponent<NetworkObject>().NetworkObjectId;
+                
+            }
+            else
+            {
+                currentTarget = null;
+            }
+        }
     }
 
     public void EnableIsInvulnerable()

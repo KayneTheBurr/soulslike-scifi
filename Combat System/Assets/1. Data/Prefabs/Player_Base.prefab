@@ -19375,7 +19375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 4267900917
+  GlobalObjectIdHash: 3037142561
   InScenePlacedSourceGlobalObjectIdHash: 3037142561
   DeferredDespawnTick: 0
   Ownership: 1
@@ -19409,6 +19409,7 @@ MonoBehaviour:
   characterEffectsManager: {fileID: 0}
   characterAnimatorManager: {fileID: 0}
   characterCombatManager: {fileID: 0}
+  characterSFXManager: {fileID: 0}
   characterGroup: 0
   isPerformingAction: 0
   isGrounded: 1
@@ -19651,8 +19652,8 @@ MonoBehaviour:
   horizontalMovement: 0
   moveAmount: 0
   rotationSpeed: 10
-  runSpeed: 4
-  sprintSpeed: 8
+  runSpeed: 5
+  sprintSpeed: 12
   walkSpeed: 1.5
   sprintStaminaCost: 5
   jumpStaminaCost: 15
@@ -19673,6 +19674,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64fd997511edfca4ab014221a154e866, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hit_Fwd_Med_01: SS_hit_Fwd_Med_01
+  hit_Back_Med_01: SS_hit_Back_Med_01
+  hit_Left_Med_01: SS_hit_Left_Med_01
+  hit_Right_Med_01: SS_hit_Right_Med_01
 --- !u!114 &4979950608411682141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19697,6 +19702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4945bcf5d10ffec4186e72fb0cc66c3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bloodSplatterVFX: {fileID: 0}
   effectToTest: {fileID: 11400000, guid: 2cf417e76d0eb004eab0848a7ebd515c, type: 2}
   processEffect: 0
 --- !u!143 &7377431891504224825

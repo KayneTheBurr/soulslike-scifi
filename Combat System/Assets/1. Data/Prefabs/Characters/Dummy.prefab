@@ -21664,7 +21664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3515302245
+  GlobalObjectIdHash: 2741310794
   InScenePlacedSourceGlobalObjectIdHash: 3037142561
   DeferredDespawnTick: 0
   Ownership: 1
@@ -21791,6 +21791,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 479c142bf22184d4f9bf9ea2aad91135, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hit_Fwd_Med_01: SS_hit_Fwd_Med_01
+  hit_Back_Med_01: SS_hit_Back_Med_01
+  hit_Left_Med_01: SS_hit_Left_Med_01
+  hit_Right_Med_01: SS_hit_Right_Med_01
 --- !u!114 &7012828793404712313
 MonoBehaviour:
   m_ObjectHideFlags: 0

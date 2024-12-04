@@ -58,9 +58,12 @@ public class MeleeWeaponDamageCollider : DamageCollider
         damageEffect.chemicalDamage = chemicalDamage;
         damageEffect.radiationDamage = radiationDamage;
         damageEffect.geneticDamage = geneticDamage;
-        damageEffect.contactPoint = contactPoint;
 
-        switch(characterCausingDamage.characterCombatManager.currentAttackType)
+        damageEffect.contactPoint = contactPoint;
+        damageEffect.angleHitFrom = Vector3.SignedAngle(characterCausingDamage.transform.forward, damageTarget.transform.forward, Vector3.up);
+        Debug.Log(damageEffect.angleHitFrom);
+
+        switch (characterCausingDamage.characterCombatManager.currentAttackType)
         {
             case AttackType.LightAttack01:
                 ApplyAttackDamageModifiers(light_Attack_01_DamageModifier, damageEffect);
