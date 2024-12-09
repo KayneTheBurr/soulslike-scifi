@@ -172,6 +172,7 @@ public class PlayerInputManager : MonoBehaviour
         HandleChargeR2Input();
         HandleQuedInputs();
     }
+
     //Lock On
     private void HandleLockOnInput()
     {
@@ -245,6 +246,7 @@ public class PlayerInputManager : MonoBehaviour
             }
         }
     }
+
     //Movements
     private void HandlePlayerMovementInput()
     {
@@ -290,6 +292,7 @@ public class PlayerInputManager : MonoBehaviour
         camVerticalInput = camera_Input.y;
         camHorizontalInput = camera_Input.x;
     }
+
     //Actions
     private void HandleDodgeInput()
     {
@@ -345,7 +348,6 @@ public class PlayerInputManager : MonoBehaviour
             player.playerEquipmentManager.SwitchLeftWeapon();
         }
     }
-
 
     //Attacks
     private void HandleR1Input()
@@ -417,6 +419,7 @@ public class PlayerInputManager : MonoBehaviour
         if (qued_r1_input) r1_Input = true;
         if (qued_r2_input) r2_Input = true;
     }
+
     private void HandleQuedInputs()
     {
         if(input_Que_Active)

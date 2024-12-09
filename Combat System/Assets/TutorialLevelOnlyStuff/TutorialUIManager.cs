@@ -13,12 +13,10 @@ public class TutorialUIManager : MonoBehaviour
 
     public TextMeshProUGUI infoText;
     public int currentTutorialStep = 1;
-    public bool learnMove= true;
-    public bool learnJump = false;
-    public bool learnRoll = false;
-    public bool learnSprint = false;
-    public bool learnAttack = false;
-    public bool flee = false;
+    public int totalEnemies = 0;
+    public int enemiesKilled = 0;
+    public bool winGame = false;
+    
 
     private void Awake()
     {
@@ -32,67 +30,41 @@ public class TutorialUIManager : MonoBehaviour
     }
     private void Update()
     {
-        if(learnMove)
-        {
-            learnMove = false;
-            //tell them how to move/aim
-            infoText.text = "Use Mouse to look, WASD to Move";
-        }
-        if (learnJump)
-        {
-            currentTutorialStep++;
-            learnJump = false;
-            infoText.text = "Jump over laser with F";
-        }
-        if(learnRoll)
-        {
-            currentTutorialStep++;
-            learnRoll = false;
-            infoText.text = "Roll under laser with [SPACE]";
-        }
-        if(learnSprint)
-        {
-            learnSprint = false;
-            currentTutorialStep++;
-            infoText.text = "Sprint to jump farther by holding down SPACE";
-        }
-        if(learnAttack)
-        {
-            learnAttack = false;
-            currentTutorialStep++;
-            infoText.text = "Right Click to perform light attack";
-        }
-        if(flee)
-        {
-            flee = false;
-            currentTutorialStep++;
-            infoText.text = "Avoid all enemies and get to the end!";
-        }
+        infoText.text = "Killed " + enemiesKilled + " / " + totalEnemies;
         if(player.playerNetworkManager.currentHealth.Value <= 0)
         {
             StartCoroutine(Respawn());
         }
+        
+        if (enemiesKilled >= totalEnemies)
+        {
+            if(!winGame)
+            {
+                winGame = true;
+                WinTutorial();
+            }
+        }
     }
     public IEnumerator Respawn()
     {
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(2);
         if(player != null)
         {
             player.gameObject.transform.position = Vector3.zero;
             player.respawnCharacter = true;
         }
-        
-        
     }
-
+    public void CountEnemies()
+    {
+        totalEnemies++;
+    }
     public void EnemyKilled()
     {
-        currentTutorialStep++;
-        infoText.text = "Roll while in-air parkour(ish)";
+        enemiesKilled++;
     }
     public void WinTutorial()
     {
-        currentTutorialStep++;
+        
         infoText.text = "You Win";
     }
 

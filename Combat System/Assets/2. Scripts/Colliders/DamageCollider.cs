@@ -8,6 +8,7 @@ public class DamageCollider : MonoBehaviour
 {
     [Header("Collider")]
     [SerializeField] protected Collider damageCollider;
+    
 
     [Header("Damage Types")]
     public float physicalDamage = 0; //break down into sub types (standard, slash, pierce, strike)
@@ -38,6 +39,9 @@ public class DamageCollider : MonoBehaviour
             contactPoint = damageTarget.GetComponent<Collider>().ClosestPointOnBounds(transform.position);
 
             //check if we can damage this target or not based on characters "freindly fire" 
+            
+
+
             //check if target is blocking
 
             //check if target is invulnerable
