@@ -5,14 +5,14 @@ public class LightAttackWeaponItemAction : WeaponItemAction
 {
     [Header("Light Attacks")]
     [SerializeField] string light_Attack_01 = "Main_Light_Attack_01";
-    //[SerializeField] string light_Attack_02 = "Main_Light_Attack_02";
+    [SerializeField] string light_Attack_02 = "Main_Light_Attack_02";
 
     [Header("Light Run Attacks")]
     [SerializeField] string light_run_attack_01 = "SS_Main_Run_Attack_01";
 
-    [Header("Light Rolling Attacks")]
+    [Header("Light Dodge Attacks")]
     [SerializeField] string light_roll_attack_01 = "SS_Main_Roll_Attack_01";
-
+    [SerializeField] string light_backstep_attack_01 = "SS_Main_Back_Step_Attack_01";
 
     public override void AttemptToPerformAction(PlayerManager playerPerformingAction, WeaponItem weaponPerformingAction)
     {
@@ -33,28 +33,47 @@ public class LightAttackWeaponItemAction : WeaponItemAction
             PerformLightRunningAttack(playerPerformingAction, weaponPerformingAction);
             return;
         }
-        //if we are rolling, perform a rolling attack 
-        //if (playerPerformingAction.characterCombatManager.canPerformRollingAttack)
-        //{
-        //    PerformLightRollingAttack(playerPerformingAction, weaponPerformingAction);
-        //    return;
-        //}
+        //if we are rolling, perform a rolling attack
+        if (playerPerformingAction.characterCombatManager.canPerformRollingAttack)
+        {
+            PerformLightRollingAttack(playerPerformingAction, weaponPerformingAction);
+            return;
+        }
+        //if we are backsteping, perform a backstep attack
+        if (playerPerformingAction.characterCombatManager.canPerformBackStepAttack)
+        {
+            PerformLightBackStepAttack(playerPerformingAction, weaponPerformingAction);
+            return;
+        }
 
         PerformLightAttack(playerPerformingAction, weaponPerformingAction);
     }
 
     private void PerformLightAttack(PlayerManager playerPerformingAction, WeaponItem weaponPerformingAction)
     {
-        
+        //if we are attacking and we can perform a combo, perform the combo attack
+        if(playerPerformingAction.playerCombatManager.canComboWithMainHandWeapon && playerPerformingAction.isPerformingAction)
+        {
+            playerPerformingAction.playerCombatManager.canComboWithMainHandWeapon = false;
 
-        if(playerPerformingAction.playerNetworkManager.isUsingRightHand.Value)
+            //figure out which attack we are currently performing, perform the next one
+            //perform the attack based on the previous attack
+            if(playerPerformingAction.playerCombatManager.lastAttackAnimation == light_Attack_01)
+            {
+                playerPerformingAction.playerAnimatorManager.PlayTargetAttackActionAnimation(AttackType.LightAttack02, light_Attack_02, true);
+            }
+        
+            else if(playerPerformingAction.playerCombatManager.lastAttackAnimation == light_Attack_02)
+            {
+                playerPerformingAction.playerAnimatorManager.PlayTargetAttackActionAnimation(AttackType.LightAttack01, light_Attack_01, true);
+            }
+        }
+        //otherwise perform a normal light attack
+        else if(!playerPerformingAction.isPerformingAction)
         {
             playerPerformingAction.playerAnimatorManager.PlayTargetAttackActionAnimation(AttackType.LightAttack01, light_Attack_01, true);
         }
-        if(playerPerformingAction.playerNetworkManager.isUsingLeftHand.Value)
-        {
 
-        }
     }
 
     private void PerformLightRunningAttack(PlayerManager playerPerformingAction, WeaponItem weaponPerformingAction)
@@ -62,30 +81,26 @@ public class LightAttackWeaponItemAction : WeaponItemAction
         //if we are 2 handing, play 2 handing 
         //else perform one handed light running attack 
 
-        if (playerPerformingAction.playerNetworkManager.isUsingRightHand.Value)
-        {
-            playerPerformingAction.playerAnimatorManager.PlayTargetAttackActionAnimation(AttackType.LightRunningAttack01, light_run_attack_01, true);
-        }
-        if (playerPerformingAction.playerNetworkManager.isUsingLeftHand.Value)
-        {
-
-        }
+        playerPerformingAction.playerAnimatorManager.PlayTargetAttackActionAnimation(AttackType.LightRunningAttack01, light_run_attack_01, true);
+        
     }
     private void PerformLightRollingAttack(PlayerManager playerPerformingAction, WeaponItem weaponPerformingAction)
     {
         //if we are 2 handing, play 2 handing 
-        //else perform one handed light running attack 
+        //else perform one handed light rolling attack 
 
-        if (playerPerformingAction.playerNetworkManager.isUsingRightHand.Value)
-        {
-            playerPerformingAction.playerCombatManager.canPerformRollingAttack = false;
-            playerPerformingAction.playerAnimatorManager.PlayTargetAttackActionAnimation(AttackType.LightRollingAttack01, light_roll_attack_01, true);
-        }
-        if (playerPerformingAction.playerNetworkManager.isUsingLeftHand.Value)
-        {
-
-        }
+        playerPerformingAction.playerCombatManager.canPerformRollingAttack = false;
+        playerPerformingAction.playerAnimatorManager.PlayTargetAttackActionAnimation(AttackType.LightRollingAttack01, light_roll_attack_01, true);
+        
     }
-    
+    private void PerformLightBackStepAttack(PlayerManager playerPerformingAction, WeaponItem weaponPerformingAction)
+    {
+        //if we are 2 handing, play 2 handing 
+        //else perform one handed light rolling attack 
+
+        playerPerformingAction.playerCombatManager.canPerformBackStepAttack = false;
+        playerPerformingAction.playerAnimatorManager.PlayTargetAttackActionAnimation(AttackType.LightBackStepAttack01, light_backstep_attack_01, true);
+
+    }
 
 }

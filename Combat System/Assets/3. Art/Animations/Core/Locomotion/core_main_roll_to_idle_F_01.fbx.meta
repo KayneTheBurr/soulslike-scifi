@@ -72,7 +72,21 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.4966507
+      - time: 0.12021074
+        functionName: EnableIFrames
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.4588746
+        functionName: DisableIFrames
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.49124175
         functionName: EnableCanDoRollingAttack
         data: 
         objectReferenceParameter: {instanceID: 0}

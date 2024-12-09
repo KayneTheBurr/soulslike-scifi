@@ -9,13 +9,12 @@ public class WorldAIManager : MonoBehaviour
 {
     public static WorldAIManager instance;
 
-    [Header("Debugging")]
-    [SerializeField] bool despawnAllCharacters = false;
-    [SerializeField] bool spawnAllCharacters = false;
+    
 
 
     [Header("Characters")]
-    [SerializeField] GameObject[] aICharacters;
+    [SerializeField] private List<AICharacterSpawner> aiCharacterSpawners;
+    //[SerializeField] GameObject[] aICharacters;
     [SerializeField] List<GameObject> spawnedInCharacters;
 
     private void Awake()
@@ -31,42 +30,19 @@ public class WorldAIManager : MonoBehaviour
     }
     private void Start()
     {
-        if(NetworkManager.Singleton.IsServer || NetworkManager.Singleton.IsHost)
-        {
-            StartCoroutine(WaitForSceneToLoad());
-        }
+        
     }
     private void Update()
     {
-        if(despawnAllCharacters)
-        {
-            despawnAllCharacters = false;
-            DespawnAllCharacters();
-        }
-        if(spawnAllCharacters)
-        {
-            spawnAllCharacters = false;
-            SpawnAllCharacters();
-        }
+
     }
 
-    private IEnumerator WaitForSceneToLoad()
+    public void SpawnCharacter(AICharacterSpawner aiSpawner)
     {
-        while(!SceneManager.GetActiveScene().isLoaded)
+        if(NetworkManager.Singleton.IsServer)
         {
-            yield return null;
-        }
-        SpawnAllCharacters();
-    }
-    private void SpawnAllCharacters()
-    {
-        Debug.Log("Spawn All Enemies!");
-
-        foreach (var character in aICharacters)
-        {
-            GameObject instantiatedCharacter = Instantiate(character);
-            instantiatedCharacter.GetComponent<NetworkObject>().Spawn();
-            spawnedInCharacters.Add(instantiatedCharacter);
+            aiCharacterSpawners.Add(aiSpawner);
+            aiSpawner.AttemptToSpawnCharacter();
         }
     }
     private void DespawnAllCharacters()

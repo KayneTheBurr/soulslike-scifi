@@ -46,12 +46,11 @@ public class TakeDamageEffect : InstantCharacterEffect
         if (character.isDead.Value) return;
 
         //check for invulnerability window
-
+        if (character.characterNetworkManager.isInvulnerable.Value) return;
 
         CalculateDamage(character);
 
-        //check which direction damage came from
-        //play damage animation
+        //check which direction damage came from and play damage animation
         PlayDirectionalBasedDamageAnimation(character);
 
         //check for build up effect (poison bleed etc)
@@ -85,6 +84,9 @@ public class TakeDamageEffect : InstantCharacterEffect
         {
             finalDamage = 1;
         }
+
+        Debug.Log("Dealt " + finalDamage + " damage!");
+
         character.characterNetworkManager.currentHealth.Value -= finalDamage;
         //calculate poise damage to determine if character will be stunned and play damaged animation or not 
     }
@@ -92,16 +94,17 @@ public class TakeDamageEffect : InstantCharacterEffect
     private void PlayDamageVFX(CharacterManager character)
     {
         //play a special effect based on element type
-        Debug.Log("play vfx");
+        
 
         character.characterEffectsManager.PlayBloodSplatterVFX(contactPoint);
     }
     private void PlayDamageSFX(CharacterManager character)
     {
-        Debug.Log("play sfx");
+        
         AudioClip physicalDamageSFX = WorldSFXManager.instance.ChooseRandomSFXFromArray(WorldSFXManager.instance.physicalDamageSFX);
 
         character.characterSFXManager.PlaySoundFX(physicalDamageSFX, 0.5f);
+        character.characterSFXManager.PlayDamageGrunt();
         //play more sfx based on damage type done
     }
 
@@ -136,9 +139,9 @@ public class TakeDamageEffect : InstantCharacterEffect
         else if (angleHitFrom >= -45 && angleHitFrom <= 45)
         {
             damageAnimation = character.characterAnimatorManager.GetRandomAnimationFromList(character.characterAnimatorManager.Back_Med_Damage);
-            Debug.Log("back hit");
+            
         }
-        Debug.Log("animation to play:" +  damageAnimation);
+        
         // if poise is broken, play the stagger animation
         if(poiseIsBroken)
         {

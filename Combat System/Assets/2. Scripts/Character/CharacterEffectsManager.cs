@@ -40,7 +40,7 @@ public class CharacterEffectsManager : MonoBehaviour
         {
             
             GameObject bloodSplatter = Instantiate(WorldCharacterEffectsManager.instance.bloodSplatterVFX, contactPoint, Quaternion.identity) ;
-            Debug.Log(bloodSplatter.name);
+            
         }
     }
 

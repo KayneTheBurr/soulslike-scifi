@@ -35,20 +35,22 @@ public class DamageCollider : MonoBehaviour
 
         if (damageTarget != null )
         {
-            
             contactPoint = damageTarget.GetComponent<Collider>().ClosestPointOnBounds(transform.position);
 
             //check if we can damage this target or not based on characters "freindly fire" 
             //check if target is blocking
+
             //check if target is invulnerable
+            if (damageTarget.characterNetworkManager.isInvulnerable.Value) return;
+
             DamageTarget(damageTarget);
 
+            Debug.Log(damageTarget);
         }
     }
 
     protected virtual void DamageTarget(CharacterManager damageTarget)
     {
-        
         //dont want to deal damage again to a target if we already damaged them with this instance of damage
         //add them to a list and check the list to see if they are on the list of damageable characters already or not 
         if (charactersDamaged.Contains(damageTarget)) return;
@@ -65,11 +67,7 @@ public class DamageCollider : MonoBehaviour
         damageEffect.geneticDamage = geneticDamage;
         damageEffect.contactPoint = contactPoint;
 
-        
-
         damageTarget.characterEffectsManager.ProcessInstantEffects(damageEffect);
-
-        
     }
 
     public virtual void EnableDamageCollider()
@@ -81,7 +79,4 @@ public class DamageCollider : MonoBehaviour
         damageCollider.enabled = false;
         charactersDamaged.Clear(); //reset the characters list so you can damage characters on the next attack
     }
-
-
-
 }

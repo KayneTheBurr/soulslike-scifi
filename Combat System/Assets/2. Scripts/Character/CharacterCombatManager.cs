@@ -11,11 +11,15 @@ public class CharacterCombatManager : MonoBehaviour
     [Header("Attack Target")]
     public CharacterManager currentTarget;
 
+    [Header("Last Attack Animation Performed")]
+    public string lastAttackAnimation;
+
     [Header("Lock On Transform")]
     public Transform lockOnTransform;
 
     [Header("Attack Flags")]
     public bool canPerformRollingAttack = false;
+    public bool canPerformBackStepAttack = false;
 
     protected virtual void Awake()
     {
@@ -27,7 +31,6 @@ public class CharacterCombatManager : MonoBehaviour
         }
         
     }
-
     public virtual void SetTarget(CharacterManager newTarget)
     {
         if(character.IsOwner)
@@ -37,7 +40,6 @@ public class CharacterCombatManager : MonoBehaviour
                 currentTarget = newTarget;
                 //tell server the ulong ID of the target we locked onto 
                 character.characterNetworkManager.currentTargetNetworkObjectID.Value = newTarget.GetComponent<NetworkObject>().NetworkObjectId;
-                
             }
             else
             {
@@ -45,13 +47,21 @@ public class CharacterCombatManager : MonoBehaviour
             }
         }
     }
+    public virtual void EnableCanDoCombo()
+    {
 
-    public void EnableIsInvulnerable()
+    }
+    public virtual void DisableCanDoCombo()
+    {
+
+    }
+
+    public void EnableIFrames()
     {
         if (character.IsOwner)
             character.characterNetworkManager.isInvulnerable.Value = true;
     }
-    public void DisableIsInvulnerable()
+    public void DisableIFrames()
     {
         if (character.IsOwner)
             character.characterNetworkManager.isInvulnerable.Value = false;
@@ -62,6 +72,14 @@ public class CharacterCombatManager : MonoBehaviour
     }
     public void DisableCanDoRollingAttack()
     {
-        canPerformRollingAttack = true;
+        canPerformRollingAttack = false;
+    }
+    public void EnableCanDoBackStepAttack()
+    {
+        canPerformBackStepAttack = true;
+    }
+    public void DisableCanDoBackStepAttack()
+    {
+        canPerformBackStepAttack = false;
     }
 }

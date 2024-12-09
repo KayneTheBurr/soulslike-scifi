@@ -46,6 +46,7 @@ public class PlayerEquipmentManager : CharacterEquipmentManager
         LoadLeftWeapon();
         LoadRightWeapon();
     }
+
     //Right Hand
     public void LoadRightWeapon()
     {
@@ -67,7 +68,7 @@ public class PlayerEquipmentManager : CharacterEquipmentManager
     {
         if (!player.IsOwner) return;
         
-        player.playerAnimatorManager.PlayTargetActionAnimation("Swap_Right_weapon_01", false, true, true, true);
+        player.playerAnimatorManager.PlayTargetActionAnimation("Swap_Right_weapon_01", false, false, true, true);
         //if we have 2 weapons equiped, never swap to unarmed
         //if he have one weapon equipped, swap to unarmed and back, not through both unarmed slots 
 
@@ -152,9 +153,73 @@ public class PlayerEquipmentManager : CharacterEquipmentManager
 
     public void SwitchLeftWeapon()
     {
+        if (!player.IsOwner) return;
 
+        player.playerAnimatorManager.PlayTargetActionAnimation("Swap_Left_weapon_01", false, false, true, true);
+        //if we have 2 weapons equiped, never swap to unarmed
+        //if he have one weapon equipped, swap to unarmed and back, not through both unarmed slots 
+
+        WeaponItem selectedWeapon = null;
+
+        //disable 2 handing weapon if we are doing that 
+
+        //add one to weapon index to select next weapon
+        player.playerInventoryManager.leftHandWeaponIndex += 1;
+
+        //check if out weapon index is out of bounds, if so reset to first weapon slot (0)
+        if (player.playerInventoryManager.leftHandWeaponIndex < 0 || player.playerInventoryManager.leftHandWeaponIndex > 2)
+        {
+            player.playerInventoryManager.leftHandWeaponIndex = 0;
+
+            //check if we are holding more than one weapon
+            float weaponCount = 0;
+            WeaponItem firstWeapon = null;
+            int firstWeaponPos = 0;
+            for (int i = 0; i < player.playerInventoryManager.weaponsInLeftHandSlots.Length; i++)
+            {
+                if (player.playerInventoryManager.weaponsInLeftHandSlots[i].itemID != WorldItemDataBase.instance.unarmedWeapon.itemID)
+                {
+                    weaponCount++;
+
+                    if (firstWeapon == null)
+                    {
+                        firstWeapon = player.playerInventoryManager.weaponsInLeftHandSlots[i];
+                        firstWeaponPos = i;
+                    }
+                }
+            }
+            if (weaponCount <= 1)
+            {
+                player.playerInventoryManager.leftHandWeaponIndex = -1;
+                selectedWeapon = WorldItemDataBase.instance.unarmedWeapon;
+                player.playerNetworkManager.currentLeftWeaponID.Value = selectedWeapon.itemID;
+            }
+            else
+            {
+                player.playerInventoryManager.leftHandWeaponIndex = firstWeaponPos;
+                player.playerNetworkManager.currentLeftWeaponID.Value = firstWeapon.itemID;
+            }
+            return;
+        }
+        foreach (WeaponItem weapon in player.playerInventoryManager.weaponsInLeftHandSlots)
+        {
+            //if the next weapon is not unarmed weapon
+            if (player.playerInventoryManager.weaponsInLeftHandSlots[player.playerInventoryManager.leftHandWeaponIndex].itemID !=
+                WorldItemDataBase.instance.unarmedWeapon.itemID)
+            {
+                //assign network weapon so it switches for all connected
+                selectedWeapon = player.playerInventoryManager.weaponsInLeftHandSlots[player.playerInventoryManager.leftHandWeaponIndex];
+                player.playerNetworkManager.currentLeftWeaponID.Value =
+                    player.playerInventoryManager.weaponsInLeftHandSlots[player.playerInventoryManager.leftHandWeaponIndex].itemID;
+                return;
+            }
+        }
+        if (selectedWeapon == null && player.playerInventoryManager.leftHandWeaponIndex <= 2)
+        {
+
+            SwitchLeftWeapon();
+        }
     }
-
 
     //Damage Colliders
     public void OpenDamageCollider()
@@ -163,11 +228,15 @@ public class PlayerEquipmentManager : CharacterEquipmentManager
         if (player.playerNetworkManager.isUsingRightHand.Value)
         {
             rightWeaponManager.meleeDamageCollider.EnableDamageCollider();
+            player.characterSFXManager.PlaySoundFX(WorldSFXManager.instance.
+                ChooseRandomSFXFromArray(player.playerInventoryManager.currentRightHandWeapon.whooshes));
         }
         //use elft weapon
         else if (player.playerNetworkManager.isUsingLeftHand.Value)
         {
             leftWeaponManager.meleeDamageCollider.EnableDamageCollider();
+            player.characterSFXManager.PlaySoundFX(WorldSFXManager.instance.
+                ChooseRandomSFXFromArray(player.playerInventoryManager.currentLeftHandWeapon.whooshes));
         }
         //play damage swoosh sfx
     }

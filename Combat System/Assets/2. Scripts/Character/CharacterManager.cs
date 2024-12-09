@@ -18,6 +18,8 @@ public class CharacterManager : NetworkBehaviour
     [HideInInspector] public CharacterAnimatorManager characterAnimatorManager;
     [HideInInspector] public CharacterCombatManager characterCombatManager;
     [HideInInspector] public CharacterSFXManager characterSFXManager;
+    [HideInInspector] public CharacterLocomotionManager characterLocomotionManager;
+    [HideInInspector] public CharacterUIManager characterUIManager;
 
     [Header("Character Group")]
     public CharacterGroup characterGroup;
@@ -39,16 +41,26 @@ public class CharacterManager : NetworkBehaviour
         characterAnimatorManager = GetComponent<CharacterAnimatorManager>();
         characterCombatManager = GetComponent<CharacterCombatManager>();
         characterSFXManager = GetComponent<CharacterSFXManager>();
+        characterLocomotionManager = GetComponent<CharacterLocomotionManager>();
+        characterUIManager = GetComponent<CharacterUIManager>();
     }
     protected virtual void Start()
     {
         IgnoreMyOwnColliders();
     }
+    protected virtual void OnEnable()
+    {
 
+    }
+    protected virtual void OnDisable()
+    {
+
+    }
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
 
+        animator.SetBool("IsMoving", characterNetworkManager.isMoving.Value);
         characterNetworkManager.isMoving.OnValueChanged += characterNetworkManager.OnIsMovingChanged;
     }
 

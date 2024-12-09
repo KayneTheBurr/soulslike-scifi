@@ -45,4 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponItemActions:
-  - {fileID: 11400000, guid: 1d1d7bad1c1aa5c44abcc9ee37f13e3c, type: 2}
+  - {fileID: 11400000, guid: 024c38cfe1f48e840a0063603c2348c7, type: 2}
+  - {fileID: 11400000, guid: 0c3527ad390482a499aebfe4a2aa67f6, type: 2}

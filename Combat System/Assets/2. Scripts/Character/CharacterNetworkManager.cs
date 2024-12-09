@@ -25,6 +25,8 @@ public class CharacterNetworkManager : NetworkBehaviour
         new NetworkVariable<bool>(false, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
     public NetworkVariable<bool> isInvulnerable =
         new NetworkVariable<bool>(false, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    public NetworkVariable<bool> isChargingAttack =
+        new NetworkVariable<bool>(false, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
 
     [Header("Animator")]
     public NetworkVariable<bool> isMoving =
@@ -90,6 +92,11 @@ public class CharacterNetworkManager : NetworkBehaviour
         {
             character.characterCombatManager.currentTarget = null;
         }
+    }
+
+    public void OnIsChargingAttackChanged(bool old, bool isChargingAttack)
+    {
+        character.animator.SetBool("IsChargingAttack", isChargingAttack);
     }
 
     public void OnIsMovingChanged(bool oldStatus, bool newStatus)

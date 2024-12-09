@@ -8,8 +8,8 @@ public class CharacterAnimatorManager : MonoBehaviour
 {
     CharacterManager character;
 
-    int vertical;
-    int horizontal;
+     int vertical;
+     int horizontal;
 
     [Header("Damage Animations")]
     public string lastDamageAnimationPlayed;
@@ -80,15 +80,53 @@ public class CharacterAnimatorManager : MonoBehaviour
     }
     public void UpdateAnimatorMovementParameters(float horizontalValue, float verticalValue, bool isSprinting)
     {
-        float horizontalAmt = horizontalValue;
-        float verticalAmt = verticalValue;
+        float snappedHorizontalAmt;
+        float snappedVerticalAmt;
 
-        if(isSprinting )
+        //snap horizontal values 
+        if (horizontalValue > 0 && horizontalValue <= 0.5f)
         {
-            verticalAmt = 2;
+            snappedHorizontalAmt = 0.5f;
         }
-        character.animator.SetFloat(horizontal, horizontalAmt, 0.1f, Time.deltaTime);
-        character.animator.SetFloat(vertical, verticalAmt, 0.1f, Time.deltaTime);
+        else if (horizontalValue > 0.5f && horizontalValue <= 1f)
+        {
+            snappedHorizontalAmt = 1f;
+        }
+        else if (horizontalValue < 0 && horizontalValue >= -0.5f)
+        {
+            snappedHorizontalAmt = -0.5f;
+        }
+        else if (horizontalValue < 0 && horizontalValue >= -1f)
+        {
+            snappedHorizontalAmt = -1f;
+        }
+        else snappedHorizontalAmt = 0;
+
+        //snap vertical values
+        if (verticalValue > 0 && verticalValue <= 0.5f)
+        {
+            snappedVerticalAmt = 0.5f;
+        }
+        else if (verticalValue > 0.5f && verticalValue <= 1f)
+        {
+            snappedVerticalAmt = 1f;
+        }
+        else if (verticalValue < 0 && verticalValue >= -0.5f)
+        {
+            snappedVerticalAmt = -0.5f;
+        }
+        else if (verticalValue < 0 && verticalValue >= -1f)
+        {
+            snappedVerticalAmt = -1f;
+        }
+        else snappedVerticalAmt = 0;
+
+        if (isSprinting )
+        {
+            snappedVerticalAmt = 2;
+        }
+        character.animator.SetFloat(horizontal, snappedHorizontalAmt, 0.1f, Time.deltaTime);
+        character.animator.SetFloat(vertical, snappedVerticalAmt, 0.1f, Time.deltaTime);
     }
 
     public virtual void PlayTargetActionAnimation(string targetAnimation, 
@@ -97,8 +135,7 @@ public class CharacterAnimatorManager : MonoBehaviour
     {
         character.applyRootMotion = applyRootMotion;
         character.animator.CrossFade(targetAnimation, 0.2f);
-        Debug.Log(hit_Fwd_Med_01);
-        Debug.Log("playing animation:" +  targetAnimation);
+        
 
         //stop character from performing other actions
         character.isPerformingAction = isPerformingAction;
@@ -121,8 +158,9 @@ public class CharacterAnimatorManager : MonoBehaviour
         //tell the network we are attacking flag (counter damage etc)
 
         character.characterCombatManager.currentAttackType = attackType;
+        character.characterCombatManager.lastAttackAnimation = targetAnimation;
         character.applyRootMotion = applyRootMotion;
-        character.animator.CrossFade(targetAnimation, 0.2f);
+        character.animator.CrossFade(targetAnimation, 0.3f);
         character.isPerformingAction = isPerformingAction;
         character.canMove = canMove;
         character.canRotate = canRotate;

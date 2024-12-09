@@ -43,7 +43,7 @@ public class TitleScreenManager : MonoBehaviour
         //original single line here before debuggin unity 6 shit
         //NetworkManager.Singleton.StartHost();
 
-        Debug.Log("Configuring port for Host...");
+        //Debug.Log("Configuring port for Host...");
 
         var transport = NetworkManager.Singleton.GetComponent<Unity.Netcode.Transports.UTP.UnityTransport>();
 
@@ -51,12 +51,12 @@ public class TitleScreenManager : MonoBehaviour
         if (isHostInstance) // Main host
         {
             transport.ConnectionData.Port = 7778;
-            Debug.Log("Starting Main Host on port 7778...");
+            //Debug.Log("Starting Main Host on port 7778...");
         }
         else // Clone host
         {
             transport.ConnectionData.Port = 7780;
-            Debug.Log("Starting Clone Host on port 7780...");
+            //Debug.Log("Starting Clone Host on port 7780...");
         }
 
         if (!NetworkManager.Singleton.StartHost())
@@ -65,7 +65,7 @@ public class TitleScreenManager : MonoBehaviour
         }
         else
         {
-            Debug.Log($"Host started successfully on port {transport.ConnectionData.Port}!");
+            //Debug.Log($"Host started successfully on port {transport.ConnectionData.Port}!");
         }
     }
     public void StartNewGame()

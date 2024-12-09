@@ -50,4 +50,5 @@ MonoBehaviour:
   - {fileID: 4993609475029919357, guid: 54c0f19575e1af8418642037fe23d656, type: 3}
   - {fileID: 4993609475029919357, guid: 51dbf4bdae8a88646913fbfa7e43de78, type: 3}
   - {fileID: 4993609475029919357, guid: cedb4fbf36bf9dc44be0a48bf02971a8, type: 3}
+  - {fileID: 4993609475029919357, guid: 745d8aed55ddde14c9a30e8e9de70e00, type: 3}
   spawnedInCharacters: []
