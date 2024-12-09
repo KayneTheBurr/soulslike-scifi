@@ -17,7 +17,8 @@ public class CharacterLocomotionManager : MonoBehaviour
     protected bool fallingVelocitySet = false;
     protected float inAirTimer = 0;
 
-
+    [Header("Flags")]
+    public bool isRolling = false;
 
 
     protected virtual void Awake()
@@ -51,6 +52,16 @@ public class CharacterLocomotionManager : MonoBehaviour
         character.characterController.Move(yVelocity * Time.deltaTime);
     }
 
+    public void EnableCanRotate()
+    {
+        character.canRotate = true;
+    }
+
+    public void DisableCanRotate()
+    {
+        character.canRotate = false;
+    }
+
     protected virtual bool HandleGroundChecks()
     {
         character.isGrounded = Physics.CheckSphere(character.transform.position, groundCheckSphereRadius, groundLayer);
@@ -62,6 +73,5 @@ public class CharacterLocomotionManager : MonoBehaviour
     {
         //Gizmos.DrawSphere(character.transform.position, groundCheckSphereRadius);
     }
-
 
 }

@@ -25,6 +25,8 @@ public class CharacterNetworkManager : NetworkBehaviour
         new NetworkVariable<bool>(false, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
     public NetworkVariable<bool> isInvulnerable =
         new NetworkVariable<bool>(false, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    public NetworkVariable<bool> isChargingAttack =
+        new NetworkVariable<bool>(false, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
 
     [Header("Animator")]
     public NetworkVariable<bool> isMoving =
@@ -41,6 +43,10 @@ public class CharacterNetworkManager : NetworkBehaviour
         new NetworkVariable<int>(10, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
     public NetworkVariable<int> endurance =
         new NetworkVariable<int>(10, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+
+    [Header("Target")]
+    public NetworkVariable<ulong> currentTargetNetworkObjectID = 
+        new NetworkVariable<ulong>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
 
     [Header("Resources")]
     public NetworkVariable<float> currentStamina = 
@@ -71,6 +77,26 @@ public class CharacterNetworkManager : NetworkBehaviour
             }
         }
 
+    }
+    public void OnLockOnTargetIDChange(ulong oldID, ulong newID)
+    {
+        if(!IsOwner)
+        {
+            character.characterCombatManager.currentTarget = 
+                NetworkManager.Singleton.SpawnManager.SpawnedObjects[newID].gameObject.GetComponent<CharacterManager>();
+        }
+    }
+    public void OnIsLockOnChanged(bool old, bool isLockedOn)
+    {
+        if(!isLockedOn)
+        {
+            character.characterCombatManager.currentTarget = null;
+        }
+    }
+
+    public void OnIsChargingAttackChanged(bool old, bool isChargingAttack)
+    {
+        character.animator.SetBool("IsChargingAttack", isChargingAttack);
     }
 
     public void OnIsMovingChanged(bool oldStatus, bool newStatus)

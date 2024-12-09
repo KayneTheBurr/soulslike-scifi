@@ -1,11 +1,35 @@
 using UnityEngine;
 using Unity.Netcode;
+using NUnit.Framework;
+using System.Collections;
+using System.Collections.Generic;
 
 public class CharacterAnimatorManager : MonoBehaviour
 {
     CharacterManager character;
 
-    int vertical, horizontal;
+     int vertical;
+     int horizontal;
+
+    [Header("Damage Animations")]
+    public string lastDamageAnimationPlayed;
+
+    [SerializeField] string hit_Fwd_Med_01 =  "SS_hit_Fwd_Med_01";
+    [SerializeField] string hit_Fwd_Med_02 = "SS_hit_Fwd_Med_02";
+
+    [SerializeField] string hit_Back_Med_01 = "SS_hit_Back_Med_01";
+    [SerializeField] string hit_Back_Med_02 = "SS_hit_Back_Med_02";
+
+    [SerializeField] string hit_Left_Med_01 = "SS_hit_Left_Med_01";
+    [SerializeField] string hit_Left_Med_02 = "SS_hit_Left_Med_02";
+
+    [SerializeField] string hit_Right_Med_01 = "SS_hit_Right_Med_01";
+    [SerializeField] string hit_Right_Med_02 = "SS_hit_Right_Med_02";
+
+    public List<string> Fwd_Med_Damage = new List<string>();
+    public List<string> Back_Med_Damage = new List<string>();
+    public List<string> Left_Med_Damage = new List<string>();
+    public List<string> Right_Med_Damage = new List<string>();
 
     protected virtual void Awake()
     {
@@ -14,17 +38,95 @@ public class CharacterAnimatorManager : MonoBehaviour
         horizontal = Animator.StringToHash("Horizontal");
 
     }
+
+    protected virtual void Start()
+    {
+        Fwd_Med_Damage.Add(hit_Fwd_Med_01);
+        Fwd_Med_Damage.Add(hit_Fwd_Med_02);
+
+        Back_Med_Damage.Add(hit_Back_Med_01);
+        Back_Med_Damage.Add(hit_Back_Med_02);
+
+        Left_Med_Damage.Add(hit_Left_Med_01);
+        Left_Med_Damage.Add(hit_Left_Med_02);
+
+        Right_Med_Damage.Add(hit_Right_Med_01);
+        Right_Med_Damage.Add(hit_Right_Med_02);
+    }
+
+    public string GetRandomAnimationFromList(List<string> animationList)
+    {
+        List<string> finalList = new List<string>();
+        foreach(var anim in animationList)
+        {
+            finalList.Add(anim);
+        }
+        //check if we have played this animation so we dont play it twice in a row 
+        finalList.Remove(lastDamageAnimationPlayed);
+
+        //check list for null entries and remove them 
+        for (int i = finalList.Count-1 ; i > -1 ; i--)
+        {
+            if (finalList[i] == null)
+            {
+                finalList.RemoveAt(i);
+            }
+        }
+
+        int randomValue = Random.Range(0, finalList.Count);
+
+        return finalList[randomValue];
+
+    }
     public void UpdateAnimatorMovementParameters(float horizontalValue, float verticalValue, bool isSprinting)
     {
-        float horizontalAmt = horizontalValue;
-        float verticalAmt = verticalValue;
+        float snappedHorizontalAmt;
+        float snappedVerticalAmt;
 
-        if(isSprinting )
+        //snap horizontal values 
+        if (horizontalValue > 0 && horizontalValue <= 0.5f)
         {
-            verticalAmt = 2;
+            snappedHorizontalAmt = 0.5f;
         }
-        character.animator.SetFloat(horizontal, horizontalAmt, 0.1f, Time.deltaTime);
-        character.animator.SetFloat(vertical, verticalAmt, 0.1f, Time.deltaTime);
+        else if (horizontalValue > 0.5f && horizontalValue <= 1f)
+        {
+            snappedHorizontalAmt = 1f;
+        }
+        else if (horizontalValue < 0 && horizontalValue >= -0.5f)
+        {
+            snappedHorizontalAmt = -0.5f;
+        }
+        else if (horizontalValue < 0 && horizontalValue >= -1f)
+        {
+            snappedHorizontalAmt = -1f;
+        }
+        else snappedHorizontalAmt = 0;
+
+        //snap vertical values
+        if (verticalValue > 0 && verticalValue <= 0.5f)
+        {
+            snappedVerticalAmt = 0.5f;
+        }
+        else if (verticalValue > 0.5f && verticalValue <= 1f)
+        {
+            snappedVerticalAmt = 1f;
+        }
+        else if (verticalValue < 0 && verticalValue >= -0.5f)
+        {
+            snappedVerticalAmt = -0.5f;
+        }
+        else if (verticalValue < 0 && verticalValue >= -1f)
+        {
+            snappedVerticalAmt = -1f;
+        }
+        else snappedVerticalAmt = 0;
+
+        if (isSprinting )
+        {
+            snappedVerticalAmt = 2;
+        }
+        character.animator.SetFloat(horizontal, snappedHorizontalAmt, 0.1f, Time.deltaTime);
+        character.animator.SetFloat(vertical, snappedVerticalAmt, 0.1f, Time.deltaTime);
     }
 
     public virtual void PlayTargetActionAnimation(string targetAnimation, 
@@ -33,6 +135,7 @@ public class CharacterAnimatorManager : MonoBehaviour
     {
         character.applyRootMotion = applyRootMotion;
         character.animator.CrossFade(targetAnimation, 0.2f);
+        
 
         //stop character from performing other actions
         character.isPerformingAction = isPerformingAction;
@@ -55,8 +158,9 @@ public class CharacterAnimatorManager : MonoBehaviour
         //tell the network we are attacking flag (counter damage etc)
 
         character.characterCombatManager.currentAttackType = attackType;
+        character.characterCombatManager.lastAttackAnimation = targetAnimation;
         character.applyRootMotion = applyRootMotion;
-        character.animator.CrossFade(targetAnimation, 0.2f);
+        character.animator.CrossFade(targetAnimation, 0.3f);
         character.isPerformingAction = isPerformingAction;
         character.canMove = canMove;
         character.canRotate = canRotate;

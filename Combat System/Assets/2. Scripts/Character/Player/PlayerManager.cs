@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Unity.Netcode;
 
 public class PlayerManager : CharacterManager
 {
@@ -29,8 +30,6 @@ public class PlayerManager : CharacterManager
         playerInventoryManager = GetComponent<PlayerInventoryManager>();
         playerEquipmentManager = GetComponent<PlayerEquipmentManager>();
         playerCombatManager = GetComponent<PlayerCombatManager>();
-
-        
     }
 
     protected override void Start()
@@ -56,6 +55,17 @@ public class PlayerManager : CharacterManager
 
     }
 
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        
+    }
+    protected override void OnDisable()
+    {
+        base.OnDisable();
+        
+    }
+
     public override IEnumerator HandleDeathEvents(bool manuallySelectDeathAnim = false)
     {
         if(IsOwner)
@@ -69,8 +79,9 @@ public class PlayerManager : CharacterManager
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
+        NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnectedCallback;
 
-        if( IsOwner)
+        if(IsOwner)
         {
             PlayerCamera.instance.player = this;
             PlayerInputManager.instance.player = this;
@@ -90,12 +101,24 @@ public class PlayerManager : CharacterManager
             playerNetworkManager.currentHealth.OnValueChanged += PlayerUIManager.instance.playerHUDManager.SetNewHealthValue;
 
         }
+        //only update floating HP bar if we arent the owner, only want to see other players bars not our own 
+        if (!IsOwner)
+            characterNetworkManager.isMoving.OnValueChanged += characterNetworkManager.OnIsMovingChanged;
+
         //Stats
         playerNetworkManager.currentHealth.OnValueChanged += playerNetworkManager.CheckHP;
+
         //Equipment
         playerNetworkManager.currentRightWeaponID.OnValueChanged += playerNetworkManager.OnCurrentRightHandWeaponIDChange;
         playerNetworkManager.currentLeftWeaponID.OnValueChanged += playerNetworkManager.OnCurrentLeftHandWeaponIDChange;
         playerNetworkManager.currentWeaponBeingUsed.OnValueChanged += playerNetworkManager.OnCurrentWeaponBeingUsedIDChange;
+
+        //lock on 
+        playerNetworkManager.isLockedOn.OnValueChanged += playerNetworkManager.OnIsLockOnChanged;
+        playerNetworkManager.currentTargetNetworkObjectID.OnValueChanged += playerNetworkManager.OnLockOnTargetIDChange;
+
+        //Flags
+        playerNetworkManager.isChargingAttack.OnValueChanged += playerNetworkManager.OnIsChargingAttackChanged;
 
         //if we connect to someone elses world, reload our character data to this new character
         //dont run this if we are the server host 
@@ -105,6 +128,58 @@ public class PlayerManager : CharacterManager
         }
 
 
+    }
+
+    public override void OnNetworkDespawn()
+    {
+        base.OnNetworkDespawn();
+        NetworkManager.Singleton.OnClientConnectedCallback -= OnClientConnectedCallback;
+
+        if (IsOwner)
+        {
+            //update stat when its corresponding attribute is chagned 
+            playerNetworkManager.vitality.OnValueChanged -= playerNetworkManager.SetNewMaxHealthValue;
+            playerNetworkManager.endurance.OnValueChanged -= playerNetworkManager.SetNewMaxStaminaValue;
+
+            //read stat value, set stat any time it is changed
+            playerNetworkManager.currentStamina.OnValueChanged -= playerStatsManager.ResetStaminaRegenTimer;
+            playerNetworkManager.currentStamina.OnValueChanged -= PlayerUIManager.instance.playerHUDManager.SetNewStaminaValue;
+            playerNetworkManager.currentHealth.OnValueChanged -= PlayerUIManager.instance.playerHUDManager.SetNewHealthValue;
+        }
+        if (!IsOwner)
+            characterNetworkManager.isMoving.OnValueChanged -= characterNetworkManager.OnIsMovingChanged;
+        //Stats
+        playerNetworkManager.currentHealth.OnValueChanged -= playerNetworkManager.CheckHP;
+
+        //Equipment
+        playerNetworkManager.currentRightWeaponID.OnValueChanged -= playerNetworkManager.OnCurrentRightHandWeaponIDChange;
+        playerNetworkManager.currentLeftWeaponID.OnValueChanged -= playerNetworkManager.OnCurrentLeftHandWeaponIDChange;
+        playerNetworkManager.currentWeaponBeingUsed.OnValueChanged -= playerNetworkManager.OnCurrentWeaponBeingUsedIDChange;
+
+        //lock on 
+        playerNetworkManager.isLockedOn.OnValueChanged -= playerNetworkManager.OnIsLockOnChanged;
+        playerNetworkManager.currentTargetNetworkObjectID.OnValueChanged -= playerNetworkManager.OnLockOnTargetIDChange;
+
+        //Flags
+        playerNetworkManager.isChargingAttack.OnValueChanged -= playerNetworkManager.OnIsChargingAttackChanged;
+
+    }
+
+    private void OnClientConnectedCallback(ulong clientID)
+    {
+        WorldGameSessionManager.instance.AddPlayerToActivePlayersList(this); 
+
+        //if we are the host, we dont need to sync other players, only if joining the game late
+        if(!IsServer && IsOwner)
+        {
+            foreach(var player in WorldGameSessionManager.instance.players)
+            {
+                if(player != this)
+                {
+                    player.LoadOtherPlayerCharactersWhenJoiningServer();
+                }
+            }
+        }
     }
 
     public void SaveGameDataToCurrentCharacterData(ref CharacterSaveData currentCharacterData)
@@ -156,6 +231,23 @@ public class PlayerManager : CharacterManager
         }
     }
 
+    public void LoadOtherPlayerCharactersWhenJoiningServer()
+    {
+        //sync weapons 
+        playerNetworkManager.OnCurrentRightHandWeaponIDChange(0, playerNetworkManager.currentRightWeaponID.Value);
+        playerNetworkManager.OnCurrentLeftHandWeaponIDChange(0, playerNetworkManager.currentLeftWeaponID.Value);
+
+        //lock on target
+        if(playerNetworkManager.isLockedOn.Value)
+        {
+            playerNetworkManager.OnLockOnTargetIDChange(0, playerNetworkManager.currentTargetNetworkObjectID.Value);
+        }
+        //armor
+        //consmetic choices
+
+    }
+
+    //Debug for testing
     private void DebugMenu()
     {
         if(respawnCharacter)
@@ -170,6 +262,5 @@ public class PlayerManager : CharacterManager
 
         }
     }
-
 
 }

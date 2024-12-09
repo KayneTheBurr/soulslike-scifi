@@ -28,9 +28,6 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
     [SerializeField] float backStepStaminaCost = 15;
     
 
-
-
-
     protected override void Awake()
     {
         base.Awake();
@@ -51,7 +48,15 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
             horizontalMovement = player.characterNetworkManager.horizontalMovement.Value;
             moveAmount = player.characterNetworkManager.moveAmount.Value;
 
-            player.playerAnimatorManager.UpdateAnimatorMovementParameters(0, moveAmount, player.playerNetworkManager.isSprinting.Value);
+            if (player.playerNetworkManager.isLockedOn.Value || player.playerNetworkManager.isSprinting.Value)
+            {
+                player.playerAnimatorManager.UpdateAnimatorMovementParameters(horizontalMovement, verticalMovement, player.playerNetworkManager.isSprinting.Value);
+            }
+            else
+            {
+                //only pass vertical since strafing is only while locked on, want to only run forward with camera movement right now 
+                player.playerAnimatorManager.UpdateAnimatorMovementParameters(0, moveAmount, player.playerNetworkManager.isSprinting.Value);
+            }
 
 
         }
@@ -66,15 +71,18 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
     }
     private void GetVertandHoriInputs()
     {
-        verticalMovement = PlayerInputManager.instance.verticalInput;
-        horizontalMovement = PlayerInputManager.instance.horizontalInput;
+        verticalMovement = PlayerInputManager.instance.vertical_Input;
+        horizontalMovement = PlayerInputManager.instance.horizontal_Input;
         moveAmount = PlayerInputManager.instance.moveAmount;
 
         //clamp for animations
     }
     private void HandleGroundedMovement()
     {
-        GetVertandHoriInputs();
+        if(player.canMove || player.canRotate)
+        {
+            GetVertandHoriInputs();
+        }
 
         if (!player.canMove) return; //if i cant move, dont let me move
 
@@ -117,8 +125,8 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
         if(!player.isGrounded)
         {
             Vector3 airborneDirection;
-            airborneDirection = PlayerCamera.instance.cam.transform.forward * PlayerInputManager.instance.verticalInput;
-            airborneDirection += PlayerCamera.instance.cam.transform.right * PlayerInputManager.instance.horizontalInput;
+            airborneDirection = PlayerCamera.instance.cam.transform.forward * PlayerInputManager.instance.vertical_Input;
+            airborneDirection += PlayerCamera.instance.cam.transform.right * PlayerInputManager.instance.horizontal_Input;
             airborneDirection.y = 0;
 
             player.characterController.Move(airborneDirection * airborneManeuverSpeed * Time.deltaTime);
@@ -128,23 +136,63 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
 
     private void HandleRotation()
     {
+        if (player.isDead.Value) return;
         if (!player.canRotate) return; //if i cant rotate, dont let me rotate
 
-        targetRotateDirection = Vector3.zero;
-        targetRotateDirection = PlayerCamera.instance.cam.transform.forward * verticalMovement;
-        targetRotateDirection += PlayerCamera.instance.cam.transform.right * horizontalMovement;
-        targetRotateDirection.Normalize();
-        targetRotateDirection.y = 0;
-
-
-        if(targetRotateDirection == Vector3.zero)
+        if (player.playerNetworkManager.isLockedOn.Value)//if locked on 
         {
-            targetRotateDirection = transform.forward;
-        }
+            //allow sprinting/rolling without facing the target while locked on
+            if (player.playerNetworkManager.isSprinting.Value || player.playerLocomotionManager.isRolling) 
+            {
+                Vector3 targetDirection = Vector3.zero;
+                targetDirection = PlayerCamera.instance.cam.transform.forward * verticalMovement;
+                targetDirection += PlayerCamera.instance.cam.transform.right * horizontalMovement;
+                targetDirection.Normalize();
+                targetDirection.y = 0;
 
-        Quaternion newRotation = Quaternion.LookRotation(targetRotateDirection);
-        Quaternion targetRotation = Quaternion.Slerp(transform.rotation, newRotation, rotationSpeed * Time.deltaTime);
-        transform.rotation = targetRotation;
+                if (targetDirection == Vector3.zero)
+                {
+                    targetDirection = transform.forward;
+                }
+
+                Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
+                Quaternion finalRotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+                transform.rotation = finalRotation;
+            }
+            else //if locked on and not sprinting, we need to be strafing instead of normal movement 
+            {
+                if (player.playerCombatManager.currentTarget == null) return;
+
+                Vector3 targetDirection;
+                targetDirection = player.playerCombatManager.currentTarget.transform.position - player.transform.position;
+                targetDirection.y = 0;
+                targetDirection.Normalize();
+
+                Debug.DrawLine(player.playerCombatManager.currentTarget.transform.position, player.transform.position, Color.red);
+
+                Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
+                Quaternion finalRotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+                player.transform.rotation = finalRotation;
+
+            }
+        }
+        else
+        {
+            targetRotateDirection = Vector3.zero;
+            targetRotateDirection = PlayerCamera.instance.cam.transform.forward * verticalMovement;
+            targetRotateDirection += PlayerCamera.instance.cam.transform.right * horizontalMovement;
+            targetRotateDirection.Normalize();
+            targetRotateDirection.y = 0;
+
+            if (targetRotateDirection == Vector3.zero)
+            {
+                targetRotateDirection = transform.forward;
+            }
+
+            Quaternion newRotation = Quaternion.LookRotation(targetRotateDirection);
+            Quaternion targetRotation = Quaternion.Slerp(transform.rotation, newRotation, rotationSpeed * Time.deltaTime);
+            transform.rotation = targetRotation;
+        }
     }
 
     public void HandleSprinting()
@@ -183,7 +231,6 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
 
         if (moveAmount > 0) //if moving, dodge in direction of movement
         {
-            
             dodgeDirection = PlayerCamera.instance.cam.transform.forward * verticalMovement;
             dodgeDirection += PlayerCamera.instance.cam.transform.right * horizontalMovement;
             dodgeDirection.y = 0;
@@ -195,12 +242,17 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
             player.playerAnimatorManager.PlayTargetActionAnimation("Fwd_Dodge_01", true, true);
 
             player.playerNetworkManager.currentStamina.Value -= dodgeStaminaCost;
+
+            isRolling = true;
         }
         else //if stationary, dodge backwards (backstep)
         {
-            player.playerAnimatorManager.PlayTargetActionAnimation("Back_Step_01", true, true);
+            if(player.isGrounded) //roll allowed in air, backstep is not 
+            {
+                player.playerAnimatorManager.PlayTargetActionAnimation("Back_Step_01", true, true);
 
-            player.playerNetworkManager.currentStamina.Value -= backStepStaminaCost;
+                player.playerNetworkManager.currentStamina.Value -= backStepStaminaCost;
+            }
         }
     }
     public void AttemptToJump()
@@ -221,11 +273,10 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
         player.playerAnimatorManager.PlayTargetActionAnimation("SS_Main_Jump_Start_01", false, true);
         player.playerNetworkManager.isJumping.Value = true;
 
-
         player.playerNetworkManager.currentStamina.Value -= jumpStaminaCost;
 
-        jumpDirection = PlayerCamera.instance.cam.transform.forward * PlayerInputManager.instance.verticalInput;
-        jumpDirection += PlayerCamera.instance.cam.transform.right * PlayerInputManager.instance.horizontalInput;
+        jumpDirection = PlayerCamera.instance.cam.transform.forward * PlayerInputManager.instance.vertical_Input;
+        jumpDirection += PlayerCamera.instance.cam.transform.right * PlayerInputManager.instance.horizontal_Input;
         jumpDirection.y = 0;
         
         if(jumpDirection != Vector3.zero)
@@ -233,18 +284,17 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
             //our movement speed will affect how much we can move while in the air 
             if (player.playerNetworkManager.isSprinting.Value)
             {
-                jumpDirection *= 1;
+                jumpDirection *= 2;
             }
             else if (moveAmount > 0.5f)
             {
-                jumpDirection *= 0.5f;
+                jumpDirection *= 1f;
             }
             else if (moveAmount <= 0.5f)
             {
                 jumpDirection *= 0.25f;
             }
         }
-        
     }
 
     public void ApplyJumpForce()

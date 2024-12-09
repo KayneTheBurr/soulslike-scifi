@@ -9,6 +9,14 @@ public class MeleeWeaponDamageCollider : DamageCollider
 
     [Header("Weapon Attack Modifiers")]
     public float light_Attack_01_DamageModifier;
+    public float light_Attack_02_DamageModifier;
+    public float heavy_Attack_01_DamageModifier;
+    public float heavy_Attack_02_DamageModifier;
+    public float charge_Attack_01_DamageModifier;
+    public float charge_Attack_02_DamageModifier;
+    public float light_Run_Attack_01_DamageModifier;
+    public float light_Roll_Attack_01_DamageModifier;
+    public float light_BackStep_Attack_01_DamageModifier;
 
 
     protected override void Awake()
@@ -58,18 +66,45 @@ public class MeleeWeaponDamageCollider : DamageCollider
         damageEffect.chemicalDamage = chemicalDamage;
         damageEffect.radiationDamage = radiationDamage;
         damageEffect.geneticDamage = geneticDamage;
-        damageEffect.contactPoint = contactPoint;
 
-        switch(characterCausingDamage.characterCombatManager.currentAttackType)
+        damageEffect.contactPoint = contactPoint;
+        damageEffect.angleHitFrom = Vector3.SignedAngle(characterCausingDamage.transform.forward, damageTarget.transform.forward, Vector3.up);
+        
+
+        switch (characterCausingDamage.characterCombatManager.currentAttackType)
         {
             case AttackType.LightAttack01:
                 ApplyAttackDamageModifiers(light_Attack_01_DamageModifier, damageEffect);
+                break;
+            case AttackType.LightAttack02:
+                ApplyAttackDamageModifiers(light_Attack_02_DamageModifier, damageEffect);
+                break;
+            case AttackType.HeavyAttack01:
+                ApplyAttackDamageModifiers(heavy_Attack_01_DamageModifier, damageEffect);
+                break;
+            case AttackType.HeavyAttack02:
+                ApplyAttackDamageModifiers(heavy_Attack_02_DamageModifier, damageEffect);
+                break;
+            case AttackType.ChargeAttack01:
+                ApplyAttackDamageModifiers(charge_Attack_01_DamageModifier, damageEffect);
+                break;
+            case AttackType.ChargeAttack02:
+                ApplyAttackDamageModifiers(charge_Attack_02_DamageModifier, damageEffect);
+                break;
+            case AttackType.LightRunningAttack01:
+                ApplyAttackDamageModifiers(light_Run_Attack_01_DamageModifier, damageEffect);
+                break;
+            case AttackType.LightRollingAttack01:
+                ApplyAttackDamageModifiers(light_Roll_Attack_01_DamageModifier, damageEffect);
+                break;
+            case AttackType.LightBackStepAttack01:
+                ApplyAttackDamageModifiers(light_BackStep_Attack_01_DamageModifier, damageEffect);
                 break;
             default:
                 break;
         }
 
-        //only send the damage request from the damage collider owner, otehrwise it could then trigger the damage 
+        //only send the damage request from the damage collider owner, otehrwise it could then trigger the damage a second time 
         if(characterCausingDamage.IsOwner)
         {
             damageTarget.characterNetworkManager.NotifyServerOfCharacterDamageServerRpc(

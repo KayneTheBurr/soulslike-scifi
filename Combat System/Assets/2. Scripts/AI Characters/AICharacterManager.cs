@@ -7,6 +7,9 @@ public class AICharacterManager : CharacterManager
     [HideInInspector] public AINetworkManager aiNetworkManager;
     [HideInInspector] public AILocomotionManager aiLocomotionManager;
 
+    [Header("Character Name")]
+    public string characterName = "";
+
     [Header("NavMesh Agent")]
     public NavMeshAgent navMeshAgent;
 
@@ -16,8 +19,12 @@ public class AICharacterManager : CharacterManager
     [Header("States")]
     public IdleState idle;
     public PursueTargetState pursueTarget;
-    //combat
-    //attack
+    public CombatStanceState combatStance;
+    public AttackState attack;
+
+    [Header("Temp Testing")]
+    public int maxHP;
+    
 
     protected override void Awake()
     {
@@ -34,11 +41,49 @@ public class AICharacterManager : CharacterManager
 
         currentState = idle;
     }
+
+    public override void OnNetworkSpawn()
+    {
+        base.OnNetworkSpawn();
+        if(IsOwner)
+        {
+            //force setting network variable HP on spawn
+            aiNetworkManager.maxHealth.Value = maxHP;
+            aiNetworkManager.currentHealth.Value = maxHP;
+
+            idle = Instantiate(idle);
+            pursueTarget = Instantiate(pursueTarget);
+            combatStance = Instantiate(combatStance);
+            attack = Instantiate(attack);
+            currentState = idle;
+        }
+
+        aiNetworkManager.currentHealth.OnValueChanged += aiNetworkManager.CheckHP;
+
+    }
+    public override void OnNetworkDespawn()
+    {
+        base.OnNetworkDespawn();
+        aiNetworkManager.currentHealth.OnValueChanged -= aiNetworkManager.CheckHP;
+    }
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        if(characterUIManager.hasFloatingHPBar)
+            characterNetworkManager.currentHealth.OnValueChanged += characterUIManager.OnHPChanged;
+    }
+    protected override void OnDisable()
+    {
+        base.OnDisable();
+        if (characterUIManager.hasFloatingHPBar)
+            characterNetworkManager.currentHealth.OnValueChanged -= characterUIManager.OnHPChanged;
+    }
+
     private void ProcessStateMachine()
     {
         AIStates nextState = currentState?.Tick(this);
 
-        if(nextState != null)
+        if (nextState != null)
         {
             currentState = nextState;
         }
@@ -46,6 +91,14 @@ public class AICharacterManager : CharacterManager
         //reset the position/rotation after teh state machine has processed it
         navMeshAgent.transform.localPosition = Vector3.zero;
         navMeshAgent.transform.localRotation = Quaternion.identity;
+
+        if (aiCombatManager.currentTarget != null)
+        {
+            aiCombatManager.distanceFromTarget = Vector3.Distance(aiCombatManager.currentTarget.transform.position, transform.position);
+            aiCombatManager.targetDirection = aiCombatManager.currentTarget.transform.position - transform.position;
+            aiCombatManager.viewableAngle = WorldUtilityManager.instance.GetAngleOfTarget(transform, aiCombatManager.targetDirection);
+        }
+
 
         if (navMeshAgent.enabled)
         {
@@ -68,10 +121,22 @@ public class AICharacterManager : CharacterManager
 
 
     }
+
+    protected override void Update()
+    {
+        base.Update();
+        aiCombatManager.HandleActionRecovery(this);
+
+    }
     protected override void FixedUpdate()
     {
         base.FixedUpdate();
-        ProcessStateMachine();
+
+        if(IsOwner)
+        {
+            ProcessStateMachine();
+        }
+        
 
     }
 }
