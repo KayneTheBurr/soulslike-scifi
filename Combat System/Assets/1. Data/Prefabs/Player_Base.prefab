@@ -19575,7 +19575,7 @@ MonoBehaviour:
   staminaRegenTimer: 0
   staminaRegenDelay: 1
   staminaTickTimer: 0
-  staminaTickRate: 0.05
+  staminaTickRate: 0.025
   staminaRegenAmount: 3
 --- !u!114 &-9173822166919761407
 MonoBehaviour:
@@ -19594,6 +19594,7 @@ MonoBehaviour:
   lastAttackAnimation: 
   lockOnTransform: {fileID: 0}
   canPerformRollingAttack: 0
+  canPerformBackStepAttack: 0
   currentWeaponBeingUsed: {fileID: 0}
   canComboWithMainHandWeapon: 0
 --- !u!114 &-3160774519190820704

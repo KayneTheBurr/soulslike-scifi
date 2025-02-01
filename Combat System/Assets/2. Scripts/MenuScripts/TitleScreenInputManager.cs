@@ -13,7 +13,7 @@ public class TitleScreenInputManager : MonoBehaviour
     {
         if (deleteCharacterSlot)
         {
-            Debug.Log("delete char");
+            //Debug.Log("delete char");
             deleteCharacterSlot = false;
             TitleScreenManager.instance.AttemptToDeleteCharacterSlot();
         }
